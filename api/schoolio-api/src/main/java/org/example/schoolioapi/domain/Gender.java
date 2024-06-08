@@ -1,4 +1,4 @@
-package org.example.schoolioapi;
+package org.example.schoolioapi.domain;
 
 public enum Gender {
     MALE,
