@@ -1,7 +1,7 @@
 HELP.md
 /target
-!.mvn/wrapper/maven-wrapper.jar
 !target/*.jar
+!.mvn/wrapper/maven-wrapper.jar
 *.properties
 
 ### STS ###
