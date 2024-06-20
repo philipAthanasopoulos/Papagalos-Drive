@@ -1,9 +1,8 @@
 HELP.md
 /target
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-*application.properties
+!target/*.jar
+*.properties
 
 ### STS ###
 .apt_generated
