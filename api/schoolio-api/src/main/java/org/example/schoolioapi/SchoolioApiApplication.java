@@ -3,7 +3,9 @@ package org.example.schoolioapi;
 import org.example.schoolioapi.domain.Address;
 import org.example.schoolioapi.domain.Gender;
 import org.example.schoolioapi.domain.Student;
+import org.example.schoolioapi.domain.User;
 import org.example.schoolioapi.repository.StudentRepository;
+import org.example.schoolioapi.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -22,22 +24,23 @@ public class SchoolioApiApplication {
 	}
 
 	@Bean
-	CommandLineRunner runner(StudentRepository repository){
+	CommandLineRunner runner(UserRepository repository){
 		return args -> {
-			Student student  = new Student(
-					"John",
-					"Doe",
-					"johnDoe@gmail.com",
-					Gender.MALE,
-					new Address(
-							"a","b","c"
-					),
-					List.of("Chemistry"),
-					BigDecimal.ONE,
-					LocalDateTime.now()
-			);
+//			Student student  = new Student(
+//					"John",
+//					"Doe",
+//					"johnDoe@gmail.com",
+//					Gender.MALE,
+//					new Address(
+//							"a","b","c"
+//					),
+//					List.of("Chemistry"),
+//					BigDecimal.ONE,
+//					LocalDateTime.now()
+//			);
 
-			repository.insert(student);
+//			User user = new User("George");
+//			repository.insert(user);
 		};
 	}
 }
