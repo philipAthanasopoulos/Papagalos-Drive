@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {findAllByDisplayValue} from "@testing-library/react";
 
 interface Address {
     country: string;
     city: string;
     postalCode: string;
-}
-
-interface Student {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  gender: string;
-  address: Address;
-  favouriteSubjects: string[];
-  totalSpentInBooks: number; 
-  created: string; 
 }
 
 interface User {
