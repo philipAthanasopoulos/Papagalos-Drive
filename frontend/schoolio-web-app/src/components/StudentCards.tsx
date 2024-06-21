@@ -32,7 +32,7 @@ const StudentList: React.FC = () => {
       try {
         const res = await axios.get<User[]>('https://schoolio.onrender.com/users');
         // const res = await axios.get<User[]>('http://localhost:8080/users');
-
+ 
         setusers(res.data);
         console.log(res.data);
       } catch (error) {
