@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-interface Address {
-    country: string;
-    city: string;
-    postalCode: string;
-}
 
 interface User {
 
