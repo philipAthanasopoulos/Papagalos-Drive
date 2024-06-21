@@ -20,35 +20,36 @@ interface Student {
   created: string; 
 }
 
-const StudentList: React.FC = () => {
-  const [students, setStudents] = useState<Student[]>([]);
-  const [response, setResponse] = useState<any>(null);
+interface User {
 
+  username: string;
+}
+
+const StudentList: React.FC = () => {
+  const [users, setusers] = useState<User[]>([]);
   useEffect(() => {
-    const fetchStudents = async () => {
+    const fetchusers = async () => {
       try {
-        const res = await axios.get<Student[]>('https://schoolio.onrender.com/api/students');
-        setStudents(res.data);
+        const res = await axios.get<User[]>('https://schoolio.onrender.com/users');
+        // const res = await axios.get<User[]>('http://localhost:8080/users');
+
+        setusers(res.data);
         console.log(res.data);
       } catch (error) {
         console.error('Error:', error);
       }
     };
 
-    fetchStudents();
+    fetchusers();
   }, []);
 
   return (
     <div>
       <ul>
-        {students.map((student) => (
-          <li key={student.id}>
+        {users.map((user) => (
+          <li key={user.username}>
             <div>
-              <p>{student.firstName} {student.lastName}</p>
-              <p>{student.gender}</p>
-              <p>{student.email}</p>
-              <p>{student.address.country}, {student.address.city}, {student.address.postalCode}</p>
-              <p>{student.favouriteSubjects}</p>
+              <p>{user.username}</p>
             </div>
           </li>
         ))}
