@@ -14,7 +14,7 @@ jobs:
       - run: npm -v
       - run: node -v
       - run: cd frontend/schoolio-web-app
-      - run: npm ci && npm run build
+      - run: ls -l && npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
