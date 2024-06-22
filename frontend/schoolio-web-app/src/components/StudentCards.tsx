@@ -16,7 +16,7 @@ const StudentList: React.FC = () => {
         // const res = await axios.get<User[]>('http://localhost:8080/users');
  
         setusers(res.data);
-        console.log(res.data);
+        console.log(res.data); 
       } catch (error) {
         console.error('Error:', error);
       }
