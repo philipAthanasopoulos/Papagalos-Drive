@@ -1,0 +1,35 @@
+.folder-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .folder-button .emoji {
+    margin-right: 8px;
+  }
+  
+  .folder-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  .folder-button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+  }
+  
+  .folder-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(72, 207, 173, 0.5);
+  }

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="updated gh actions" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;philipAthanasopoulos&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/philipAthanasopoulos/Schoolio.git&quot;,
+    &quot;accountId&quot;: &quot;db8b2485-3794-4f78-bbfa-79a3186ab951&quot;
+  }
+}</component>
+  <component name="JQLSearcherProjectManager">
+    <selected>-1</selected>
+    <searchers />
+  </component>
+  <component name="JiraServerManager">
+    <servers />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2hW3vZzEjGZiQGos4iZwYgZFQ7y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.schoolio-api/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchoolioApiApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.schoolio-api [build].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.schoolio-api [package].executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.SchoolioApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dell/Desktop/GitHub projects/Schoolio/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Dell\\Downloads\\ideaIU-2024.1.4.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn build" />
+      <command value="mvn package" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.SchoolioApiApplicationTests">
+    <configuration name="SchoolioApiApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="schoolio-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.schoolioapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.schoolioapi" />
+      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.SchoolioApiApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchoolioApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="schoolio-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.schoolioapi.SchoolioApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="schoolio-api/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="schoolio-api/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SchoolioApiApplicationTests" />
+        <item itemvalue="Docker.schoolio-api/Dockerfile" />
+        <item itemvalue="Docker.schoolio-api/Dockerfile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="Default" summary="Default task">
+      <changelist id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="" />
+      <created>1717696237957</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722254767868</updated>
+      <workItem from="1717696239012" duration="1394000" />
+      <workItem from="1717697831921" duration="323000" />
+      <workItem from="1720903181200" duration="144000" />
+      <workItem from="1720903332060" duration="179000" />
+      <workItem from="1720959426443" duration="68000" />
+      <workItem from="1720959717178" duration="943000" />
+      <workItem from="1720961920433" duration="157000" />
+      <workItem from="1721039638022" duration="5000" />
+      <workItem from="1721046789267" duration="3303000" />
+      <workItem from="1721127402469" duration="4000" />
+      <workItem from="1721134575304" duration="46000" />
+      <workItem from="1721198369477" duration="534000" />
+      <workItem from="1721231965515" duration="4916000" />
+      <workItem from="1721236942796" duration="195000" />
+      <workItem from="1721237143737" duration="1176000" />
+      <workItem from="1721238339946" duration="816000" />
+      <workItem from="1721239169740" duration="396000" />
+      <workItem from="1721369634680" duration="2939000" />
+      <workItem from="1721373385180" duration="1704000" />
+      <workItem from="1721390819308" duration="180000" />
+      <workItem from="1721391038221" duration="1579000" />
+      <workItem from="1721466616054" duration="1307000" />
+      <workItem from="1721469360522" duration="1000" />
+      <workItem from="1721478259881" duration="7000" />
+      <workItem from="1721480283730" duration="45000" />
+      <workItem from="1721499863224" duration="2329000" />
+      <workItem from="1721552745519" duration="3323000" />
+      <workItem from="1721556530345" duration="391000" />
+      <workItem from="1721585749487" duration="1221000" />
+      <workItem from="1721823523533" duration="1648000" />
+      <workItem from="1721830870800" duration="796000" />
+      <workItem from="1721831730139" duration="3490000" />
+      <workItem from="1721903963468" duration="2841000" />
+      <workItem from="1721914113368" duration="1521000" />
+      <workItem from="1722075227296" duration="54000" />
+      <workItem from="1722155940984" duration="2312000" />
+      <workItem from="1722159072537" duration="14000" />
+      <workItem from="1722161698301" duration="2125000" />
+      <workItem from="1722165943515" duration="5034000" />
+      <workItem from="1722244213603" duration="151000" />
+      <workItem from="1722244375848" duration="6934000" />
+      <workItem from="1722254344996" duration="390000" />
+      <workItem from="1722254759539" duration="9000" />
+    </task>
+    <task id="LOCAL-00001" summary="new commit">
+      <option name="closed" value="true" />
+      <created>1722161766275</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722161766275</updated>
+    </task>
+    <task id="LOCAL-00002" summary="migrated note file from binary to string type">
+      <changelist id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="migrated note file from binary to string type" />
+      <option name="closed" value="true" />
+      <created>1722163842142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722255058181</updated>
+      <workItem from="1722254768346" duration="267000" />
+      <workItem from="1722255043251" duration="15000" />
+    </task>
+    <task active="true" id="SCHOOL-1" summary="Create a new account">
+      <changelist id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="migrated note file from binary to string type" />
+      <created>1718891802024</created>
+      <option name="issue" value="true" />
+      <url>https://objectarmy.atlassian.net/browse/SCHOOL-1</url>
+      <option name="number" value="1" />
+      <option name="presentableId" value="SCHOOL-1" />
+      <option name="project" value="SCHOOL" />
+      <updated>1722255058181</updated>
+      <workItem from="1722255058903" duration="11000" />
+      <workItem from="1722258713020" duration="5000" />
+      <workItem from="1722327507544" duration="1864000" />
+      <workItem from="1722329410921" duration="5028000" />
+      <workItem from="1722341553852" duration="59000" />
+      <workItem from="1722507322400" duration="4179000" />
+      <workItem from="1722602611796" duration="860000" />
+      <workItem from="1722608669112" duration="2649000" />
+      <workItem from="1722671150498" duration="241000" />
+      <workItem from="1722680843342" duration="2635000" />
+      <workItem from="1722684613579" duration="232000" />
+      <workItem from="1722684985514" duration="200000" />
+      <workItem from="1722763562536" duration="3000" />
+      <workItem from="1722774122105" duration="9000" />
+      <workItem from="1722779462053" duration="1706000" />
+      <workItem from="1722796186606" duration="23000" />
+      <workItem from="1722796398095" duration="1458000" />
+      <workItem from="1722849658067" duration="425000" />
+      <workItem from="1722864597108" duration="28000" />
+      <workItem from="1722934979217" duration="1384000" />
+      <workItem from="1722942267160" duration="1661000" />
+      <workItem from="1722943952826" duration="1760000" />
+      <workItem from="1722945748347" duration="265000" />
+      <workItem from="1722946836126" duration="4000" />
+      <workItem from="1723057633770" duration="155000" />
+      <workItem from="1723057894702" duration="644000" />
+      <workItem from="1723058752589" duration="1025000" />
+      <workItem from="1723064694620" duration="217000" />
+      <workItem from="1723064929344" duration="84000" />
+      <workItem from="1723066494080" duration="23000" />
+      <workItem from="1723066844136" duration="346000" />
+    </task>
+    <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
+      <option name="closed" value="true" />
+      <created>1722935986645</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722935986645</updated>
+    </task>
+    <task id="LOCAL-00004" summary="generated new jarfile">
+      <option name="closed" value="true" />
+      <created>1722936053511</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1722936053511</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commented out local api url">
+      <option name="closed" value="true" />
+      <created>1722936103205</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1722936103205</updated>
+    </task>
+    <task id="LOCAL-00006" summary="updated jarfile">
+      <option name="closed" value="true" />
+      <created>1722936374305</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722936374305</updated>
+    </task>
+    <task id="LOCAL-00007" summary="updated jarfile">
+      <option name="closed" value="true" />
+      <created>1722946005211</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1722946005211</updated>
+    </task>
+    <task id="LOCAL-00008" summary="updated gh actions">
+      <option name="closed" value="true" />
+      <created>1723058298979</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723058298979</updated>
+    </task>
+    <task id="LOCAL-00009" summary="updated gh actions">
+      <option name="closed" value="true" />
+      <created>1723064877945</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723064877945</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers>
+      <JIRA url="https://objectarmy.atlassian.net">
+        <option name="apiType" value="REST_2_0" />
+        <option name="inCloud" value="true" />
+        <option name="jiraVersion" value="1001.0.0-SNAPSHOT" />
+        <username>filipposfivos@gmail.com</username>
+      </JIRA>
+    </servers>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="new commit" />
+    <MESSAGE value="migrated note file from binary to string type" />
+    <MESSAGE value="added JsonIgnoreProperties for subfolder objects so that only ids are returned" />
+    <MESSAGE value="generated new jarfile" />
+    <MESSAGE value="commented out local api url" />
+    <MESSAGE value="updated jarfile" />
+    <MESSAGE value="updated gh actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated gh actions" />
+  </component>
+  <component name="WfRunsListSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;branch&quot;: &quot;main&quot;,
+    &quot;currentBranchFilter&quot;: true
+  }
+}</component>
+</project>
