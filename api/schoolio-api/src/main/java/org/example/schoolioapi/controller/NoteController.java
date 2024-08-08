@@ -1,16 +1,14 @@
 package org.example.schoolioapi.controller;
 
-import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.service.FolderService;
 import org.example.schoolioapi.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
-import java.util.Base64;
 import java.util.List;
 
 @RestController
@@ -25,21 +23,21 @@ public class NoteController {
         this.folderService = folderService;
     }
 
-    @PostMapping("/notes/add")
-    public void uploadNote(@RequestParam("title") String title,
-                           @RequestParam("image") MultipartFile content,
-                           @RequestParam("targetFolder") String targetFolder,
-                           Model model) throws IOException {
-        Note note = new Note();
-        note.setFileName(title);
-        note.setFile(Base64.getEncoder().encodeToString(content.getBytes()));
-        this.noteService.saveNote(note);
-
-        Folder folder = folderService.getFolderByName(targetFolder);
-        folder.addNote(note);
-        this.folderService.saveFolder(folder);
-
-    }
+//    @PostMapping("/notes/add")
+//    public void uploadNote(@RequestParam("title") String title,
+//                           @RequestParam("image") MultipartFile content,
+//                           @RequestParam("targetFolder") String targetFolder,
+//                           Model model) throws IOException {
+//        Note note = new Note();
+//        note.setFileName(title);
+//        note.setFile(Base64.getEncoder().encodeToString(content.getBytes()));
+//        this.noteService.saveNote(note);
+//
+//        Folder folder = folderService.getFolderByName(targetFolder);
+//        folder.addNote(note);
+//        this.folderService.saveFolder(folder);
+//
+//    }
 
     @GetMapping("/notes/{id}")
     public Note getNoteById(@PathVariable String id) {
