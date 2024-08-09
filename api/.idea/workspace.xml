@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="updated gh actions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folders.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,6 +263,9 @@
       <workItem from="1723066844136" duration="1429000" />
       <workItem from="1723106324057" duration="6656000" />
       <workItem from="1723183200553" duration="1089000" />
+      <workItem from="1723189379181" duration="584000" />
+      <workItem from="1723190742796" duration="13000" />
+      <workItem from="1723210675891" duration="512000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -353,6 +348,10 @@
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
+    {
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
+    },
     {
       &quot;branch&quot;: &quot;main&quot;,
       &quot;currentBranchFilter&quot;: true
