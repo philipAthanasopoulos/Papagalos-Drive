@@ -1,14 +1,19 @@
 package org.example.schoolioapi.controller;
 
+import org.bson.types.Binary;
+import org.example.schoolioapi.domain.FileType;
+import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.domain.Note;
+import org.example.schoolioapi.domain.NoteBlob;
 import org.example.schoolioapi.service.FolderService;
+import org.example.schoolioapi.service.NoteBlobService;
 import org.example.schoolioapi.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -16,31 +21,41 @@ import java.util.List;
 public class NoteController {
     private final NoteService noteService;
     private final FolderService folderService;
+    private NoteBlobService noteBlobService;
 
     @Autowired
-    public NoteController(NoteService noteService, FolderService folderService) {
+    public NoteController(NoteService noteService, FolderService folderService, NoteBlobService mongoRepository) {
         this.noteService = noteService;
         this.folderService = folderService;
+        this.noteBlobService = mongoRepository;
     }
 
-//    @PostMapping("/notes/add")
-//    public void uploadNote(@RequestParam("title") String title,
-//                           @RequestParam("image") MultipartFile content,
-//                           @RequestParam("targetFolder") String targetFolder,
-//                           Model model) throws IOException {
-//        Note note = new Note();
-//        note.setFileName(title);
-//        note.setFile(Base64.getEncoder().encodeToString(content.getBytes()));
-//        this.noteService.saveNote(note);
-//
-//        Folder folder = folderService.getFolderByName(targetFolder);
-//        folder.addNote(note);
-//        this.folderService.saveFolder(folder);
-//
-//    }
+    @PostMapping("/notes/add")
+    public void uploadNote(@RequestParam("title") String title,
+                           @RequestParam("file") MultipartFile file,
+                           @RequestParam("targetFolderName") String targetFolderName,
+                           Model model) throws IOException {
+
+        Folder folder = folderService.getFolderByName(targetFolderName);
+
+        NoteBlob blob = noteBlobService.saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
+
+        Note note = noteService.saveNote(new Note(
+                title,
+                FileType.valueOf(getFileExtension(file)),
+                blob.getId()
+        ));
+
+        folderService.addNoteToFolder(folder, note);
+    }
+
+    private String getFileExtension(MultipartFile file) {
+        String name = file.getOriginalFilename();
+        return name.substring(name.lastIndexOf(".") + 1).toUpperCase();
+    }
 
     @GetMapping("/notes/{id}")
-    public Note getNoteById(@PathVariable String id) {
+    public Note getNoteById(@PathVariable Long id) {
         return this.noteService.getNoteById(id).orElse(null);
     }
 

@@ -1,28 +1,34 @@
 package org.example.schoolioapi.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection = "folders")
+@Entity
 @Data
 public class Folder {
     @Id
-    private String id;
+    @GeneratedValue(generator = "Incremental")
+    private Long id;
     private String name;
-    @DBRef
+    @OneToMany
     private List<Folder> subFolders;
-    @DBRef
+    @OneToMany
     private List<Note> notes;
 
     public Folder(String name) {
         this.name = name;
         this.subFolders = new ArrayList<>();
         this.notes = new ArrayList<>();
+    }
+
+    public Folder() {
+
     }
 
     public void addNote(Note note) {

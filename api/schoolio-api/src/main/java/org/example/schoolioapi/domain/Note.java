@@ -1,14 +1,27 @@
 package org.example.schoolioapi.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+@Entity
 @Data
-@Document(collection = "notes")
 public class Note {
     @Id
-    private String id;
-    private String fileName;
-    private String file;
+    @GeneratedValue(generator = "Incremental")
+    private Long id;
+    private String name;
+    private FileType type;
+    private String mongoId;
+
+    public Note(String name, FileType type, String mongoId) {
+        this.name = name;
+        this.type = type;
+        this.mongoId = mongoId;
+    }
+
+    public Note() {
+
+    }
 }

@@ -19,7 +19,7 @@ public class FolderService {
         this.noteService = noteService;
     }
 
-    public Optional<Folder> getFolderById(String id) {
+    public Optional<Folder> getFolderById(Long id) {
         return folderRepository.findById(id);
     }
 
@@ -43,8 +43,10 @@ public class FolderService {
         folderRepository.save(folder);
     }
 
-    public Folder getFolderByName(String targetFolder) {
-        return folderRepository.findByName(targetFolder);
+    public Folder getFolderByName(String name) {
+        return folderRepository.findFolderByName(name).orElse(
+                saveFolder(new Folder(name))
+        );
     }
 
     public Folder saveFolder(Folder folder) {

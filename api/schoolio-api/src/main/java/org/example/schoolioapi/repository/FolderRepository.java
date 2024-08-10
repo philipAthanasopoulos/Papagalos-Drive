@@ -1,9 +1,12 @@
 package org.example.schoolioapi.repository;
 
 import org.example.schoolioapi.domain.Folder;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface FolderRepository extends MongoRepository<Folder, String> {
-    Folder findByName(String metafrastes);
+import java.util.Optional;
 
+public interface FolderRepository extends JpaRepository<Folder, Long> {
+    Folder findByName(String name);
+    Optional<Folder> findFolderByName(String name);
 }

@@ -18,11 +18,11 @@ public class NoteService {
         this.noteRepository = noteRepository;
     }
 
-    public void saveNote(Note note) {
-        noteRepository.insert(note);
+    public Note saveNote(Note note) {
+        return noteRepository.save(note);
     }
 
-    public Optional<Note> getNoteById(String id) {
+    public Optional<Note> getNoteById(Long id) {
         return noteRepository.findById(id);
     }
 
