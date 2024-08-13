@@ -14,7 +14,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="rel_database@localhost" uuid="7063107d-c7ae-4bc9-b041-7f98454c7e07">
+    <data-source source="LOCAL" name="rel_database@localhost" uuid="b5cd00b6-e42e-43b4-b6b0-44d6d2a394de">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>

@@ -12,10 +12,12 @@ import java.util.Optional;
 public class NoteService {
 
     private final NoteRepository noteRepository;
+    private final NoteBlobService noteBlobService;
 
     @Autowired
-    public NoteService(NoteRepository noteRepository) {
+    public NoteService(NoteRepository noteRepository, NoteBlobService noteBlobService) {
         this.noteRepository = noteRepository;
+        this.noteBlobService = noteBlobService;
     }
 
     public Note saveNote(Note note) {
@@ -28,5 +30,14 @@ public class NoteService {
 
     public List<Note> getAllNotes() {
         return noteRepository.findAll();
+    }
+
+    //Steps
+    //Delete note blob in NoSQL database
+    //Delete note object
+
+    public void deleteNote(Note note) {
+        noteBlobService.deleteNoteBlobById(note.getMongoId());
+        noteRepository.delete(note);
     }
 }

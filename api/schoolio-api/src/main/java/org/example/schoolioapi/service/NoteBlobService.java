@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class NoteBlobService {
-    private NoteBlobRepository noteBlobRepository;
+    private final NoteBlobRepository noteBlobRepository;
 
     public NoteBlobService(NoteBlobRepository noteBlobRepository) {
         this.noteBlobRepository = noteBlobRepository;
@@ -19,4 +19,9 @@ public class NoteBlobService {
     public NoteBlob getNoteBlobById(String id){
         return noteBlobRepository.findById(id).orElse(null);
     }
+
+    public void deleteNoteBlobById(String id){
+        noteBlobRepository.deleteById(id);
+    }
+
 }

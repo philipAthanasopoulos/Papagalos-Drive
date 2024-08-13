@@ -1,80 +1,117 @@
-import React, { Component } from 'react';
-import Note from './Note';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {webApi} from '../env/env';
-// import {localApi} from'../env/env'
+import { localApi } from '../env/env';
 import { Button } from 'react-bootstrap';
-
-class Folder {
-    id: string;
-    name: string;
-    subFolders: Folder[];
-    notes: Note[];
-
-    constructor(id: string) {
-        this.id = id;
-        this.name = '';
-        this.subFolders = [];
-        this.notes = [];
-    }
-}
+import { FolderDTO } from './FolderDTO';
 
 type Props = {
-    id: string;
+    id: number;
 };
 
-type State = {
-    folder: Folder;
-};
+const FolderComponent: React.FC<Props> = ({ id }) => {
+    const [folder, setFolder] = useState<FolderDTO>(new FolderDTO(id));
+    const [base64Strings, setBase64Strings] = useState<string[]>([]);
+    const [dataHasLoaded, setDataHasLoaded] = useState<boolean>(false);
 
-class FolderComponent extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-        this.state = {
-            folder: new Folder(props.id),
-        };
-    }
-
-    fetchFolder = async (folderId:string) => {
+    const fetchFolder = async (folderId: number) => {
         try {
-            const response = await axios.get(`${webApi}/folder/${folderId}`);
+            const response = await axios.get(`${localApi}/folder/${folderId}`);
             console.log(response.data);
-            const { id, name, subFolders, notes } = response.data;
-            this.setState({ folder: { id, name, subFolders, notes } });
-            console.log(this.state.folder.subFolders);
+            console.log("Got folder");
+            const { id, name, subFolderIds, subFolderNames, noteBlobIds, noteNames } = response.data;
+            setFolder({ id, name, subFolderIds, subFolderNames, noteBlobIds, noteNames });
+            setDataHasLoaded(true);
         } catch (error) {
             console.error('Error loading folder:', error);
         }
     };
 
-    componentDidMount() {
-        if (this.props.id) {
-            this.fetchFolder(this.props.id);
+    useEffect(() => {
+        fetchFolder(id);
+    }, [id]);
+
+    const renderSubFolders = (): React.ReactNode => {
+        const { subFolderIds, subFolderNames } = folder;
+        return subFolderNames?.map((name, index) => (
+            <div key={index}>
+                <Button variant='light' size='lg' onClick={() => fetchFolder(subFolderIds[index])}>
+                    📁{name}
+                </Button>
+            </div>
+        ));
+    };
+    
+    async function fetchBlobData(blobId: string) {
+        return await axios.get(`${localApi}/blob/${blobId}`);
+    }
+
+    const fetchBlobs = async () => {
+        const blobIds = folder.noteBlobIds;
+        const strings: string[] = [];
+        const fetchPromises =  blobIds.map(async (blobId) => {
+            try {
+                const response = await fetchBlobData(blobId);
+                strings.push(response.data.data);
+            } catch (error) {
+                console.error('Error loading blobs:', error);
+            }
+        });
+        await Promise.all(fetchPromises);
+        setBase64Strings(strings);
+        setDataHasLoaded(true);
+    }
+
+
+    async function openFileInNewTab(index: number): Promise<void> {
+        const response = fetchBlobData(folder.noteBlobIds[index]);
+        await Promise.resolve(response);
+        const base64String = (await response).data.data;    
+
+        const newWindow = window.open();
+        if (newWindow) {
+            newWindow.document.write(`
+                <html>
+                    <head>
+                        <title>File Viewer</title>
+                    </head>
+                    <body>
+                        <embed src="data:application/pdf;base64,${base64String}" type="application/pdf" width="100%" height="100%" />
+                    </body>
+                </html>
+            `);
+            newWindow.document.close();
         }
     }
 
-    render() {
-        const { name, subFolders, notes } = this.state.folder;
+    const renderBlobs = (): React.ReactNode => {
         return (
-            <div>
-                <h1>Φάκελος: {name}</h1>
-                {notes?.map((note, index) => (
-                    <div key={index}>
-                        <a href={`data:image/jpeg;base64,${note.file}`} target='_blank' rel='noopener noreferrer'>
-                            {note.fileName}
-                        </a>
-                    </div>
-                ))}
-                {subFolders?.map((subFolder, index) => (
-                    <div key={index}>
-                        <Button variant='link' onClick={() => this.fetchFolder(subFolder.id)}>
-                            📁{subFolder.name}
-                        </Button>
-                    </div>
-                ))}
-            </div>
+            <>
+                <div>
+                    {folder.noteNames.map((name, index) => (
+                        <div key={index}>
+                            <Button variant='light' size='lg' onClick={() => openFileInNewTab(index)}>
+                                📄{name}
+                            </Button>
+                        </div>
+                    ))}
+                </div>
+            </>
         );
-    }
-}
+    };
+
+    return (
+        <div className='d-flex flex-column'>
+            {dataHasLoaded && (
+                <>
+                    <h1>Φάκελος: {folder.name}</h1>
+                    {renderBlobs()}
+                    {renderSubFolders()}
+                </>
+            )}
+        </div>
+    );
+};
 
 export default FolderComponent;
+
+

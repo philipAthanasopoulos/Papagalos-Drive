@@ -1,10 +1,17 @@
 package org.example.schoolioapi;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.service.FolderService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.io.File;
+import java.util.List;
 
 @SpringBootApplication()
 public class SchoolioApiApplication {
@@ -12,10 +19,11 @@ public class SchoolioApiApplication {
         SpringApplication.run(SchoolioApiApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner run(FolderService folderService) {
-        return args -> {
-//            Folder rootFolder = folderService.getRootFolder();
+//    @Bean
+//    @Transactional
+//    public CommandLineRunner run(FolderService folderService) {
+//        return args -> {
+//            Folder rootFolder = folderService.saveFolder(new Folder("root"));
 //
 //            ObjectMapper mapper = new ObjectMapper();
 //            JsonNode jsonNode = mapper.readTree(new File("C:\\Users\\Dell\\Desktop\\GitHub projects\\Schoolio\\database\\institutions.json"));
@@ -23,12 +31,14 @@ public class SchoolioApiApplication {
 //            for (JsonNode institution : institutions) {
 //                String institutionName = institution.findValue("Ίδρυμα").asText();
 //                List<JsonNode> departments = institution.findValues("Τμήμα");
-//
-//                folderService.addSubFolderToFolder(rootFolder, new Folder(institutionName));
-//                Folder institutionFolder = folderService.getFolderByName(institutionName);
-//                departments.forEach(department -> folderService.addSubFolderToFolder(institutionFolder, new Folder(department.asText())));
+//                Folder institutionFolder = new Folder(institutionName);
+//                folderService.addSubFolderToFolder(folderService.getFolderByName("root"), institutionFolder);
+//                for (JsonNode department : departments) {
+//                    System.out.println("Adding " + department.asText() + " to " + institutionName);
+//                    folderService.addSubFolderToFolder(folderService.getFolderByName(institutionName), new Folder(department.asText()));
+//                }
 //            }
+//        };
+//    }
 
-        };
-    }
 }

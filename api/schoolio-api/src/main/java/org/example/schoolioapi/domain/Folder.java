@@ -1,9 +1,6 @@
 package org.example.schoolioapi.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -13,22 +10,21 @@ import java.util.List;
 @Data
 public class Folder {
     @Id
-    @GeneratedValue(generator = "Incremental")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+
     @OneToMany
-    private List<Folder> subFolders;
+    private List<Folder> subFolders = new ArrayList<>();
+
     @OneToMany
     private List<Note> notes;
 
     public Folder(String name) {
         this.name = name;
-        this.subFolders = new ArrayList<>();
-        this.notes = new ArrayList<>();
     }
 
     public Folder() {
-
     }
 
     public void addNote(Note note) {
@@ -37,8 +33,7 @@ public class Folder {
     }
 
     public void addSubFolder(Folder subFolder) {
-        if (this.subFolders == null) subFolders = List.of(subFolder);
-        else subFolders.add(subFolder);
+        subFolders.add(subFolder);
     }
 }
 

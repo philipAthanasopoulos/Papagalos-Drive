@@ -6,34 +6,68 @@
     </root>
     <schema id="2" parent="1" name="Notes">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-07-19.12:09:28</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-08-12.09:29:11</LastIntrospectionLocalTimestamp>
     </schema>
     <schema id="3" parent="1" name="admin"/>
     <schema id="4" parent="1" name="config"/>
     <schema id="5" parent="1" name="local"/>
-    <table id="6" parent="2" name="notes"/>
-    <table id="7" parent="2" name="user"/>
-    <column id="8" parent="6" name="_id">
+    <table id="6" parent="2" name="folders"/>
+    <table id="7" parent="2" name="noteBlob"/>
+    <table id="8" parent="2" name="notes"/>
+    <table id="9" parent="2" name="user"/>
+    <column id="10" parent="6" name="_id">
       <DasType>ObjectId|12s</DasType>
       <Position>1</Position>
     </column>
-    <column id="9" parent="6" name="file">
+    <column id="11" parent="6" name="_class">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="12" parent="6" name="name">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="13" parent="6" name="notes">
+      <DasType>list|4999545s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="14" parent="6" name="subFolders">
+      <DasType>list|4999545s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="15" parent="7" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="16" parent="7" name="_class">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="17" parent="7" name="data">
       <DasType>BinData|12s</DasType>
       <Position>1</Position>
     </column>
-    <column id="10" parent="6" name="_class">
-      <DasType>String|12s</DasType>
-      <Position>2</Position>
+    <column id="18" parent="8" name="_id">
+      <DasType>ObjectId|12s</DasType>
+      <Position>1</Position>
     </column>
-    <column id="11" parent="6" name="fileName">
-      <DasType>String|12s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="12" parent="7" name="_id">
+    <column id="19" parent="8" name="file">
       <DasType>String|12s</DasType>
       <Position>1</Position>
     </column>
-    <column id="13" parent="7" name="_class">
+    <column id="20" parent="8" name="_class">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="21" parent="8" name="fileName">
+      <DasType>String|12s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="22" parent="9" name="_id">
+      <DasType>String|12s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="23" parent="9" name="_class">
       <DasType>String|12s</DasType>
       <Position>1</Position>
     </column>

@@ -1,4 +1,4 @@
-package org.example.schoolioapi.domain;
+package org.example.schoolioapi.DTO;
 
 import lombok.Builder;
 import lombok.Data;
@@ -12,4 +12,6 @@ public class FolderDTO {
     private String name;
     private List<Long> subFolderIds;
     private List<String> subFolderNames;
+    private List<String> noteBlobIds;
+    private List<String> noteNames;
 }

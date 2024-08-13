@@ -3,9 +3,34 @@
 <h1>Upload new Photo</h1>
 <form action="/notes/add" enctype="multipart/form-data" method="POST">
     Title:<input name="title" type="text"/>
-    Image:<input accept="image/*" name="file" type="file"/>
+    Image:<input name="file" type="file"/>
     Target folder:<input name="targetFolderName" type="text"/>
     <input type="submit" value="Upload"/>
 </form>
+
+<form action="/folder/addSubFolder" method="POST">
+    Parent:<input name="parentName" type="text"/>
+    New child:<input name="subFolderName" type="text"/>
+    <input type="submit"/>
+</form>
+
+<form action="/notes/{id}" method="POST" onsubmit="event.preventDefault(); deleteNote();">
+    Note ID:<input name="id" type="text" id="noteId"/>
+    <input type="submit" value="Delete"/>
+</form>
+
+<script>
+    async function deleteNote() {
+        const noteId = document.getElementById('noteId').value;
+        const response = await fetch(`/notes/${noteId}`, {
+            method: 'DELETE'
+        });
+        if (response.ok) {
+            alert('Note deleted successfully');
+        } else {
+            alert('Failed to delete note');
+        }
+    }
+</script>
 </body>
 </html>

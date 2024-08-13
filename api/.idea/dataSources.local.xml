@@ -11,11 +11,12 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="rel_database@localhost" uuid="7063107d-c7ae-4bc9-b041-7f98454c7e07">
+    <data-source name="rel_database@localhost" uuid="b5cd00b6-e42e-43b4-b6b0-44d6d2a394de">
       <database-info product="PostgreSQL" version="16.3" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="16.3" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>

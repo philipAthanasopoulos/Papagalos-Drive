@@ -1,6 +1,6 @@
 package org.example.schoolioapi.controller;
 
-import org.example.schoolioapi.domain.NoteBlob;
+import org.bson.types.Binary;
 import org.example.schoolioapi.service.NoteBlobService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class NoteBlobController {
     }
 
     @GetMapping("/blob/{id}")
-    public NoteBlob getBlobById(@PathVariable String id){
-        return noteBlobService.getNoteBlobById(id);
+    public Binary getNoteBlobById(@PathVariable String id) {
+        return noteBlobService.getNoteBlobById(id).getData();
     }
 }

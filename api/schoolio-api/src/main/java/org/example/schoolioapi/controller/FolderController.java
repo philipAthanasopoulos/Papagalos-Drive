@@ -1,6 +1,7 @@
 package org.example.schoolioapi.controller;
 
 import org.example.schoolioapi.domain.Folder;
+import org.example.schoolioapi.DTO.FolderDTO;
 import org.example.schoolioapi.service.FolderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +19,9 @@ public class FolderController {
     }
 
     @GetMapping("/folder/{id}")
-    public Folder getFolderById(@PathVariable Long id) {
-        return folderService.getFolderById(id).orElse(null);
+    public FolderDTO getFolderById(@PathVariable Long id) {
+//        return folderService.getFolderById(id).orElse(null);
+        return folderService.getFolderDTOById(id);
     }
 
     @GetMapping("/folder/all")
@@ -32,15 +34,10 @@ public class FolderController {
         return folderService.getRootFolder();
     }
 
-    @PostMapping("/folder/add")
-    public void addSubFolder(@RequestParam Long parentFolderId, @RequestParam String subfolderName) {
-        Folder parentFolder = folderService.getFolderById(parentFolderId).orElse(null);
-        Folder newFolder = folderService.saveFolder(new Folder(subfolderName));
+    @PostMapping("/folder/addSubFolder")
+    public void addSubFolder(@RequestParam String parentName, @RequestParam String subFolderName) {
+        Folder parentFolder = folderService.getFolderByName(parentName);
+        Folder newFolder = new Folder(subFolderName);
         folderService.addSubFolderToFolder(parentFolder, newFolder);
-    }
-
-    @GetMapping("/new")
-    public Folder createRoot(){
-        return folderService.saveFolder(new Folder("root"));
     }
 }

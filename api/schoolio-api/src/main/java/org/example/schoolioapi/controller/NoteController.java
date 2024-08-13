@@ -8,7 +8,6 @@ import org.example.schoolioapi.domain.NoteBlob;
 import org.example.schoolioapi.service.FolderService;
 import org.example.schoolioapi.service.NoteBlobService;
 import org.example.schoolioapi.service.NoteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,9 +20,8 @@ import java.util.List;
 public class NoteController {
     private final NoteService noteService;
     private final FolderService folderService;
-    private NoteBlobService noteBlobService;
+    private final NoteBlobService noteBlobService;
 
-    @Autowired
     public NoteController(NoteService noteService, FolderService folderService, NoteBlobService mongoRepository) {
         this.noteService = noteService;
         this.folderService = folderService;
@@ -62,5 +60,10 @@ public class NoteController {
     @GetMapping("/notes")
     public List<Note> getAllNotes() {
         return this.noteService.getAllNotes();
+    }
+
+    @DeleteMapping("/notes/{id}")
+    public void deleteNoteById(@PathVariable Long id){
+        folderService.deleteNoteFromFolderById(noteService.getNoteById(id).orElseThrow());
     }
 }
