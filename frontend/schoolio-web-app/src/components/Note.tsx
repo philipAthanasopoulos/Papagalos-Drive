@@ -1,25 +1,23 @@
 import axios from 'axios';
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { localApi } from '../env/env';
 
-type Props = {}
-
-export default function Note({}: Props) {
+export default function Note() {
   const id = useParams<{ id: string }>().id;
   const [base64String, setBase64String] = React.useState<string>('');
   const [type, setType] = React.useState<string>('');
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchBlobData().then((response) => {
       setBase64String(response.data.data);
     });
-  }, []);
+  }, [fetchBlobData]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     detectMimeType();
-  }, [base64String]);
+  }, [base64String,detectMimeType]);
 
   const signatures: { [key: string]: string } = {
     JVBERi0: "application/pdf",
