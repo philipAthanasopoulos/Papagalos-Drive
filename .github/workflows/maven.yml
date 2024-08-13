@@ -48,6 +48,9 @@ jobs:
           build-args: |
             MONGO_DB_CONNECTION_URL=${{ secrets.MONGO_DB_CONNECTION_URL }}
             MONGO_DB_DATABASE_NAME=${{ secrets.MONGO_DB_DATABASE_NAME }}
+            PSQL_DATABASE_URL=${{secrets.PSQL_DATABASE_URL}}
+            PSQL_DATABASE_USERNAME=${{secrets.PSQL_DATABASE_USERNAME}}
+            PSQL_DATABASE_PASSWORD=${{secrets.PSQL_DATABASE_PASSWORD}}
 
 
 

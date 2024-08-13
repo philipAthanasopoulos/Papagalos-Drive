@@ -25,7 +25,6 @@ public class FolderService {
         return folderRepository.findById(id);
     }
 
-
     public List<Folder> getAllFolders() {
         return folderRepository.findAll();
     }
@@ -49,7 +48,7 @@ public class FolderService {
             folder.addSubFolder(subFolder);
             folderRepository.save(folder);
         }
-        else System.out.println("sub folder " + subFolder.getName().toUpperCase() + " alredy exists in " + folder.getName().toUpperCase());
+        else System.out.println("sub folder " + subFolder.getName().toUpperCase() + " already exists in " + folder.getName().toUpperCase());
     }
 
 
