@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { localApi } from '../env/env';
+import { webApi } from '../env/env';
 import { FolderDTO } from './FolderDTO';
 import { Link, useParams } from 'react-router-dom';
 
@@ -12,7 +12,7 @@ export const FolderComponent: React.FC = () => {
 
     const fetchFolder = async (folderId: number) => {
         try {
-            const response = await axios.get(`${localApi}/folder/${folderId}`);
+            const response = await axios.get(`${webApi}/folder/${folderId}`);
             const folder: FolderDTO = response.data;
             setFolder(folder);
         } catch (error) {

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React,{useEffect} from 'react'
 import { useParams } from 'react-router-dom';
-import { localApi } from '../env/env';
+import { webApi } from '../env/env';
 
 export default function Note() {
   const id = useParams<{ id: string }>().id;
@@ -37,7 +37,7 @@ export default function Note() {
 
   
   async function fetchBlobData() {
-    return await axios.get(`${localApi}/blob/${id}`);
+    return await axios.get(`${webApi}/blob/${id}`);
   }
 
   return (
