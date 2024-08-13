@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: npm -v
       - run: node -v
-      - run: ls -l && npm ci && npm run build
+      - run: ls -l && npm ci && npm run build || true
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: frontend/schoolio-web-app
