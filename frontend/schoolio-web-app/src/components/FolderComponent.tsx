@@ -25,6 +25,7 @@ export const FolderComponent: React.FC = () => {
     }, [id]);
 
     const displaySubFolderLinks = (): React.ReactNode => {
+        if (!folder || !folder.subFolderNames || !folder.subFolderIds) return null;
         const { subFolderIds, subFolderNames } = folder;
         return subFolderNames?.map((name, index) => (
             <div key={index}>
@@ -33,7 +34,10 @@ export const FolderComponent: React.FC = () => {
         ));
     };
 
+    
+
     const displayNoteLinks = (): React.ReactNode => {
+        if (!folder || !folder.noteNames || !folder.noteBlobIds) return null;
         return (
             <div>
                 {folder.noteNames.map((name, index) => (
