@@ -3,6 +3,7 @@ import axios from 'axios';
 import { webApi } from '../env/env';
 import { FolderDTO } from './FolderDTO';
 import { Link, useParams } from 'react-router-dom';
+import papaFolder from '../images/papa-folder.svg';
 
 
 export const FolderComponent: React.FC = () => {
@@ -29,7 +30,9 @@ export const FolderComponent: React.FC = () => {
         const { subFolderIds, subFolderNames } = folder;
         return subFolderNames?.map((name, index) => (
             <div key={index}>
-                <Link to={`/folder/${subFolderIds[index]}`} className='btn btn-light btn-lg'>📁{name}</Link>
+                <Link to={`/folder/${subFolderIds[index]}`} className='btn btn-light btn-lg'>
+                <img src={papaFolder} alt="" />
+                {name}</Link>
             </div>
         ));
     };

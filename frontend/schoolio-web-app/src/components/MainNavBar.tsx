@@ -7,30 +7,30 @@ import { Image } from 'react-bootstrap';
 
 function CollapsibleExample() {
   return (
-    <Navbar collapseOnSelect  expand ="lg" className="bg-body-tertiary">
+    <Navbar collapseOnSelect  expand ="lg" className="bg-light">
       <Container>
         <Image src={papagalos_png}  width={100}/>
-        <Navbar.Brand href="#home">Παπαγαλος</Navbar.Brand>
+        <Navbar.Brand href='/'>Παπαγαλος</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Σημειώσεις</Nav.Link>
-            <Nav.Link href="#pricing">Νέα</Nav.Link>
+            <Nav.Link href="/">Σημειώσεις</Nav.Link>
+            <Nav.Link href="/">Νέα</Nav.Link>
             <NavDropdown title="Ενέργειες" id="collapsible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item href="/">Action</NavDropdown.Item>
+              <NavDropdown.Item href="/">
                 Another action
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="/">Something</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item href="/">
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link href="/">More deets</Nav.Link>
+            <Nav.Link eventKey={2} href="/">
               Dank memes
             </Nav.Link>
           </Nav>
