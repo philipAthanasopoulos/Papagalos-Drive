@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Philip Athanasopoulos
  */
 @Controller
-@CrossOrigin(origins = "*")
-
+@CrossOrigin()
 public class HomepageController {
 
     @RequestMapping("/hello")

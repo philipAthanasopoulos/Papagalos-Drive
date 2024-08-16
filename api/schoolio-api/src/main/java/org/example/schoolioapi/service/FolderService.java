@@ -1,7 +1,7 @@
 package org.example.schoolioapi.service;
 
-import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.DTO.FolderDTO;
+import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.repository.FolderRepository;
 import org.springframework.stereotype.Service;
@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class FolderService {
 
     private final FolderRepository folderRepository;
@@ -29,7 +30,6 @@ public class FolderService {
         return folderRepository.findAll();
     }
 
-
     public Folder getRootFolder() {
         return folderRepository.findByName("root");
     }
@@ -41,14 +41,14 @@ public class FolderService {
         folderRepository.save(folder);
     }
 
-    @Transactional
     public void addSubFolderToFolder(Folder folder, Folder subFolder) {
-        folderRepository.save(subFolder);
-        if (!folder.getSubFolders().contains(subFolder)){
+
+        saveFolder(subFolder);
+
+        if (!folder.getSubFolders().contains(subFolder)) {
             folder.addSubFolder(subFolder);
-            folderRepository.save(folder);
-        }
-        else System.out.println("sub folder " + subFolder.getName().toUpperCase() + " already exists in " + folder.getName().toUpperCase());
+            saveFolder(folder);
+        } else System.out.println("sub folder " + subFolder.getName().toUpperCase() + " already exists in " + folder.getName().toUpperCase());
     }
 
 
@@ -63,7 +63,7 @@ public class FolderService {
         return folderRepository.save(folder);
     }
 
-    public FolderDTO getFolderDTOById(Long id){
+    public FolderDTO getFolderDTOById(Long id) {
         return convertToDTO(this.getFolderById(id).orElseThrow());
     }
 

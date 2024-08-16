@@ -1,17 +1,7 @@
 package org.example.schoolioapi;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.schoolioapi.domain.Folder;
-import org.example.schoolioapi.service.FolderService;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.io.File;
-import java.util.List;
 
 @SpringBootApplication()
 public class SchoolioApiApplication {

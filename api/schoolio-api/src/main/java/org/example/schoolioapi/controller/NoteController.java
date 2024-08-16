@@ -8,7 +8,7 @@ import org.example.schoolioapi.domain.NoteBlob;
 import org.example.schoolioapi.service.FolderService;
 import org.example.schoolioapi.service.NoteBlobService;
 import org.example.schoolioapi.service.NoteService;
-import org.springframework.ui.Model;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,7 +16,8 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin()
+@EnableCaching
 public class NoteController {
     private final NoteService noteService;
     private final FolderService folderService;
@@ -31,8 +32,7 @@ public class NoteController {
     @PostMapping("/notes/add")
     public void uploadNote(@RequestParam("title") String title,
                            @RequestParam("file") MultipartFile file,
-                           @RequestParam("targetFolderName") String targetFolderName,
-                           Model model) throws IOException {
+                           @RequestParam("targetFolderName") String targetFolderName) throws IOException {
 
         Folder folder = folderService.getFolderByName(targetFolderName);
 
@@ -63,7 +63,7 @@ public class NoteController {
     }
 
     @DeleteMapping("/notes/{id}")
-    public void deleteNoteById(@PathVariable Long id){
+    public void deleteNoteById(@PathVariable Long id) {
         folderService.deleteNoteFromFolderById(noteService.getNoteById(id).orElseThrow());
     }
 }

@@ -1,26 +1,25 @@
 package org.example.schoolioapi.controller;
 
-import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.DTO.FolderDTO;
+import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.service.FolderService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin()
+@EnableCaching
 public class FolderController {
     private final FolderService folderService;
 
-    @Autowired
     public FolderController(FolderService folderService) {
         this.folderService = folderService;
     }
 
     @GetMapping("/folder/{id}")
     public FolderDTO getFolderById(@PathVariable Long id) {
-//        return folderService.getFolderById(id).orElse(null);
         return folderService.getFolderDTOById(id);
     }
 

@@ -5,7 +5,6 @@ import { FolderDTO } from './FolderDTO';
 import { Link, useParams } from 'react-router-dom';
 import papaFolder from '../images/papa-folder.svg';
 
-
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;
     const id = Number(pathId);
@@ -36,8 +35,6 @@ export const FolderComponent: React.FC = () => {
             </div>
         ));
     };
-
-    
 
     const displayNoteLinks = (): React.ReactNode => {
         if (!folder || !folder.noteNames || !folder.noteBlobIds) return null;
