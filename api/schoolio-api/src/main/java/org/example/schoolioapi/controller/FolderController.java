@@ -3,14 +3,14 @@ package org.example.schoolioapi.controller;
 import org.example.schoolioapi.DTO.FolderDTO;
 import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.service.FolderService;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin()
-@EnableCaching
 public class FolderController {
     private final FolderService folderService;
 
@@ -19,6 +19,7 @@ public class FolderController {
     }
 
     @GetMapping("/folder/{id}")
+//    @Cacheable(value = "folderDTO", key = "#id")
     public FolderDTO getFolderById(@PathVariable Long id) {
         return folderService.getFolderDTOById(id);
     }
@@ -33,9 +34,10 @@ public class FolderController {
         return folderService.getRootFolder();
     }
 
-    @PostMapping("/folder/addSubFolder")
-    public void addSubFolder(@RequestParam String parentName, @RequestParam String subFolderName) {
-        Folder parentFolder = folderService.getFolderByName(parentName);
+    @PostMapping("/folder/{id}/addSubFolder")
+//    @CacheEvict(value = "folderDTO", key = "#id")
+    public void addSubFolder(@PathVariable Long id, @RequestParam String subFolderName) {
+        Folder parentFolder = folderService.getFolderById(id).orElseThrow();
         Folder newFolder = new Folder(subFolderName);
         folderService.addSubFolderToFolder(parentFolder, newFolder);
     }

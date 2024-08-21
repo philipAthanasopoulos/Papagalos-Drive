@@ -10,7 +10,7 @@ function CollapsibleExample() {
     <Navbar collapseOnSelect  expand ="lg" className="bg-light">
       <Container>
         <Image src={papagalos_png}  width={100}/>
-        <Navbar.Brand href='/'>Παπαγαλος</Navbar.Brand>
+        <Navbar.Brand href='/'>Παπαγάλος</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

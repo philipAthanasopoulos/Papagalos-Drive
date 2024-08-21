@@ -1,7 +1,6 @@
 FROM openjdk:22-jdk
 COPY target/*.jar /api.jar
-FROM redis
-
+#
 ARG MONGO_DB_CONNECTION_URL
 ARG MONGO_DB_DATABASE_NAME
 ARG PSQL_DATABASE_URL
@@ -14,9 +13,6 @@ ENV PSQL_DATABASE_URL=${PSQL_DATABASE_URL}
 ENV PSQL_DATABASE_USERNAME=${PSQL_DATABASE_USERNAME}
 ENV PSQL_DATABASE_PASSWORD=${PSQL_DATABASE_PASSWORD}
 
-COPY redis.conf /usr/local/etc/redis/redis.conf
-CMD [ "redis-server", "/usr/local/etc/redis/redis.conf" ]
-
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/api.jar"]
+ENTRYPOINT ["java", "-jar", "/api.jar"]
 

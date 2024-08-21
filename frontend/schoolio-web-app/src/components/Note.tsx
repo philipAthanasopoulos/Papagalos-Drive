@@ -12,11 +12,12 @@ export default function Note() {
 
 
   useEffect(() => {
-    fetchBlobData().then((response) => {
-      setBase64String(response.data.data);
+    fetchBlobData().then((data) => {
+      setBase64String(data);
       setLoading(false);
-    });
-  }, [fetchBlobData]);
+    }
+    );
+  }, []);
 
   useEffect(() => {
     detectMimeType();
@@ -57,7 +58,7 @@ export default function Note() {
   };
   
   async function fetchBlobData() {
-    return await axios.get(`${webApi}/blob/${id}`);
+    return (await (axios.get(`${webApi}/blob/${id}`))).data.data;
   }
 
   return (

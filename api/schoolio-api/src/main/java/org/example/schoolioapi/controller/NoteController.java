@@ -8,7 +8,7 @@ import org.example.schoolioapi.domain.NoteBlob;
 import org.example.schoolioapi.service.FolderService;
 import org.example.schoolioapi.service.NoteBlobService;
 import org.example.schoolioapi.service.NoteService;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @CrossOrigin()
-@EnableCaching
 public class NoteController {
     private final NoteService noteService;
     private final FolderService folderService;
@@ -29,20 +28,22 @@ public class NoteController {
         this.noteBlobService = mongoRepository;
     }
 
-    @PostMapping("/notes/add")
-    public void uploadNote(@RequestParam("title") String title,
-                           @RequestParam("file") MultipartFile file,
-                           @RequestParam("targetFolderName") String targetFolderName) throws IOException {
-
-        Folder folder = folderService.getFolderByName(targetFolderName);
-
+    @PostMapping("/folder/{id}/addNote")
+//    @CacheEvict(value = "folderDTO" , key = "#id")
+    public void uploadNote(
+            @PathVariable Long id,
+            @RequestParam("title") String title,
+            @RequestParam("file") MultipartFile file
+    ) throws IOException {
+        Folder folder = folderService.getFolderById(id).orElseThrow();
         NoteBlob blob = noteBlobService.saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
-
-        Note note = noteService.saveNote(new Note(
+        Note note = noteService.saveNote(
+            new Note(
                 title,
                 FileType.valueOf(getFileExtension(file)),
                 blob.getId()
-        ));
+            )
+        );
 
         folderService.addNoteToFolder(folder, note);
     }

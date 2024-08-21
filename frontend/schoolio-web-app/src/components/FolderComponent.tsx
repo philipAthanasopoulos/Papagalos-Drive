@@ -4,15 +4,17 @@ import { webApi } from '../env/env';
 import { FolderDTO } from './FolderDTO';
 import { Link, useParams } from 'react-router-dom';
 import papaFolder from '../images/papa-folder.svg';
+import AddSubFolderButton from './AddSubFolderButton';
+import AddFileButton from './AddFileButton';
 
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;
     const id = Number(pathId);
     const [folder, setFolder] = useState<FolderDTO>(new FolderDTO(id));
 
-    const fetchFolder = async (folderId: number) => {
+    const fetchFolder = async () => {
         try {
-            const response = await axios.get(`${webApi}/folder/${folderId}`);
+            const response = await axios.get(`${webApi}/folder/${id}`);
             const folder: FolderDTO = response.data;
             setFolder(folder);
         } catch (error) {
@@ -21,11 +23,11 @@ export const FolderComponent: React.FC = () => {
     };
 
     useEffect(() => {
-        fetchFolder(id);
+        fetchFolder();
+        console.log('FolderComponent mounted');
     }, [id]);
 
     const displaySubFolderLinks = (): React.ReactNode => {
-        if (!folder || !folder.subFolderNames || !folder.subFolderIds) return null;
         const { subFolderIds, subFolderNames } = folder;
         return subFolderNames?.map((name, index) => (
             <div key={index}>
@@ -37,7 +39,6 @@ export const FolderComponent: React.FC = () => {
     };
 
     const displayNoteLinks = (): React.ReactNode => {
-        if (!folder || !folder.noteNames || !folder.noteBlobIds) return null;
         return (
             <div>
                 {folder.noteNames.map((name, index) => (
@@ -51,11 +52,27 @@ export const FolderComponent: React.FC = () => {
         );
     };
 
+    const displayButtons = (): React.ReactNode => {
+        return(
+            <div className='d-flex'>
+                <AddSubFolderButton id={pathId}/>
+                <AddFileButton id={pathId} />
+            </div>
+        );
+    }
+
     return (
         <div className='d-flex flex-column'>
-            <h1>Φάκελος: {folder.name}</h1>
-            {displayNoteLinks()}
-            {displaySubFolderLinks()}
+            <div className='d-flex '>
+                <h1 className='pe-5'>
+                    Φάκελος: {folder.name}
+                </h1>
+                 {displayButtons()}
+            </div>
+            <div className='pt-5'>
+                {displayNoteLinks()}
+                {displaySubFolderLinks()}
+            </div>
         </div>
     );
 };

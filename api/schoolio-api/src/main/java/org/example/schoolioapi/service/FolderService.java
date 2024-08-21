@@ -48,7 +48,8 @@ public class FolderService {
         if (!folder.getSubFolders().contains(subFolder)) {
             folder.addSubFolder(subFolder);
             saveFolder(folder);
-        } else System.out.println("sub folder " + subFolder.getName().toUpperCase() + " already exists in " + folder.getName().toUpperCase());
+        } else
+            System.out.println("sub folder " + subFolder.getName().toUpperCase() + " already exists in " + folder.getName().toUpperCase());
     }
 
 

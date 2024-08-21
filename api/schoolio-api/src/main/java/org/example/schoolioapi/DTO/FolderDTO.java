@@ -3,11 +3,12 @@ package org.example.schoolioapi.DTO;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
 @Builder
-public class FolderDTO {
+public class FolderDTO implements Serializable {
     private Long Id;
     private String name;
     private List<Long> subFolderIds;
