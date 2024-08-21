@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { Alert, Button, Fade, Form, FormControl, FormLabel, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
+import React, { useState } from 'react'
+import { Alert, Button, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
 import axios from 'axios';
 import {webApi} from "../env/env"
-import { Folder2, FolderFill, FolderPlus, FolderSymlink, FolderX } from 'react-bootstrap-icons';
+import { FolderPlus} from 'react-bootstrap-icons';
 
 type Props = {
     id?: string;
