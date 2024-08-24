@@ -19,7 +19,7 @@ public class FolderController {
     }
 
     @GetMapping("/folder/{id}")
-//    @Cacheable(value = "folderDTO", key = "#id")
+    @Cacheable(value = "folderDTO", key = "#id")
     public FolderDTO getFolderById(@PathVariable Long id) {
         return folderService.getFolderDTOById(id);
     }
@@ -35,7 +35,7 @@ public class FolderController {
     }
 
     @PostMapping("/folder/{id}/addSubFolder")
-//    @CacheEvict(value = "folderDTO", key = "#id")
+    @CacheEvict(value = "folderDTO", key = "#id")
     public void addSubFolder(@PathVariable Long id, @RequestParam String subFolderName) {
         Folder parentFolder = folderService.getFolderById(id).orElseThrow();
         Folder newFolder = new Folder(subFolderName);

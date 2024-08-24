@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication()
-//@EnableCaching
+@EnableCaching
 public class SchoolioApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(SchoolioApiApplication.class, args);

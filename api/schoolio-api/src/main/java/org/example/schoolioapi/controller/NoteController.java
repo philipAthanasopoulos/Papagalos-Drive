@@ -29,7 +29,7 @@ public class NoteController {
     }
 
     @PostMapping("/folder/{id}/addNote")
-//    @CacheEvict(value = "folderDTO" , key = "#id")
+    @CacheEvict(value = "folderDTO" , key = "#id")
     public void uploadNote(
             @PathVariable Long id,
             @RequestParam("title") String title,

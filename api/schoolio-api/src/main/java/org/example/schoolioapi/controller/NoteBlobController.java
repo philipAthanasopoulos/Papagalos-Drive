@@ -18,7 +18,7 @@ public class NoteBlobController {
     }
 
     @GetMapping("/blob/{id}")
-//    @Cacheable(value = "blob", key = "#id")
+    @Cacheable(value = "blob", key = "#id")
     public Binary getNoteBlobById(@PathVariable String id) {
         return noteBlobService.getNoteBlobById(id).getData();
     }
