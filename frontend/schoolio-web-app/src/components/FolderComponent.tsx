@@ -6,6 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import papaFolder from '../images/papa-folder.svg';
 import AddSubFolderButton from './AddSubFolderButton';
 import AddFileButton from './AddFileButton';
+import { FileEarmarkRichtext, FolderFill } from 'react-bootstrap-icons';
 
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;
@@ -31,9 +32,10 @@ export const FolderComponent: React.FC = () => {
         const { subFolderIds, subFolderNames } = folder;
         return subFolderNames?.map((name, index) => (
             <div key={index}>
+                <hr />
                 <Link to={`/folder/${subFolderIds[index]}`} className='btn btn-light btn-lg'>
-                <img src={papaFolder} alt="" />
-                {name}</Link>
+                    <FolderFill color='orange' /> {name}
+                </Link>
             </div>
         ));
     };
@@ -43,8 +45,9 @@ export const FolderComponent: React.FC = () => {
             <div>
                 {folder.noteNames.map((name, index) => (
                     <div key={index}>
+                    <hr />
                         <Link to={`/file/${folder.noteBlobIds[index]}`} className='btn btn-light btn-lg'>
-                            📄{name}
+                            <FileEarmarkRichtext color='green'/> {name}
                         </Link>
                     </div>
                 ))}
@@ -55,14 +58,18 @@ export const FolderComponent: React.FC = () => {
     const displayButtons = (): React.ReactNode => {
         return(
             <div className='d-flex'>
-                <AddSubFolderButton id={pathId}/>
-                <AddFileButton id={pathId} />
+                <div className='me-5'>
+                    <AddSubFolderButton id={pathId}/>
+                </div>
+                <div className='me-5'>
+                    <AddFileButton id={pathId} />
+                </div>
             </div>
         );
     }
 
     return (
-        <div className='d-flex flex-column'>
+        <div className='d-flex flex-column pt-5'>
             <div className='d-flex '>
                 <h1 className='pe-5'>
                     Φάκελος: {folder.name}
