@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom';
 import AddSubFolderButton from './AddSubFolderButton';
 import AddFileButton from './AddFileButton';
 import { FileEarmarkRichtext, FolderFill } from 'react-bootstrap-icons';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 export const FolderComponent: React.FC = () => {
@@ -19,7 +19,6 @@ export const FolderComponent: React.FC = () => {
             const response = await axios.get(`${webApi}/folder/${id}`);
             const folder: FolderDTO = response.data;
             setFolder(folder);
-            
         } catch (error) {
             console.error('Error loading folder:', error);
         }
@@ -76,7 +75,7 @@ export const FolderComponent: React.FC = () => {
             <div>
                 <hr />
                 <div className='d-flex mb-4 mt-4'>
-                    <Skeleton key={index} height={30} width={20} className='me-2'/>
+                    <Skeleton key={index} height={30} width={15} className='ms-3 me-1'/>
                     <Skeleton key={index} height={30} width={100} />
                 </div>
             </div>
@@ -84,22 +83,24 @@ export const FolderComponent: React.FC = () => {
     }
 
     return (
-        <div className='d-flex flex-column pt-5'>
-            <div className='d-flex '>
-                <h1 className='pe-5 d-flex'>
-                    Φάκελος: {folder?.name || <Skeleton className='btn btn-light btn-lg text-left'/>}
-                </h1>
-                {displayButtons()}
+        <div className='container pt-5'>
+            <div className='row'>
+                <div className='col-12 d-flex flex-wrap'>
+                    <h1 className='pe-5 d-flex'>
+                        Φάκελος: {folder?.name || <Skeleton className='btn btn-light btn-lg text-left' width={100} />}
+                    </h1>
+                    {displayButtons()}
+                </div>
             </div>
-            <div className='pt-5'>
-                {displayNoteLinks() || 
-                    <div>
-                        {Array.from({ length: 30 }).map((_, index) => (
-                            displayLoadingSkeleton(index)
-                        ))}
-                    </div>
-                }
-                {displaySubFolderLinks()}
+            <div className='row pt-5'>
+                <div className='col-12'>
+                    {displayNoteLinks() || (
+                        <div>
+                            {Array.from({ length: 30 }).map((_, index) => displayLoadingSkeleton(index))}
+                        </div>
+                    )}
+                    {displaySubFolderLinks()}
+                </div>
             </div>
         </div>
     );
