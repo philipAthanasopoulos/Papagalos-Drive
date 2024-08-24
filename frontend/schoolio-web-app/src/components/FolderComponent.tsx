@@ -16,11 +16,9 @@ export const FolderComponent: React.FC = () => {
 
     const fetchFolder = async () => {
         try {
-            setTimeout(async() => {
-                const response = await axios.get(`${webApi}/folder/${id}`);
-                const folder: FolderDTO = response.data;
-                setFolder(folder);
-            },5000)
+            const response = await axios.get(`${webApi}/folder/${id}`);
+            const folder: FolderDTO = response.data;
+            setFolder(folder);
             
         } catch (error) {
             console.error('Error loading folder:', error);
