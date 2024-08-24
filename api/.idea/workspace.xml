@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added config file and enabled caching">
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added caffeine caching">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/ConfigClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/ConfigClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteBlobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteBlobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -432,7 +426,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723835308454</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added caffeine caching">
+      <option name="closed" value="true" />
+      <created>1724503426206</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724503426206</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -466,7 +468,8 @@
     <MESSAGE value="updated gh actions" />
     <MESSAGE value="migrating to mongo &amp;&amp; postgres implementation" />
     <MESSAGE value="added config file and enabled caching" />
-    <option name="LAST_COMMIT_MESSAGE" value="added config file and enabled caching" />
+    <MESSAGE value="added caffeine caching" />
+    <option name="LAST_COMMIT_MESSAGE" value="added caffeine caching" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
