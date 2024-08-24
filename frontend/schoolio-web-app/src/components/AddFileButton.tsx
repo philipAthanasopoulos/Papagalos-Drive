@@ -70,7 +70,7 @@ const AddFileButton = (props: Props) => {
         </div>
         <div>
             <Button variant="light" size='lg' onClick={() => setShowModal(true)}>
-                <FileEarmarkArrowUpFill color='blue'/> Add new file
+                <FileEarmarkArrowUpFill color='#00A0FF'/> Add new file
             </Button>
             
             <Modal show={showModal} onHide={() =>setShowModal(false)} >

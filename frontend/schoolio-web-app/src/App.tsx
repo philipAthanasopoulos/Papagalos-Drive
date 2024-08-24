@@ -5,6 +5,7 @@ import { Container } from 'react-bootstrap';
 import { FolderComponent } from './components/FolderComponent';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Note from './components/Note';
+import {Footer} from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
               <Route path="/file/:id" element={<Note />} />
             </Routes>
           </Container>
+          <footer>
+            <Footer />
+          </footer>
         </header>
       </div>
     </Router>
