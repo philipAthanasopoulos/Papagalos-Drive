@@ -35,7 +35,7 @@ public class NoteController {
             @RequestParam("title") String title,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
-        Folder folder = folderService.getFolderById(id).orElseThrow();
+        Folder folder = folderService.getFolderById(id);
         NoteBlob blob = noteBlobService.saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
         Note note = noteService.saveNote(
             new Note(

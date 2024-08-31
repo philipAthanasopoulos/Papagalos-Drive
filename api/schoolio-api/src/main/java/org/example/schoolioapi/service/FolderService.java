@@ -22,8 +22,8 @@ public class FolderService {
         this.noteService = noteService;
     }
 
-    public Optional<Folder> getFolderById(Long id) {
-        return folderRepository.findById(id);
+    public Folder getFolderById(Long id) {
+        return folderRepository.findById(id).orElse(null);
     }
 
     public List<Folder> getAllFolders() {
@@ -33,7 +33,6 @@ public class FolderService {
     public Folder getRootFolder() {
         return folderRepository.findByName("root");
     }
-
 
     public void addNoteToFolder(Folder folder, Note note) {
         folder.addNote(note);
@@ -52,20 +51,18 @@ public class FolderService {
             System.out.println("sub folder " + subFolder.getName().toUpperCase() + " already exists in " + folder.getName().toUpperCase());
     }
 
-
     public Folder getFolderByName(String name) {
         return folderRepository.findFolderByName(name).orElseThrow(() ->
                 new RuntimeException("Folder not found: " + name)
         );
     }
 
-
     public Folder saveFolder(Folder folder) {
         return folderRepository.save(folder);
     }
 
     public FolderDTO getFolderDTOById(Long id) {
-        return convertToDTO(this.getFolderById(id).orElseThrow());
+        return convertToDTO(this.getFolderById(id));
     }
 
     //TODO

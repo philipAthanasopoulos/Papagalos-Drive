@@ -14,4 +14,8 @@ export class FolderDTO {
         this.noteBlobIds = [];
         this.noteNames = [];
     }
+
+    isEmpty(): boolean {
+        return ( (this.subFolderIds.length === 0 || !this.subFolderIds) && this.noteBlobIds.length === 0 || !this.noteBlobIds);
+    }
 }

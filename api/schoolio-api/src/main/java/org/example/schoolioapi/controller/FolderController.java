@@ -37,7 +37,7 @@ public class FolderController {
     @PostMapping("/folder/{id}/addSubFolder")
     @CacheEvict(value = "folderDTO", key = "#id")
     public void addSubFolder(@PathVariable Long id, @RequestParam String subFolderName) {
-        Folder parentFolder = folderService.getFolderById(id).orElseThrow();
+        Folder parentFolder = folderService.getFolderById(id);
         Folder newFolder = new Folder(subFolderName);
         folderService.addSubFolderToFolder(parentFolder, newFolder);
     }

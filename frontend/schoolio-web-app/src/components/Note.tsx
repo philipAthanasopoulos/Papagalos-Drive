@@ -68,7 +68,7 @@ export default function Note() {
           <ReactLoading type='bubbles' color={getRandomColor()} />
         </div>
       ) : (
-        <embed 
+        <iframe 
           className='flex-grow-1 w-100'
           src={`data:${type};base64,${base64String}`}
         />

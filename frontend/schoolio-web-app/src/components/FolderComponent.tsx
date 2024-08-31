@@ -8,19 +8,24 @@ import AddFileButton from './AddFileButton';
 import { FileEarmarkRichtext, FolderFill } from 'react-bootstrap-icons';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import EmptyFolder from './EmptyFolder';
+import { SearchBar } from './SearchBar';
 
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;
     const id = Number(pathId);
     const [folder, setFolder] = useState<FolderDTO>();
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const fetchFolder = async () => {
         try {
             const response = await axios.get(`${webApi}/folder/${id}`);
             const folder: FolderDTO = response.data;
             setFolder(folder);
+            setIsLoading(false)
         } catch (error) {
             console.error('Error loading folder:', error);
+            fetchFolder();
         }
     };
 
@@ -70,6 +75,7 @@ export const FolderComponent: React.FC = () => {
             </div>
         );
     }
+    
     const displayLoadingSkeleton =(index:number): React.ReactNode => {
         return (
             <div>
@@ -87,19 +93,27 @@ export const FolderComponent: React.FC = () => {
             <div className='row'>
                 <div className='col-12 d-flex flex-wrap'>
                     <h1 className='pe-5 d-flex'>
-                        Φάκελος: {folder?.name || <Skeleton className='btn btn-light btn-lg text-left' width={100} />}
+                        Φάκελος: {folder?.name || <Skeleton  width={100} />}
                     </h1>
                     {displayButtons()}
+                    <SearchBar folder={folder} />
                 </div>
+            </div>
+            <div>
             </div>
             <div className='row pt-5'>
                 <div className='col-12'>
-                    {displayNoteLinks() || (
-                        <div>
+                    {isLoading && <div>
                             {Array.from({ length: 30 }).map((_, index) => displayLoadingSkeleton(index))}
-                        </div>
+                        </div>}
+
+                    {folder?.isEmpty ? <EmptyFolder /> :
+                    (
+                        <>
+                            {displayNoteLinks()}
+                            {displaySubFolderLinks()}
+                        </>
                     )}
-                    {displaySubFolderLinks()}
                 </div>
             </div>
         </div>
