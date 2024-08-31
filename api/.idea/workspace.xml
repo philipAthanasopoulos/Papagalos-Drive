@@ -5,31 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="updated ui&#10;added unit tests&#10;added heartbeat class">
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/heartbeat/Espresso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/repository/FolderRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/service/FolderServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/service/NoteServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/heartbeat/Espresso.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/heartbeat/Espresso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/FolderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/FolderDTO.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/FolderDTO.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +39,13 @@
     &quot;assignee&quot;: &quot;philipAthanasopoulos&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="schoolio" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/philipAthanasopoulos/Schoolio.git&quot;,
@@ -90,65 +76,65 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Docker.compose.yaml: Compose Deployment.executor": "Run",
-    "Docker.schoolio-api/Dockerfile.executor": "Run",
-    "Docker.schoolio-api/compose.yaml.redis: Compose Deployment.executor": "Run",
-    "Docker.schoolio-api/compose.yaml.spring-boot: Compose Deployment.executor": "Run",
-    "Docker.schoolio-api/compose.yaml: Compose Deployment.executor": "Run",
-    "Docker.schoolio-api/docker-compose.yaml.spring-boot: Compose Deployment.executor": "Run",
-    "Docker.schoolio-api/docker-compose.yaml: Compose Deployment.executor": "Run",
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "HTTP Request.generated-requests | #3.executor": "Run",
-    "JUnit.FolderRepositoryTest.executor": "Run",
-    "JUnit.FolderRepositoryTest.findByName.executor": "Run",
-    "JUnit.FolderServiceTest.addNoteToFolder.executor": "Run",
-    "JUnit.FolderServiceTest.executor": "Run",
-    "JUnit.FolderServiceTest.getFolderById.executor": "Run",
-    "JUnit.FolderServiceTest.getRootFolder.executor": "Run",
-    "JUnit.NoteServiceTest.executor": "Run",
-    "JUnit.NoteServiceTest.saveNote.executor": "Run",
-    "JUnit.SchoolioApiApplicationTests.executor": "Run",
-    "JUnit.java in schoolio-api.executor": "Run",
-    "Maven.schoolio-api [build].executor": "Run",
-    "Maven.schoolio-api [clean,package].executor": "Run",
-    "Maven.schoolio-api [package].executor": "Run",
-    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
-    "Notification.DoNotAsk-Database detector": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.SchoolioApiApplication.executor": "Run",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "22",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Dell/Desktop/GitHub projects/Schoolio/api",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\Dell\\Downloads\\ideaIU-2024.1.4.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.schoolio-api/Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.schoolio-api/compose.yaml.redis: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.schoolio-api/compose.yaml.spring-boot: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.schoolio-api/compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.schoolio-api/docker-compose.yaml.spring-boot: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.schoolio-api/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FolderRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FolderRepositoryTest.findByName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FolderServiceTest.addNoteToFolder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FolderServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FolderServiceTest.getFolderById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FolderServiceTest.getRootFolder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NoteServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NoteServiceTest.saveNote.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SchoolioApiApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in schoolio-api.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.schoolio-api [build].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.schoolio-api [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.schoolio-api [package].executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.SchoolioApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dell/Desktop/GitHub projects/Schoolio/api&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Dell\\Downloads\\ideaIU-2024.1.4.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "redis"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;redis&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Dell\Desktop\GitHub projects\Schoolio\api\schoolio-api\src\test\resources" />
@@ -170,7 +156,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.java in schoolio-api">
+  <component name="RunManager" selected="Spring Boot.SchoolioApiApplication">
     <configuration name="FolderRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="schoolio-api" />
       <extension name="coverage">
@@ -429,7 +415,8 @@
       <workItem from="1724848698936" duration="87000" />
       <workItem from="1724848901827" duration="2528000" />
       <workItem from="1725040062484" duration="915000" />
-      <workItem from="1725111979846" duration="1746000" />
+      <workItem from="1725111979846" duration="3120000" />
+      <workItem from="1725116970404" duration="343000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -519,7 +506,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724503637300</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="updated ui&#10;added unit tests&#10;added heartbeat class">
+      <option name="closed" value="true" />
+      <created>1725113774645</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1725113774645</updated>
+    </task>
+    <task id="LOCAL-00015" summary="updated ui&#10;added unit tests&#10;added heartbeat class">
+      <option name="closed" value="true" />
+      <created>1725113837072</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1725113837072</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -560,6 +563,10 @@
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
+    {
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
+    },
     {
       &quot;branch&quot;: &quot;main&quot;,
       &quot;currentBranchFilter&quot;: true

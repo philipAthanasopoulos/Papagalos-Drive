@@ -2,6 +2,7 @@ package org.example.schoolioapi.heartbeat;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -12,11 +13,15 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class Espresso {
 
-    @Scheduled(fixedDelay = 10 * 60000)
+    @Scheduled(fixedDelay = 3 * 60000)
     public void drinkEspresso() {
         RestTemplate restTemplate = new RestTemplate();
-        String localhost = "http://localhost:8080/folder/1";
-        restTemplate.getForEntity(localhost, String.class);
-        System.out.println("Ping");
+        String localhost = "https://schoolio.onrender.com/folder/1";
+        try {
+            restTemplate.getForEntity(localhost, String.class);
+            System.out.println("Ping");
+        } catch (RestClientException e) {
+            System.out.println("Something went wrong while drinking espresso");
+        }
     }
 }
