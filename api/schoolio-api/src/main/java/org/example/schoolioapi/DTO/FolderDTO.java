@@ -15,9 +15,6 @@ public class FolderDTO implements Serializable {
     private String name;
     private List<Long> subFolderIds;
     private List<String> subFolderNames;
-    private List<String> noteBlobIds;
-    private List<String> noteNames;
-    private List<FileType> fileTypes;
-//    private List<Note> notes;
+    private List<Note> notes;
 }
 

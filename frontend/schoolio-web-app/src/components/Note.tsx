@@ -1,43 +1,71 @@
 import axios from 'axios';
-import React,{useEffect} from 'react';
+import React,{ReactNode, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import { webApi } from '../env/env';
 import ReactLoading from 'react-loading';
+import DocViewer, { DocViewerRenderers, PDFRenderer } from 'react-doc-viewer';
+import { NoteDTO } from './FolderDTO';
 
 export default function Note() {
-  const id = useParams<{ id: string }>().id;
-  const [base64String, setBase64String] = React.useState<string>('');
-  const [type, setType] = React.useState<string>('');
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const id = Number(useParams<{ id: string }>().id);
+  const [note, setNote] = useState<NoteDTO>();
+  const [blob, setBlob] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(true);
 
 
   useEffect(() => {
-    fetchBlobData().then((data) => {
-      setBase64String(data);
-      setLoading(false);
-    }
-    );
-  }, []);
-
-  useEffect(() => {
-    detectMimeType();
-  }, [base64String,detectMimeType]);
-
-  const signatures: { [key: string]: string } = {
-    JVBERi0: "application/pdf",
-    R0lGODdh: "image/gif",
-    R0lGODlh: "image/gif",
-    iVBORw0KGgo: "image/png",
-    "/9j/": "image/jpg"
-  };
-  
-  function detectMimeType() {
-    for (var s in signatures) {
-      if (base64String.indexOf(s) === 0) {
-        setType( signatures[s]);
+    async function fetchNote() {
+      try {
+        const response = await axios.get(`${webApi}/note/${id}`);
+        setNote(response.data);
+      } catch (error) {
+        console.error('Error fetching note:', error);
       }
     }
-  }
+
+    fetchNote();
+  }, [id]);
+
+  useEffect(() => {
+    if (note) {
+      const fetchBlobData = async () => {
+        try {
+          const response = await axios.get(`${webApi}/blob/${note.mongoId}`);
+          setBlob(response.data.data);
+        } catch (error) {
+          console.error('Error fetching blob data:', error);
+        } finally {
+          setLoading(false);
+        }
+      }
+
+      fetchBlobData();
+    }
+  }, [note]);
+
+  const mimeTypes: { [key: string]: string } = {
+    pdf: "application/pdf",
+    doc: "application/msword",
+    docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    xls: "application/vnd.ms-excel",
+    xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    ppt: "application/vnd.ms-powerpoint",
+    pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+    txt: "text/plain",
+    csv: "text/csv",
+    jpeg: "image/jpeg",
+    jpg: "image/jpeg",
+    png: "image/png",
+    gif: "image/gif",
+    mp4: "video/mp4",
+    mp3: "audio/mpeg",
+    wav: "audio/wav",
+    zip: "application/zip",
+    rar: "application/x-rar-compressed"
+  };
+
+  const unsupported = ["docx","doc","xls","xlsx"];
+  
 
   //This is because papagalos is a parrot and he likes colors
   const colors: string[] = [
@@ -57,8 +85,13 @@ export default function Note() {
     return colors[Math.floor(Math.random() * colors.length)];
   };
   
-  async function fetchBlobData() {
-    return (await (axios.get(`${webApi}/blob/${id}`))).data.data;
+  const displayMedia = () => {
+      return (
+        <iframe 
+        className='flex-grow-1 w-100'
+        src={`data:${mimeTypes[note?.type.toLowerCase() ?? '']};base64,${blob}`}
+      />
+      )
   }
 
   return (
@@ -68,10 +101,7 @@ export default function Note() {
           <ReactLoading type='bubbles' color={getRandomColor()} />
         </div>
       ) : (
-        <iframe 
-          className='flex-grow-1 w-100'
-          src={`data:${type};base64,${base64String}`}
-        />
+        displayMedia()
       )}
     </div>
   );

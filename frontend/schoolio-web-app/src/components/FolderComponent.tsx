@@ -5,11 +5,11 @@ import { FolderDTO } from './FolderDTO';
 import { Link, useParams } from 'react-router-dom';
 import AddSubFolderButton from './AddSubFolderButton';
 import AddFileButton from './AddFileButton';
-import { FileEarmarkRichtext, FolderFill, Journal, JournalAlbum, Stickies, StickiesFill } from 'react-bootstrap-icons';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import EmptyFolder from './EmptyFolder';
 import { SearchBar } from './SearchBar';
+import { FileText, FiletypeDoc, FiletypeDocx, FiletypeGif, FiletypeJpg, FiletypeMp3, FiletypeMp4, FiletypePdf, FiletypePng, FiletypePptx, FiletypeTxt, FiletypeWav, FiletypeXls, FiletypeXlsx, FileZip, FolderFill } from 'react-bootstrap-icons';
 
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;
@@ -47,19 +47,44 @@ export const FolderComponent: React.FC = () => {
         ));
     };
 
+    const fileIconMapping: { [key: string]: React.ReactNode } = {
+        pdf: <FiletypePdf className='text-danger' />,
+        doc: <FiletypeDoc className='text-primary' />,
+        docx: <FiletypeDocx className='text-primary' />,
+        xls: <FiletypeXls className='text-success' />,
+        xlsx: <FiletypeXlsx className='text-success' />,
+        ppt: <FiletypePdf className='text-danger' />,
+        pptx: <FiletypePptx className='text-danger' />,
+        txt: <FiletypePptx className='text-dark' />,
+        csv: <FiletypeTxt className='text-dark' />,
+        jpeg: <FiletypeJpg className='text-info' />,
+        jpg: <FiletypeJpg className='text-info' />,
+        png: <FiletypePng className='text-info' />,
+        gif: <FiletypeGif className='text-info' />,
+        mp4: <FiletypeMp4 className='text-info' />,
+        mp3: <FiletypeMp3 className='text-info' />,
+        wav: <FiletypeWav className='text-info' />,
+        zip: <FileZip className='text-secondary' />,
+        rar: <FileZip className='text-secondary' />
+    };
+
+    const getFileIcon = (extension: string): React.ReactNode => {
+        return fileIconMapping[extension.toLowerCase()] || <FileText />;
+    };
+
     const displayNoteLinks = (): React.ReactNode => {
         if (!folder) return null;
         return (
             <div>
-                {folder.noteNames.map((name, index) => (
+                {folder.notes.map((note, index) => (
                     <div key={index} className=''>
                     <hr />
-                        <Link to={`/file/${folder.noteBlobIds[index]}`} className='btn btn-light btn-lg'>
-                            <JournalAlbum color='#00A000' className='me-2'/>
-                            <span>
-                                {name} 
+                        <Link to={`/note/${note.id}`} className='btn btn-light btn-lg'>
+                            {getFileIcon(note.type)}
+                            <span className='ms-2'>
+                                {note.name} 
                                 <span className='text-muted'>
-                                    .{folder.fileTypes[index].toLowerCase()}
+                                    .{note.type.toLowerCase()}
                                 </span>
                             </span>
                         </Link>

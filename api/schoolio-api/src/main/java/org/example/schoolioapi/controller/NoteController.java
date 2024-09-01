@@ -53,7 +53,7 @@ public class NoteController {
         return name.substring(name.lastIndexOf(".") + 1).toUpperCase();
     }
 
-    @GetMapping("/notes/{id}")
+    @GetMapping("/note/{id}")
     public Note getNoteById(@PathVariable Long id) {
         return this.noteService.getNoteById(id).orElse(null);
     }

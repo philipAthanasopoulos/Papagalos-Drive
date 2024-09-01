@@ -24,7 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Navigate to="folder/1" />} />
               <Route path="/folder/:id" element={<FolderComponent />} />
-              <Route path="/file/:id" element={<Note />} />
+              <Route path="/note/:id" element={<Note />} />
               <Route path="/help" element={<SupportSection />} />
             </Routes>
           </Container>

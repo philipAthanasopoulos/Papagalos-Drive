@@ -36,12 +36,6 @@ export const SearchBar = (props: Props) => {
     setResults([]);
   }
 
-  function padMatrix(matrix:number[],numOfPads:number){
-    for (let i = 0; i < numOfPads; i++) {
-      matrix.push(1);
-    }
-  }
-
   function replaceTonus(str: string): string {
     const tonusMap: { [key: string]: string } = {
       'ά': 'α',
