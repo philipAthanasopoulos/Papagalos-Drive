@@ -6,18 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="updated espresso link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/FolderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/FolderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/AddFileButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/AddFileButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/AddSubFolderButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/AddSubFolderButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/EmailFormComponent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/FolderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/SearchBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -427,7 +417,7 @@
       <workItem from="1725111979846" duration="3120000" />
       <workItem from="1725116970404" duration="744000" />
       <workItem from="1725118878192" duration="1421000" />
-      <workItem from="1725182318327" duration="3254000" />
+      <workItem from="1725182318327" duration="4144000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
