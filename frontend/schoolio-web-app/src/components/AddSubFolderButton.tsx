@@ -89,7 +89,7 @@ const AddSubFolderButton = (props: Props) => {
             </Modal>
         </div>
         <Button variant='light'size='lg' onClick={() => setShowModal(true)} >
-            <FolderPlus color='orange'/> Add folder
+            <FolderPlus color='orange'/> Νέος φάκελος
         </Button>
     </div>
   )

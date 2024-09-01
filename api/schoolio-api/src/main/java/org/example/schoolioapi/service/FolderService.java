@@ -76,6 +76,7 @@ public class FolderService {
                 .subFolderNames(folder.getSubFolders().stream().map(Folder::getName).toList())
                 .noteBlobIds(folder.getNotes().stream().map(Note::getMongoId).toList())
                 .noteNames(folder.getNotes().stream().map(Note::getName).toList())
+                .fileTypes(folder.getNotes().stream().map(Note::getType).toList())
                 .build();
     }
 

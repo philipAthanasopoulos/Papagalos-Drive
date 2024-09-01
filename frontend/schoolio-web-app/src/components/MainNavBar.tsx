@@ -9,6 +9,8 @@ import { useEffect, useRef, useState } from 'react';
 import './css/MainNavBar.css'
 import { SearchBar } from './SearchBar';
 import { FolderDTO } from './FolderDTO';
+import { Link } from 'react-router-dom';
+import { Headphones, Headset, Info, InfoCircle, InfoLg } from 'react-bootstrap-icons';
 
 const MainNavBar = () => {
   const [position, setPosition] = useState(window.scrollY)
@@ -44,8 +46,10 @@ const MainNavBar = () => {
   return (
         <Navbar ref={navbarRef} collapseOnSelect expand="lg" className={`bg-light fixed-top ${show}` }>
           <Container>
-            <Image src={papagalos_png}  width={100}/>
-            <Image src={papagalos_title} width={150} className='me-5' />
+            <Link to={"/"} className='me-5'>
+              <Image src={papagalos_png}  width={100}/>
+              <Image src={papagalos_title} width={150} />
+            </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
@@ -64,9 +68,11 @@ const MainNavBar = () => {
                 </NavDropdown>
               </Nav>
               <Nav>
-                <Nav.Link href="/">About</Nav.Link>
+                <Nav.Link href="/">
+                  <InfoCircle /> About
+                </Nav.Link>
                 <Nav.Link eventKey={2} href="/help">
-                  Υποστήριξη
+                  <Headset /> Υποστήριξη
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>

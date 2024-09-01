@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {webApi} from '../env/env'
 import { Alert, Button, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
 import axios from 'axios';
-import { FileEarmarkArrowUpFill } from 'react-bootstrap-icons';
+import { FileEarmarkArrowUp, FileEarmarkArrowUpFill } from 'react-bootstrap-icons';
 
 type Props = {id?: string}
 
@@ -70,7 +70,7 @@ const AddFileButton = (props: Props) => {
         </div>
         <div>
             <Button variant="light" size='lg' onClick={() => setShowModal(true)}>
-                <FileEarmarkArrowUpFill color='#00A0FF'/> Add new file
+                <FileEarmarkArrowUp color='#00A000'/> Ανέβασμα αρχείου
             </Button>
             
             <Modal show={showModal} onHide={() =>setShowModal(false)} >

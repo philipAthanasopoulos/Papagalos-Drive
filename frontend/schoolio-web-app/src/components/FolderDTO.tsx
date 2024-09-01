@@ -5,6 +5,7 @@ export class FolderDTO {
     subFolderNames: string[];
     noteBlobIds: string[];
     noteNames: string[];
+    fileTypes: string[];
 
     constructor(id: number) {
         this.id = id;
@@ -13,6 +14,7 @@ export class FolderDTO {
         this.subFolderNames = [];
         this.noteBlobIds = [];
         this.noteNames = [];
+        this.fileTypes = [];
     }
 
     isEmpty(): boolean {

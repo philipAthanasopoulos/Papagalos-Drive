@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, ScrollRestoration, us
 import Note from './components/Note';
 import {Footer} from './components/Footer';
 import { useEffect } from 'react';
-import { EmailFormComponent } from './components/EmailFormComponent';
+import { SupportSection } from './components/SupportSection';
 
 function App() {
   const location = useLocation();
@@ -25,7 +25,7 @@ function App() {
               <Route path="/" element={<Navigate to="folder/1" />} />
               <Route path="/folder/:id" element={<FolderComponent />} />
               <Route path="/file/:id" element={<Note />} />
-              <Route path="/help" element={<EmailFormComponent />} />
+              <Route path="/help" element={<SupportSection />} />
             </Routes>
           </Container>
             <Footer />

@@ -5,7 +5,7 @@ import { FolderDTO } from './FolderDTO';
 import { Link, useParams } from 'react-router-dom';
 import AddSubFolderButton from './AddSubFolderButton';
 import AddFileButton from './AddFileButton';
-import { FileEarmarkRichtext, FolderFill } from 'react-bootstrap-icons';
+import { FileEarmarkRichtext, FolderFill, Journal, JournalAlbum, Stickies, StickiesFill } from 'react-bootstrap-icons';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import EmptyFolder from './EmptyFolder';
@@ -52,10 +52,16 @@ export const FolderComponent: React.FC = () => {
         return (
             <div>
                 {folder.noteNames.map((name, index) => (
-                    <div key={index}>
+                    <div key={index} className=''>
                     <hr />
-                        <Link to={`/file/${folder.noteBlobIds[index]}`} className='btn btn-light btn-lg text-left'>
-                            <FileEarmarkRichtext color='green'/> {name}
+                        <Link to={`/file/${folder.noteBlobIds[index]}`} className='btn btn-light btn-lg'>
+                            <JournalAlbum color='#00A000' className='me-2'/>
+                            <span>
+                                {name} 
+                                <span className='text-muted'>
+                                    .{folder.fileTypes[index].toLowerCase()}
+                                </span>
+                            </span>
                         </Link>
                     </div>
                 ))}
