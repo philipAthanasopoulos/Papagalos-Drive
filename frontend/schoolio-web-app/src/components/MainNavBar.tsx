@@ -8,7 +8,6 @@ import { Collapse, Image } from 'react-bootstrap';
 import { useEffect, useRef, useState } from 'react';
 import './css/MainNavBar.css'
 import { SearchBar } from './SearchBar';
-import { FolderDTO } from './FolderDTO';
 import { Link } from 'react-router-dom';
 import { Headphones, Headset, Info, InfoCircle, InfoLg } from 'react-bootstrap-icons';
 

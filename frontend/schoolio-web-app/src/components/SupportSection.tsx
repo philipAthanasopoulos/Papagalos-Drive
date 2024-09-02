@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React from 'react'
 import { Alert, Button, Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
-import { Image, Laptop, Pc, PcDisplay } from 'react-bootstrap-icons';
+import { Bug, ChatLeftText, Image, Laptop, Lightbulb, Pc, PcDisplay } from 'react-bootstrap-icons';
+import colors from '../colors';
 
 
 export const SupportSection = () => {
@@ -10,21 +11,21 @@ export const SupportSection = () => {
     {
       subject:"Bug",
       text:"Αναφορά bug",
-      icon: "bi-bug",
-      color: "danger"
+      icon: <Bug/>,
+      color: colors.red
     },
     {
       subject:"Suggetion",
       text:"Έχω κάτι να προτείνω",
-      icon: "bi-lightbulb",
-      color:"warning"
+      icon: <Lightbulb/>,
+      color: colors.yellow
 
     },
     {
       subject:"General email",
       text:"Άλλο",
-      icon: "bi-chat-left-text",
-      color:"primary"
+      icon: <ChatLeftText/>,
+      color: colors.tealBlue
     },
 ];
 
@@ -53,8 +54,8 @@ export const SupportSection = () => {
       <Row>
         {mailTypes.map((type) => (
           <Col xs={12} sm={6} md={4} className='mb-2' key={type.subject}>
-            <Button variant={type.color} className='w-100' onClick={() => openGmail(type.subject)}>
-              <i className={`bi ${type.icon} me-1`} /> {type.text}
+            <Button className='w-100' onClick={() => openGmail(type.subject)} style={{background:`${type.color}`, border:"none"}}>
+              {type.icon} {type.text}
             </Button>
           </Col>
         ))}

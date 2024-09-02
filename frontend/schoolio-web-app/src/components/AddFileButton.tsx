@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import {webApi} from '../env/env'
 import { Alert, Button, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
 import axios from 'axios';
 import { FileEarmarkArrowUp, FileEarmarkArrowUpFill } from 'react-bootstrap-icons';
+import colors from '../colors';
 
 type Props = {id?: string}
 
@@ -14,7 +15,8 @@ const AddFileButton = (props: Props) => {
     const[file,setFile] = useState<File>();
     const[fileName, setFileName] = useState<string>("")
 
-    const handleSubmit = () => {
+    const handleSubmit = (event:FormEvent) => {
+        event.preventDefault();
         if (file){
             const formData = new FormData();
             formData.append('file', file);
@@ -27,8 +29,8 @@ const AddFileButton = (props: Props) => {
             .then(response => {
                 setshowSuccessAlert(true);
                 setTimeout(() => {
-                    window.location.reload();
                     setshowSuccessAlert(false);
+                    window.location.reload();
                 },3000);
             })
             .catch(error => {
@@ -45,9 +47,9 @@ const AddFileButton = (props: Props) => {
     const alertSuccess = () => {
         return(
             <div>
-                <Alert show={showSuccessAlert} variant='success' transition={true}>
-                    🥳🎉File added successfully!
-                </Alert>
+            <Alert show={showSuccessAlert} variant='success' transition={true}>
+                🥳🎉Το αρχείο προστέθηκε με επιτυχία!
+            </Alert>
             </div>
         )
     }
@@ -55,9 +57,9 @@ const AddFileButton = (props: Props) => {
     const alertError = () => {
         return(
             <div>
-                <Alert show={showErrorAlert} variant='danger' transition={true}>
-                   😞🌧️ Oops, something went wrong
-                </Alert>
+            <Alert show={showErrorAlert} variant='danger' transition={true}>
+               😞🌧️ Ωχ, κάτι πήγε στραβά
+            </Alert>
             </div>
         )
     }
@@ -69,35 +71,35 @@ const AddFileButton = (props: Props) => {
             {alertError()}
         </div>
         <div>
-            <Button variant="light" size='lg' onClick={() => setShowModal(true)}>
-                <FileEarmarkArrowUp color='#00A000'/> Ανέβασμα αρχείου
+            <Button  variant="light" size='lg' onClick={() => setShowModal(true)}>
+                <FileEarmarkArrowUp color={colors.green}/> Ανέβασμα αρχείου
             </Button>
             
             <Modal show={showModal} onHide={() =>setShowModal(false)} >
+                <Form onSubmit={handleSubmit}>
                     <ModalHeader>
                         <ModalTitle>Upload a new file</ModalTitle>
                     </ModalHeader>
                     <ModalBody>
                     <Form.Group controlId="formFile" className="mb-3" >
                         <Form.Label>Default file input example</Form.Label>
-                        <FormControl type = "text" value={fileName} onChange={(e) => setFileName(e.target.value)} />
-                        <FormControl type="file" className='btn btn-primary' onChange={(e) => {
+                        <FormControl required type = "text" value={fileName} onChange={(e) => setFileName(e.target.value)} />
+                        <FormControl required type="file" className='btn btn-primary' onChange={(e) => {
                             const files = (e.target as HTMLInputElement).files;
-                            if (files && files.length > 0) {
-                                setFile(files[0]);
-                            }
-                        }} />
+                            if (files && files.length > 0) setFile(files[0]);
+                        }}/>
                     </Form.Group>
                     </ModalBody>
                     <ModalFooter>
                         <Button variant='secondary' onClick={()=> setShowModal(false)}>
                             Close
                         </Button>
-                        <Button variant='success' onClick={handleSubmit}>
+                        <Button variant='success' type='submit'>
                             Submit
                         </Button>
                     </ModalFooter>
-                </Modal>
+                </Form>
+            </Modal>
         </div>
     </div>
   )

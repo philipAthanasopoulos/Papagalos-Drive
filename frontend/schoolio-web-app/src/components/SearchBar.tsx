@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { FolderDTO } from './FolderDTO'
 import { FormControl, FormLabel, ListGroup, ListGroupItem } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import cosineSimilarity from 'compute-cosine-similarity'
+import { FolderDTO } from './Folder/FolderDTO'
 
 type Props = {folder?: FolderDTO}
 
@@ -52,7 +52,33 @@ export const SearchBar = (props: Props) => {
       'Ό': 'Ο',
       'Ύ': 'Υ',
       'Ώ': 'Ω',
-      'ς': 'σ'
+      'ς': 'σ',
+      'a': 'α',
+      'b': 'β',
+      'c': 'ψ',
+      'd': 'δ',
+      'e': 'ε',
+      'f': 'φ',
+      'g': 'γ',
+      'h': 'η',
+      'i': 'ι',
+      'j': 'ξ',
+      'k': 'κ',
+      'l': 'λ',
+      'm': 'μ',
+      'n': 'ν',
+      'o': 'ο',
+      'p': 'π',
+      'q': 'κ',
+      'r': 'ρ',
+      's': 'σ',
+      't': 'τ',
+      'u': 'θ',
+      'v': 'β',
+      'w': 'ω',
+      'x': 'χ',
+      'y': 'υ',
+      'z': 'ζ',
     };
   
     return str.split('').map(char => tonusMap[char] || char).join('');

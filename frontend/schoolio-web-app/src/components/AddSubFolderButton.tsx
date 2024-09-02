@@ -3,6 +3,7 @@ import { Alert, Button, Form, FormControl, Modal, ModalBody, ModalFooter, ModalH
 import axios from 'axios';
 import {webApi} from "../env/env"
 import { FolderPlus} from 'react-bootstrap-icons';
+import colors from '../colors';
 
 type Props = {
     id?: string;
@@ -89,7 +90,7 @@ const AddSubFolderButton = (props: Props) => {
             </Modal>
         </div>
         <Button variant='light'size='lg' onClick={() => setShowModal(true)} >
-            <FolderPlus color='orange'/> Νέος φάκελος
+            <FolderPlus color={colors.yellow}/> Νέος φάκελος
         </Button>
     </div>
   )

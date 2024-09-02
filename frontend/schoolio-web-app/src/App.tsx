@@ -2,12 +2,13 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainNavBar from './components/MainNavBar';
 import { Container } from 'react-bootstrap';
-import { FolderComponent } from './components/FolderComponent';
+import { FolderComponent } from './components/Folder/FolderComponent';
 import { BrowserRouter as Router, Routes, Route, Navigate, ScrollRestoration, useLocation } from 'react-router-dom';
-import Note from './components/Note';
 import {Footer} from './components/Footer';
 import { useEffect } from 'react';
 import { SupportSection } from './components/SupportSection';
+import { NoteComponent } from './components/Note/NoteComponent';
+
 
 function App() {
   const location = useLocation();
@@ -24,7 +25,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Navigate to="folder/1" />} />
               <Route path="/folder/:id" element={<FolderComponent />} />
-              <Route path="/note/:id" element={<Note />} />
+              <Route path="/note/:id" element={<NoteComponent />} />
               <Route path="/help" element={<SupportSection />} />
             </Routes>
           </Container>
