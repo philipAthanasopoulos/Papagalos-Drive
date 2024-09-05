@@ -5,43 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="big update">
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/NoteDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/security/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.github/workflows/firebase-hosting-merge.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../.github/workflows/firebase-hosting-merge.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b5cd00b6-e42e-43b4-b6b0-44d6d2a394de.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b5cd00b6-e42e-43b4-b6b0-44d6d2a394de/storage_v2/_src_/database/rel_database.YSZgqg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b5cd00b6-e42e-43b4-b6b0-44d6d2a394de/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/FolderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/FolderDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NoteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Folder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NoteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/AddFileButton.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/AddSubFolderButton.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/FileFrame.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/EmptyFolder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/EmptyFolder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderDTO.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderDTO.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainNavBar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteDTO.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteDTO.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/SearchBar.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/SupportSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/SupportSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/css/MainNavBar.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/env/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/env/env.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -473,7 +442,7 @@
       <workItem from="1725533697266" duration="6808000" />
       <workItem from="1725560592861" duration="1750000" />
       <workItem from="1725570591078" duration="2730000" />
-      <workItem from="1725573354449" duration="5700000" />
+      <workItem from="1725573354449" duration="6706000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -603,7 +572,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725220785011</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="big update">
+      <option name="closed" value="true" />
+      <created>1725579120009</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1725579120009</updated>
+    </task>
+    <task id="LOCAL-00020" summary="big update">
+      <option name="closed" value="true" />
+      <created>1725579152730</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1725579152730</updated>
+    </task>
+    <task id="LOCAL-00021" summary="big update">
+      <option name="closed" value="true" />
+      <created>1725579291838</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1725579291838</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -644,32 +637,36 @@
     <MESSAGE value="big update" />
     <option name="LAST_COMMIT_MESSAGE" value="big update" />
   </component>
-  <component name="WfRunsListSearchHistory">{
-  &quot;history&quot;: [
+  <component name="WfRunsListSearchHistory"><![CDATA[{
+  "history": [
     {
-      &quot;branch&quot;: &quot;main&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "main",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;main&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "main",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;main&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "main",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;main&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "main",
+      "currentBranchFilter": true
     },
     {
-      &quot;branch&quot;: &quot;main&quot;,
-      &quot;currentBranchFilter&quot;: true
+      "branch": "main",
+      "currentBranchFilter": true
+    },
+    {
+      "branch": "main",
+      "currentBranchFilter": true
     }
   ],
-  &quot;lastFilter&quot;: {
-    &quot;branch&quot;: &quot;main&quot;,
-    &quot;currentBranchFilter&quot;: true
+  "lastFilter": {
+    "branch": "main",
+    "currentBranchFilter": true
   }
-}</component>
+}]]></component>
 </project>

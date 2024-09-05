@@ -15,11 +15,11 @@ public class Folder {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany
     private List<Folder> subFolders = new ArrayList<>();
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany
     private List<Note> notes;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private Folder parent;
 
     public Folder(String name) {
