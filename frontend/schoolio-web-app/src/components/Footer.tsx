@@ -1,27 +1,46 @@
-import { Facebook, Github, Google, Instagram, Linkedin, TwitterX } from 'react-bootstrap-icons';
-import { Container } from 'react-bootstrap';
+import { Facebook, Github, Google, Instagram, Linkedin, Twitter } from 'react-bootstrap-icons';
+import { Container, Row, Col, Image } from 'react-bootstrap';
+import colors from '../colors';
+import papagalosImage from '../images/papagalos.svg'
+
 
 export const Footer = () => {
   return (
-    <div className='text-center pt-5 pb-5 bg-light mt-5'>
-      <button className='me-3 rounded-circle border-0'>
-        <TwitterX color='black' />
-      </button>
-      <button className='me-3 rounded-circle border-0'>
-        <Facebook color='blue' />
-      </button>
-      <button className='me-3 rounded-circle border-0'>
-        <Google color='red' />
-      </button>
-      <button className='me-3 rounded-circle border-0'>
-        <Instagram color='purple' />
-      </button>
-      <button className='me-3 rounded-circle border-0'>
-        <Linkedin color='blue' />
-      </button>
-      <button className='me-3 rounded-circle border-0'>
-        <Github color='black' />
-      </button>
+    <div  className="text-white py-4" style={{background:`${colors.mediumGray}`, flexShrink:"0"}}>
+      <Container>
+        <Row>
+          <Col md={6} className="text-center text-md-left">
+          </Col>
+          <Col md={6} className="text-center text-md-right">
+          <br />
+            <div className="d-flex justify-content-center justify-content-md-end">
+              <a href="https://facebook.com" className="text-white mx-2">
+                <Facebook size={24} />
+              </a>
+              <a href="https://github.com" className="text-white mx-2">
+                <Github size={24} />
+              </a>
+              <a href="https://google.com" className="text-white mx-2">
+                <Google size={24} />
+              </a>
+              <a href="https://instagram.com" className="text-white mx-2">
+                <Instagram size={24} />
+              </a>
+              <a href="https://linkedin.com" className="text-white mx-2">
+                <Linkedin size={24} />
+              </a>
+              <a href="https://twitter.com" className="text-white mx-2">
+                <Twitter size={24} />
+              </a>
+            </div>
+          </Col>
+        </Row>
+        <Row className="mt-3">
+          <Col className="text-center">
+            <p className="mb-0">&copy; {new Date().getFullYear()} Papagalos Drive. All rights reserved.</p>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }

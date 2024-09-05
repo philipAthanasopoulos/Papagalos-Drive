@@ -5,6 +5,11 @@ import { webApi } from '../../env/env';
 import ReactLoading from 'react-loading';
 import DocViewer, { DocViewerRenderers, PDFRenderer } from 'react-doc-viewer';
 import { NoteDTO } from "./NoteDTO";
+import colors from '../../colors';
+import Skeleton from 'react-loading-skeleton';
+import { File } from 'react-bootstrap-icons';
+import { Container } from 'react-bootstrap';
+import { fileIcons } from '../FileIcons';
 
 export const NoteComponent = () => {
   const id = Number(useParams<{ id: string }>().id);
@@ -67,46 +72,41 @@ export const NoteComponent = () => {
     rar: "application/x-rar-compressed"
   };
 
-  const unsupported = ["docx","doc","xls","xlsx"];
-  
-
-  //This is because papagalos is a parrot and he likes colors
-  const colors: string[] = [
-    "#FF6633", "#FFB399", "#FF33FF", "#FFFF99", "#00B3E6",
-    "#E6B333", "#3366E6", "#999966", "#99FF99", "#B34D4D",
-    "#80B300", "#809900", "#E6B3B3", "#6680B3", "#66991A",
-    "#FF99E6", "#CCFF1A", "#FF1A66", "#E6331A", "#33FFCC",
-    "#66994D", "#B366CC", "#4D8000", "#B33300", "#CC80CC",
-    "#66664D", "#991AFF", "#E666FF", "#4DB3FF", "#1AB399",
-    "#E666B3", "#33991A", "#CC9999", "#B3B31A", "#00E680",
-    "#4D8066", "#809980", "#E6FF80", "#1AFF33", "#999933",
-    "#FF3380", "#CCCC00", "#66E64D", "#4D80CC", "#9900B3",
-    "#E64D66", "#4DB380", "#FF4D4D", "#99E6E6", "#6666FF"
-  ];
-
   const getRandomColor = () => {
-    return colors[Math.floor(Math.random() * colors.length)];
+    const colorValues= Object.values(colors);
+    return colorValues[Math.floor(Math.random() * colorValues.length)];
   };
   
   const displayMedia = () => {
-      return (
-        <iframe 
-        className='flex-grow-1 w-100'
+    return (
+      <iframe
+        className='flex-grow-1 vh-100'
+        style={{ width: '100%', border: 'none' }}
         src={`data:${mimeTypes[note?.type.toLowerCase() ?? '']};base64,${blob}`}
       />
-      )
-  }
+    );
+  };
 
   return (
-    <div className='vw-100 vh-100 d-flex flex-column'>
-      {loading ? (
-        <div className='d-flex justify-content-center'>
-          <ReactLoading type='bubbles' color={getRandomColor()} />
+    <Container>
+        <div className='row-12 pt-5 '>
+            <div className='col-12'>
+            {loading ? (
+                <div className='d-flex justify-content-center'>
+                  <ReactLoading type='bubbles' color={getRandomColor()} />
+                </div>
+              ) : (
+                <div>
+                  <h5 className='pe-5 d-flex text-primary mb-4 ' >
+                        {note?.path+"."+note?.type.toLowerCase() || <Skeleton  width={100} />}
+                        {fileIcons[note?.type.toLowerCase() || ""]}
+                  </h5>
+                  {displayMedia()}
+                </div>
+              )}
+            </div>
         </div>
-      ) : (
-        displayMedia()
-      )}
-    </div>
+    </Container>
   );
 
 }

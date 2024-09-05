@@ -1,5 +1,6 @@
 package org.example.schoolioapi.service;
 
+import org.example.schoolioapi.DTO.NoteDTO;
 import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.repository.NoteRepository;
 import org.springframework.stereotype.Service;
@@ -35,5 +36,18 @@ public class NoteService {
     public void deleteNote(Note note) {
         noteBlobService.deleteNoteBlobById(note.getMongoId());
         noteRepository.delete(note);
+    }
+
+    public NoteDTO getNoteDTOById(Long id){
+        Note note = getNoteById(id).orElse(null);
+
+        return NoteDTO.builder()
+                .id(note.getId())
+                .name(note.getName())
+                .type(note.getType())
+                .mongoId(note.getMongoId())
+                .uploadDate(note.getUploadDate())
+                .path(note.getParentFolder().getPath() + "/" + note.getName())
+                .build();
     }
 }

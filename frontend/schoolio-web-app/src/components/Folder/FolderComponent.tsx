@@ -3,26 +3,31 @@ import axios from 'axios';
 import { webApi } from '../../env/env';
 import { FolderDTO } from './FolderDTO';
 import { Link, useParams } from 'react-router-dom';
-import AddSubFolderButton from '../AddSubFolderButton';
-import AddFileButton from '../AddFileButton';
+import AddSubFolderButton from './AddSubFolderButton';
+import AddFileButton from '../Note/AddFileButton';
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import EmptyFolder from './EmptyFolder';
-import { SearchBar } from '../SearchBar';
+import { SearchBar } from '../Search/SearchBar';
 import colors from '../../colors';
-import { FileText, FiletypeDoc, FiletypeDocx, FiletypeGif, FiletypeJpg, FiletypeMp3, FiletypeMp4, FiletypePdf, FiletypePng, FiletypePptx, FiletypeTxt, FiletypeWav, FiletypeXls, FiletypeXlsx, FileZip, FolderFill } from 'react-bootstrap-icons';
+import { Col, Container, Row } from 'react-bootstrap';
+import FileTypeFilterButton from './FileTypeFilterButton';
+import { fileIcons } from '../FileIcons';
+import { FolderFill } from 'react-bootstrap-icons';
+import { NoteDTO } from '../Note/NoteDTO';
 
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;
     const id = Number(pathId);
     const [folder, setFolder] = useState<FolderDTO>();
     const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [selectedFileType,setSelectedFileType] = useState<string>("");
 
     const fetchFolder = async () => {
         try {
-            const response = await axios.get(`${webApi}/folder/${id}`);
-            const folder: FolderDTO = response.data;
-            setFolder(folder);
+            const response = await axios.get<FolderDTO>(`${webApi}/folder/${id}`);
+            setFolder(response.data);
+            setSelectedFileType("All");
             setIsLoading(false)
         } catch (error) {
             console.error('Error loading folder:', error);
@@ -32,13 +37,14 @@ export const FolderComponent: React.FC = () => {
 
     useEffect(() => {
         fetchFolder();
-        console.log('FolderComponent mounted');
     }, [id]);
 
     const displaySubFolderLinks = (): React.ReactNode => {
         if (!folder) return null;
         const { subFolderIds, subFolderNames } = folder;
-        return subFolderNames?.map((name, index) => (
+
+        if(selectedFileType === "All" || selectedFileType === "Folder")
+            return subFolderNames?.map((name, index) => (
             <div key={index}>
                 <hr />
                 <Link to={`/folder/${subFolderIds[index]}`} className='btn btn-light btn-lg'>
@@ -48,40 +54,16 @@ export const FolderComponent: React.FC = () => {
         ));
     };
 
-    const fileIconMapping: { [key: string]: React.ReactNode } = {
-        pdf: <FiletypePdf color={colors.red} />,
-        doc: <FiletypeDoc color={colors.tealBlue} />,
-        docx: <FiletypeDocx color={colors.tealBlue} />,
-        xls: <FiletypeXls color={colors.green} />,
-        xlsx: <FiletypeXlsx color={colors.green} />,
-        ppt: <FiletypePdf color={colors.red} />,
-        pptx: <FiletypePptx color={colors.red} />,
-        txt: <FiletypePptx color={colors.darkGray} />,
-        csv: <FiletypeTxt color={colors.darkGray} />,
-        jpeg: <FiletypeJpg color={colors.yellow} />,
-        jpg: <FiletypeJpg color={colors.yellow} />,
-        png: <FiletypePng color={colors.yellow} />,
-        gif: <FiletypeGif color={colors.yellow} />,
-        mp4: <FiletypeMp4 color={colors.yellow} />,
-        mp3: <FiletypeMp3 color={colors.yellow} />,
-        wav: <FiletypeWav color={colors.yellow} />,
-        zip: <FileZip color={colors.brownishGray} />,
-        rar: <FileZip color={colors.brownishGray} />
-    };
-
-    const getFileIcon = (extension: string): React.ReactNode => {
-        return fileIconMapping[extension.toLowerCase()] || <FileText />;
-    };
-
     const displayNoteLinks = (): React.ReactNode => {
-        if (!folder) return null;
+        let notesToDisplay:NoteDTO[] = folder?.notes.filter((note) => note.type.toLowerCase() === selectedFileType) ||  [];
+        if(selectedFileType === "All") notesToDisplay = folder?.notes || [];
         return (
             <div>
-                {folder.notes.map((note, index) => (
+                {notesToDisplay.map((note, index) => (
                     <div key={index}>
                     <hr />
                         <Link to={`/note/${note.id}`} className='btn btn-light btn-lg'>
-                            {getFileIcon(note.type)}
+                            {fileIcons[note.type.toLowerCase()]}
                             <span className='ms-2'>
                                 {note.name} 
                                 <span>
@@ -97,6 +79,33 @@ export const FolderComponent: React.FC = () => {
             </div>
         );
     };
+    
+    const displayFilesBar = (): React.ReactNode => {
+        return(
+            <div>
+            <Row>
+                <Col className="d-flex align-items-center">
+                    <h5 className="me-2">Όνομα</h5>
+                </Col>
+            </Row>
+        </div>
+        );
+    }
+
+    const displayFilterButtons = (): React.ReactNode => {
+        const fileTypes = Array.from(new Set(folder?.notes.flatMap((note) => note.type.toLowerCase()))) || [];
+        fileTypes.unshift("Folder");
+        fileTypes.unshift("All");
+        return(
+                <div className='me-4'>
+                    <FileTypeFilterButton 
+                        fileTypes={fileTypes} 
+                        selectedFileType={selectedFileType}
+                        setSelectedFileType={setSelectedFileType}
+                     />
+                </div>
+        )
+    }
 
     const displayButtons = (): React.ReactNode => {
         return(
@@ -122,35 +131,35 @@ export const FolderComponent: React.FC = () => {
             </div>
         )
     }
-
+    
     return (
-        <div className='container pt-5'>
-            <div className='row'>
-                <div className='col-12 d-flex flex-wrap'>
-                    <h1 className='pe-5 d-flex'>
-                        Φάκελος: {folder?.name || <Skeleton  width={100} />}
-                    </h1>
-                    {displayButtons()}
-                    <SearchBar folder={folder} />
-                </div>
-            </div>
-            <div>
-            </div>
+        <Container>
             <div className='row pt-5'>
                 <div className='col-12'>
-                    {isLoading && <div>
+                    {isLoading && 
+                        <div>
                             {Array.from({ length: 30 }).map((_, index) => displayLoadingSkeleton(index))}
-                        </div>}
+                        </div>
+                    }
 
-                    {folder?.isEmpty ? <EmptyFolder /> :
-                    (
-                        <>
-                            {displayNoteLinks()}
-                            {displaySubFolderLinks()}
-                        </>
-                    )}
+                    <h5 className='pe-5 d-flex text-dark mb-4 text-decoration-underline' >
+                        <Col>
+                        <FolderFill className='me-2' color={colors.yellow} />
+                        {folder?.path || <Skeleton  width={100} />}
+                        </Col>
+                    </h5>
+                    
+                    {folder?.notes.length === 0 && folder.subFolderIds.length === 0 && <EmptyFolder /> }
+                    <div className='col-12 d-flex flex-wrap align-items-center mb-2'>
+                        {displayFilterButtons()}
+                        {displayButtons()}
+                        <SearchBar folder={folder} />
+                    </div>
+                    {displayFilesBar()}
+                    {displayNoteLinks()}
+                    {displaySubFolderLinks()}
                 </div>
             </div>
-        </div>
+        </Container>
     );
 };

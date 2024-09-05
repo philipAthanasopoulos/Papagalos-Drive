@@ -11,7 +11,17 @@
         </introspection-scope>
       </schema-mapping>
     </data-source>
-    <data-source name="rel_database@localhost" uuid="b5cd00b6-e42e-43b4-b6b0-44d6d2a394de">
+    <data-source name="0@localhost" uuid="429ce28b-17c6-4158-b7bd-2344e9b96249">
+      <database-info product="Redis Standalone" version="7.4.0" jdbc-version="4.2" driver-name="Redis JDBC Driver" driver-version="1.5" dbms="REDIS" exact-version="7.4.0" exact-driver-version="1.5" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <secret-storage>master_key</secret-storage>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="rel_database@localhost" uuid="3e785115-744c-421a-ab0c-154c6ab6688f">
       <database-info product="PostgreSQL" version="16.3" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="16.3" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
@@ -23,16 +33,6 @@
           <node kind="database" qname="@">
             <node kind="schema" qname="@" />
           </node>
-        </introspection-scope>
-      </schema-mapping>
-    </data-source>
-    <data-source name="0@localhost" uuid="429ce28b-17c6-4158-b7bd-2344e9b96249">
-      <database-info product="Redis Standalone" version="7.4.0" jdbc-version="4.2" driver-name="Redis JDBC Driver" driver-version="1.5" dbms="REDIS" exact-version="7.4.0" exact-driver-version="1.5" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <secret-storage>master_key</secret-storage>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="schema" qname="@" />
         </introspection-scope>
       </schema-mapping>
     </data-source>

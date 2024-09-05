@@ -36,7 +36,7 @@ export const SupportSection = () => {
   }
 
   return (
-    <Container>
+    <Container className='mt-5'>
       <Row>
         <Col>
           <Alert variant='info'>

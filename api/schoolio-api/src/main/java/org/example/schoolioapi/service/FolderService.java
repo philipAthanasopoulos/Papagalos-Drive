@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -41,14 +40,9 @@ public class FolderService {
     }
 
     public void addSubFolderToFolder(Folder folder, Folder subFolder) {
-
-        saveFolder(subFolder);
-
-        if (!folder.getSubFolders().contains(subFolder)) {
-            folder.addSubFolder(subFolder);
-            saveFolder(folder);
-        } else
-            System.out.println("sub folder " + subFolder.getName().toUpperCase() + " already exists in " + folder.getName().toUpperCase());
+        subFolder.setParent(folder);
+        folder.addSubFolder(subFolder);
+        folderRepository.saveAll(List.of(subFolder, folder));
     }
 
     public Folder getFolderByName(String name) {
@@ -58,6 +52,7 @@ public class FolderService {
     }
 
     public Folder saveFolder(Folder folder) {
+
         return folderRepository.save(folder);
     }
 
@@ -74,7 +69,8 @@ public class FolderService {
                 .name(folder.getName())
                 .subFolderIds(folder.getSubFolders().stream().map(Folder::getId).toList())
                 .subFolderNames(folder.getSubFolders().stream().map(Folder::getName).toList())
-                .notes(folder.getNotes())
+                .notes(folder.getNotes().stream().map(note -> noteService.getNoteDTOById(note.getId())).toList())
+                .path(folder.getPath())
                 .build();
     }
 

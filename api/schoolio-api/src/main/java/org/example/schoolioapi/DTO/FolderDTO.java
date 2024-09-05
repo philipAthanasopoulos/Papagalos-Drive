@@ -1,20 +1,20 @@
 package org.example.schoolioapi.DTO;
 
 import lombok.Builder;
-import lombok.Data;
-import org.example.schoolioapi.domain.FileType;
 import org.example.schoolioapi.domain.Note;
 
-import java.io.Serializable;
 import java.util.List;
 
-@Data
 @Builder
-public class FolderDTO implements Serializable {
-    private Long Id;
-    private String name;
-    private List<Long> subFolderIds;
-    private List<String> subFolderNames;
-    private List<Note> notes;
+public record FolderDTO(
+    Long Id,
+    String name,
+    List<Long> subFolderIds,
+    List<String> subFolderNames,
+    List<NoteDTO> notes,
+    String path
+) {
 }
+
+
 

@@ -1,6 +1,7 @@
 package org.example.schoolioapi.controller;
 
 import org.bson.types.Binary;
+import org.example.schoolioapi.DTO.NoteDTO;
 import org.example.schoolioapi.domain.FileType;
 import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.domain.Note;
@@ -29,22 +30,16 @@ public class NoteController {
     }
 
     @PostMapping("/folder/{id}/addNote")
-    @CacheEvict(value = "folderDTO" , key = "#id")
-    public void uploadNote(
-            @PathVariable Long id,
-            @RequestParam("title") String title,
-            @RequestParam("file") MultipartFile file
-    ) throws IOException {
+    @CacheEvict(value = "folderDTO", key = "#id")
+    public void uploadNote(@PathVariable Long id, @RequestParam("title") String title, @RequestParam("file") MultipartFile file) throws IOException {
         Folder folder = folderService.getFolderById(id);
         NoteBlob blob = noteBlobService.saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
-        Note note = noteService.saveNote(
-            new Note(
+        Note note = noteService.saveNote(new Note(
                 title,
                 FileType.valueOf(getFileExtension(file)),
-                blob.getId()
-            )
+                blob.getId(),
+                folder)
         );
-
         folderService.addNoteToFolder(folder, note);
     }
 
@@ -54,8 +49,8 @@ public class NoteController {
     }
 
     @GetMapping("/note/{id}")
-    public Note getNoteById(@PathVariable Long id) {
-        return this.noteService.getNoteById(id).orElse(null);
+    public NoteDTO getNoteById(@PathVariable Long id) {
+        return this.noteService.getNoteDTOById(id);
     }
 
     @GetMapping("/notes")

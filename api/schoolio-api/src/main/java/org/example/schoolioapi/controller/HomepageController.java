@@ -15,4 +15,7 @@ public class HomepageController {
     public String welcomePage() {
         return "hello";
     }
+
+    @RequestMapping("/")
+    public String hello(){return "hello";}
 }
