@@ -1,0 +1,18 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -150%); 
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%); 
+  }
+}
+
+.toast-entry {
+  animation: fadeInUp 0.5s ease-in-out;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
