@@ -1,8 +1,8 @@
 package org.example.schoolioapi.DTO;
 
 import lombok.Builder;
-import lombok.Data;
 import org.example.schoolioapi.domain.FileType;
+import org.example.schoolioapi.domain.Note;
 
 import java.util.Date;
 
@@ -16,4 +16,14 @@ public record NoteDTO(
          Date uploadDate,
          String path
 ) {
+    public static NoteDTO from(Note note){
+        return NoteDTO.builder()
+                .id(note.getId())
+                .name(note.getName())
+                .type(note.getType())
+                .mongoId(note.getMongoId())
+                .uploadDate(note.getUploadDate())
+                .path(note.getParentFolder().getPath() + "/" + note.getName())
+                .build();
+    }
 }

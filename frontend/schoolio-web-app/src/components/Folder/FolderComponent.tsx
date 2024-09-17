@@ -10,11 +10,12 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import EmptyFolder from './EmptyFolder';
 import { SearchBar } from '../Search/SearchBar';
 import colors from '../../colors';
-import { Col, Container, Row } from 'react-bootstrap';
+import {  Col, Container, Row } from 'react-bootstrap';
 import FileTypeFilterButton from './FileTypeFilterButton';
 import { fileIcons } from '../FileIcons';
-import { FolderFill } from 'react-bootstrap-icons';
+import {  FolderFill } from 'react-bootstrap-icons';
 import { NoteDTO } from '../Note/NoteDTO';
+import { EditFolderButton } from './EditFolderButton';
 
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;
@@ -23,21 +24,20 @@ export const FolderComponent: React.FC = () => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [selectedFileType,setSelectedFileType] = useState<string>("");
 
-    const fetchFolder = async () => {
-        try {
-            const response = await axios.get<FolderDTO>(`${webApi}/folder/${id}`);
-            setFolder(response.data);
-            setSelectedFileType("All");
-            setIsLoading(false)
-        } catch (error) {
-            console.error('Error loading folder:', error);
-            fetchFolder();
-        }
-    };
-
     useEffect(() => {
+        const fetchFolder = async () => {
+            try {
+                const response = await axios.get<FolderDTO>(`${webApi}/folder/${id}`);
+                setFolder(new FolderDTO(response.data));
+                setSelectedFileType("All");
+                setIsLoading(false);
+            } catch (error) {
+                console.log(error)
+                fetchFolder();                                          
+            }
+        };
         fetchFolder();
-    }, [id]);
+    },[id]);
 
     const displaySubFolderLinks = (): React.ReactNode => {
         if (!folder) return null;
@@ -48,7 +48,7 @@ export const FolderComponent: React.FC = () => {
             <div key={index}>
                 <hr />
                 <Link to={`/folder/${subFolderIds[index]}`} className='btn btn-light btn-lg'>
-                    <FolderFill color={colors.yellow} /> {name}
+                    <FolderFill color={colors.carrot_orange} /> {name}
                 </Link>
             </div>
         ));
@@ -83,12 +83,12 @@ export const FolderComponent: React.FC = () => {
     const displayFilesBar = (): React.ReactNode => {
         return(
             <div>
-            <Row>
-                <Col className="d-flex align-items-center">
-                    <h5 className="me-2">Όνομα</h5>
-                </Col>
-            </Row>
-        </div>
+                <Row>
+                    <Col className="d-flex align-items-center">
+                        <h5 className="me-2">Όνομα</h5>
+                    </Col>
+                </Row>
+            </div>
         );
     }
 
@@ -97,26 +97,33 @@ export const FolderComponent: React.FC = () => {
         fileTypes.unshift("Folder");
         fileTypes.unshift("All");
         return(
-                <div className='me-4'>
-                    <FileTypeFilterButton 
-                        fileTypes={fileTypes} 
-                        selectedFileType={selectedFileType}
-                        setSelectedFileType={setSelectedFileType}
-                     />
-                </div>
+            <div className='me-4'>
+                <FileTypeFilterButton 
+                    fileTypes={fileTypes} 
+                    selectedFileType={selectedFileType}
+                    setSelectedFileType={setSelectedFileType}
+                    />
+            </div>
         )
     }
 
     const displayButtons = (): React.ReactNode => {
         return(
-            <div className='d-flex'>
+            <Container>
+            <Row>
+                <Col className='d-flex'>
                 <div className='me-5'>
-                    <AddSubFolderButton id={pathId}/>
+                    <AddSubFolderButton folder={folder} setFolder={setFolder}/>
                 </div>
                 <div className='me-5'>
-                    <AddFileButton id={pathId} />
+                    <AddFileButton folder={folder} setFodler={setFolder} />
                 </div>
-            </div>
+                <div className='me-5'>
+                    <EditFolderButton folder={folder} setFolder={setFolder} />
+                </div>
+                </Col>
+            </Row>
+            </Container>
         );
     }
     
@@ -131,35 +138,47 @@ export const FolderComponent: React.FC = () => {
             </div>
         )
     }
-    
+
+    console.log(folder instanceof FolderDTO)
+
     return (
-        <Container>
-            <div className='row pt-5'>
-                <div className='col-12'>
+        <Container className='mb-5'>
+            <Row className='pt-5'>
+                <Col xs={12}>
                     {isLoading && 
                         <div>
                             {Array.from({ length: 30 }).map((_, index) => displayLoadingSkeleton(index))}
                         </div>
                     }
 
-                    <h5 className='pe-5 d-flex text-dark mb-4 text-decoration-underline' >
+                    <h5 className='pe-5 d-flex text-dark mb-4 text-decoration-underline'>
                         <Col>
-                        <FolderFill className='me-2' color={colors.yellow} />
-                        {folder?.path || <Skeleton  width={100} />}
+                            <FolderFill className='me-2' color={colors.carrot_orange} />
+                            {folder?.path || <Skeleton width={100} />}
                         </Col>
                     </h5>
+                    {folder && 
+                    <>
+                        <Row className='d-flex flex-wrap align-items-center mb-2'>
+                            <Col xs={12} md={4} className='mb-2 mb-md-0'>
+                                {displayFilterButtons()}
+                            </Col>
+                            <Col xs={12} md={4} className='mb-2 mb-md-0'>
+                                {displayButtons()}
+                            </Col>
+                            <Col xs={12} md={4}>
+                                <SearchBar folder={folder} />
+                            </Col>
+                        </Row>
+                        {folder && displayFilesBar()}
+                        {displayNoteLinks()}
+                        {displaySubFolderLinks()}
+                    </>
+                    }   
                     
-                    {folder?.notes.length === 0 && folder.subFolderIds.length === 0 && <EmptyFolder /> }
-                    <div className='col-12 d-flex flex-wrap align-items-center mb-2'>
-                        {displayFilterButtons()}
-                        {displayButtons()}
-                        <SearchBar folder={folder} />
-                    </div>
-                    {displayFilesBar()}
-                    {displayNoteLinks()}
-                    {displaySubFolderLinks()}
-                </div>
-            </div>
+                    {folder?.isEmpty() && <EmptyFolder />}
+                </Col>
+            </Row>
         </Container>
     );
 };

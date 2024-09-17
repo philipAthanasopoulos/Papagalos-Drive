@@ -21,8 +21,18 @@ public class NoteService {
         this.noteBlobService = noteBlobService;
     }
 
-    public Note saveNote(Note note) {
-        return noteRepository.save(note);
+    public Note saveNote(Note note) throws Exception {
+
+        if (isNoteNameInvalid(note.getName()))
+            throw new Exception("Invalid note name");
+        else if (note.getParentFolder().containsNoteWithName(note.getName()))
+            throw new Exception("File with name *"+ note.getName() +"* already exists");
+        else
+            return noteRepository.save(note);
+    }
+
+    private boolean isNoteNameInvalid(String name) {
+        return name == null || name.isBlank() || name.isEmpty() || name.strip().equals("undefined");
     }
 
     public Optional<Note> getNoteById(Long id) {
@@ -38,16 +48,9 @@ public class NoteService {
         noteRepository.delete(note);
     }
 
-    public NoteDTO getNoteDTOById(Long id){
+    public NoteDTO getNoteDTOById(Long id) {
         Note note = getNoteById(id).orElse(null);
-
-        return NoteDTO.builder()
-                .id(note.getId())
-                .name(note.getName())
-                .type(note.getType())
-                .mongoId(note.getMongoId())
-                .uploadDate(note.getUploadDate())
-                .path(note.getParentFolder().getPath() + "/" + note.getName())
-                .build();
+        return NoteDTO.from(note);
     }
+
 }

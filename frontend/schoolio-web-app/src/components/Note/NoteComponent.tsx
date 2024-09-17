@@ -8,8 +8,9 @@ import { NoteDTO } from "./NoteDTO";
 import colors from '../../colors';
 import Skeleton from 'react-loading-skeleton';
 import { File } from 'react-bootstrap-icons';
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { fileIcons } from '../FileIcons';
+import { DownloadFileButton } from './DownloadFileButton';
 
 export const NoteComponent = () => {
   const id = Number(useParams<{ id: string }>().id);
@@ -88,25 +89,35 @@ export const NoteComponent = () => {
   };
 
   return (
-    <Container>
-        <div className='row-12 pt-5 '>
-            <div className='col-12'>
-            {loading ? (
-                <div className='d-flex justify-content-center'>
-                  <ReactLoading type='bubbles' color={getRandomColor()} />
-                </div>
-              ) : (
-                <div>
-                  <h5 className='pe-5 d-flex text-primary mb-4 ' >
-                        {note?.path+"."+note?.type.toLowerCase() || <Skeleton  width={100} />}
-                        {fileIcons[note?.type.toLowerCase() || ""]}
-                  </h5>
-                  {displayMedia()}
-                </div>
-              )}
+    <Container fluid>
+    <Row className='pt-5'>
+      <Col xs={12}>
+        {loading ? (
+          <div className='d-flex justify-content-center'>
+            <ReactLoading type='bubbles' color={getRandomColor()} />
+          </div>
+        ) : (
+          <div>
+            <div className='d-flex text-primary mb-4 align-items-center '>
+              <div className='d-flex text-primary mb-4 align-items-center'>
+              <h5>
+                {note?.path + "." + note?.type.toLowerCase() || <Skeleton width={100} />}
+              </h5>
+              
+              {fileIcons[note?.type.toLowerCase() || ""]}
+              <div className='ms-3'>
+                <DownloadFileButton filename={note?.name || "file"} downloadString={`data:${mimeTypes[note?.type.toLowerCase() ?? '']};base64,${blob}`} />
+              </div>
+              </div>
             </div>
-        </div>
-    </Container>
+            <div className='embed-responsive embed-responsive-16by9'>
+              {displayMedia()}
+            </div>
+          </div>
+        )}
+      </Col>
+    </Row>
+  </Container>
   );
 
 }

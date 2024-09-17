@@ -12,20 +12,20 @@ export const SupportSection = () => {
       subject:"Bug",
       text:"Αναφορά bug",
       icon: <Bug/>,
-      color: colors.red
+      color: colors.carrot_orange
     },
     {
       subject:"Suggetion",
       text:"Έχω κάτι να προτείνω",
       icon: <Lightbulb/>,
-      color: colors.yellow
+      color: colors.jonquil
 
     },
     {
       subject:"General email",
       text:"Άλλο",
       icon: <ChatLeftText/>,
-      color: colors.tealBlue
+      color: colors.sky_blue
     },
 ];
 
@@ -54,7 +54,7 @@ export const SupportSection = () => {
       <Row>
         {mailTypes.map((type) => (
           <Col xs={12} sm={6} md={4} className='mb-2' key={type.subject}>
-            <Button className='w-100' onClick={() => openGmail(type.subject)} style={{background:`${type.color}`, border:"none"}}>
+            <Button className=' w-100 rounded-pill border-0' onClick={() => openGmail(type.subject)} style={{background:`${type.color}`}}>
               {type.icon} {type.text}
             </Button>
           </Col>

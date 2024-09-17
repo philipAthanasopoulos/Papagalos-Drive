@@ -1,14 +1,18 @@
 import React, { FormEvent, useState } from 'react'
 import {webApi} from '../../env/env'
-import { Alert, Button, FloatingLabel, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
+import { Button, FloatingLabel, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
 import axios from 'axios';
-import { FileEarmarkArrowUp, FileEarmarkArrowUpFill, FilePlus, Folder, FolderPlus, Plus, Upload } from 'react-bootstrap-icons';
+import { FileEarmarkArrowUp} from 'react-bootstrap-icons';
 import colors from '../../colors';
+import { NotificationComponent } from '../Notifications/NotificationComponent';
+import { FolderDTO } from '../Folder/FolderDTO';
 
-type Props = {id?: string}
+type Props = {
+    folder?:FolderDTO,
+    setFodler:React.Dispatch<React.SetStateAction<FolderDTO | undefined>>
+}
 
 const AddFileButton = (props: Props) => {
-    const id = props.id;
     const[showModal, setShowModal] = useState<boolean>(false);
     const [showSuccessAlert, setshowSuccessAlert] = useState<boolean>(false);
     const [showErrorAlert, setshowErrorAlert] = useState<boolean>(false);
@@ -21,7 +25,7 @@ const AddFileButton = (props: Props) => {
             const formData = new FormData();
             formData.append('file', file);
             formData.append('title', fileName);
-            axios.post(`${webApi}/folder/${id}/addNote`, formData, {
+            axios.post(`${webApi}/folder/${props?.folder?.id}/notes`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -30,14 +34,14 @@ const AddFileButton = (props: Props) => {
                 setshowSuccessAlert(true);
                 setTimeout(() => {
                     setshowSuccessAlert(false);
-                    window.location.reload();
-                },3000);
+                    props.setFodler(new FolderDTO(response.data));
+                },5500);
             })
             .catch(error => {
                 setshowErrorAlert(true);
                 setTimeout(() => {
                     setshowErrorAlert(false);
-                },3000);
+                },5500);
             });
     
             setShowModal(false);
@@ -45,22 +49,14 @@ const AddFileButton = (props: Props) => {
     }
 
     const alertSuccess = () => {
-        return(
-            <div>
-            <Alert show={showSuccessAlert} variant='success' transition={true}>
-                🥳🎉Το αρχείο προστέθηκε με επιτυχία!
-            </Alert>
-            </div>
+        if(showSuccessAlert) return(
+            <NotificationComponent header='Ανέβηκε!' body='🥳🎉Το αρχείο προστέθηκε με επιτυχία!' color={colors.shamrock_green} />
         )
     }
 
     const alertError = () => {
-        return(
-            <div>
-            <Alert show={showErrorAlert} variant='danger' transition={true}>
-               😞🌧️ Ωχ, κάτι πήγε στραβά
-            </Alert>
-            </div>
+        if(showErrorAlert) return(
+            <NotificationComponent header='Ουπς!' body='😞🌧️ Ωχ, κάτι πήγε στραβά' color={colors.carrot_orange} />
         )
     }
 
@@ -72,7 +68,7 @@ const AddFileButton = (props: Props) => {
         </div>
         <div>
             <Button  variant="light" size='lg' onClick={() => setShowModal(true)}>
-                <FileEarmarkArrowUp color={colors.green}/> Ανέβασμα αρχείου
+                <FileEarmarkArrowUp color={colors.shamrock_green}/> Ανέβασμα αρχείου
             </Button>
             
             <Modal show={showModal} onHide={() =>setShowModal(false)} >
@@ -93,10 +89,10 @@ const AddFileButton = (props: Props) => {
                     </Form.Group>
                     </ModalBody>
                     <ModalFooter>
-                        <Button variant='danger' onClick={()=> setShowModal(false)}>
+                        <Button className='border-0' onClick={()=> setShowModal(false)} style={{background:colors.carrot_orange}} >
                             Ακύρωση
                         </Button>
-                        <Button variant='success' type='submit'>
+                        <Button className='border-0' type='submit' style={{background:colors.shamrock_green}}>
                             <FileEarmarkArrowUp className='me-1'/> Ανέβασμα
                         </Button>
                     </ModalFooter>

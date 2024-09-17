@@ -1,61 +1,55 @@
 import React, { useState } from 'react'
-import { Alert, Button, FloatingLabel, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
+import { Alert, Button, FloatingLabel, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle, Toast, ToastBody, ToastHeader } from 'react-bootstrap';
 import axios from 'axios';
 import {webApi} from "../../env/env"
-import { FolderPlus, Upload} from 'react-bootstrap-icons';
+import { FolderPlus} from 'react-bootstrap-icons';
 import colors from '../../colors';
+import { FolderDTO } from './FolderDTO';
+import { NotificationComponent } from '../Notifications/NotificationComponent';
 
 type Props = {
-    id?: string;
+    folder?: FolderDTO
+    setFolder: React.Dispatch<React.SetStateAction<FolderDTO | undefined>>
 }
 
 const AddSubFolderButton = (props: Props) => {
-    const id = props.id;
     const [subFolderName, setSubFolderName] = useState<string>();
     const [showModal, setShowModal] = useState<boolean>(false);
     const [showSuccessAlert, setshowSuccessAlert] = useState<boolean>(false);
     const [showErrorAlert, setshowErrorAlert] = useState<boolean>(false);
 
     function addSubFolder(){
-        axios.post(`${webApi}/folder/${id}/addSubFolder?subFolderName=${subFolderName}`)
+        axios.post(`${webApi}/folder/${props?.folder?.id}/subfolders?subFolderName=${subFolderName}`)
         .then(response =>{ 
             setshowSuccessAlert(true);
             setTimeout(() => {
-                window.location.reload();
+                props.setFolder(new FolderDTO(response.data));
                 setshowSuccessAlert(false);
-            },3000);
+            },5500);
         })
         .catch(error => {
+            console.log(error)
             setshowErrorAlert(true);
             setTimeout(() => {
                 setshowErrorAlert(false);
-            },3000);
+            },5500);
         });
     }
 
     const alertSuccess = () => {
-        return(
-            <div>
-                <Alert show={showSuccessAlert} variant='success' transition={true}>
-                    🥳🎉Folder added successfully!
-                </Alert>
-            </div>
-        )
+        if(showSuccessAlert) return(
+                    <NotificationComponent header='Ανέβηκε!' body='🥳🎉 Ο φάκελος προστέθηκε με επιτυχία!' color={colors.shamrock_green} />
+                )
     }
 
     const alertError = () => {
-        return(
-            <div>
-                <Alert show={showErrorAlert} variant='danger' transition={true}>
-                   😞🌧️ Oops, something went wrong
-                </Alert>
-            </div>
+         if (showErrorAlert) return(
+            <NotificationComponent header='Failed' body='😞🌧️ Ωχ, κάτι πήγε στραβά' color={colors.carrot_orange} />
         )
     }
 
     const handleSubmit = () => {
         setShowModal(false);
-        setSubFolderName("");
         addSubFolder();
     }
 
@@ -80,17 +74,17 @@ const AddSubFolderButton = (props: Props) => {
                     </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button variant='danger' onClick={()=> setShowModal(false)}>
+                    <Button className='border-0' style={{background:colors.carrot_orange}} onClick={()=> setShowModal(false)}>
                         Ακύρωση
                     </Button>
-                    <Button variant='success' onClick={handleSubmit}>
+                    <Button className='border-0' style={{background:colors.shamrock_green}} onClick={handleSubmit}>
                       <FolderPlus className='me-1' />  Δημιουργία
                     </Button>
                 </ModalFooter>
             </Modal>
         </div>
         <Button variant='light'size='lg' onClick={() => setShowModal(true)} >
-            <FolderPlus color={colors.yellow}/> Νέος φάκελος
+            <FolderPlus color={colors.carrot_orange}/> Νέος φάκελος
         </Button>
     </div>
   )

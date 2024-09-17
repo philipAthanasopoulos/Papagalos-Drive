@@ -25,5 +25,4 @@ public class NoteBlobService {
     public void deleteNoteBlobById(String id) {
         noteBlobRepository.deleteById(id);
     }
-
 }

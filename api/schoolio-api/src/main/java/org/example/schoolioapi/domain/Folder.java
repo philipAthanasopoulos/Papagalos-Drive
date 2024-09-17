@@ -1,6 +1,8 @@
 package org.example.schoolioapi.domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +11,8 @@ import java.util.List;
 
 @Entity
 @Data
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
 public class Folder {
     @Id
@@ -18,7 +22,7 @@ public class Folder {
     @OneToMany
     private List<Folder> subFolders = new ArrayList<>();
     @OneToMany
-    private List<Note> notes;
+    private List<Note> notes = new ArrayList<>();
     @ManyToOne
     private Folder parent;
 
@@ -31,12 +35,21 @@ public class Folder {
     }
 
     public void addNote(Note note) {
-        if (this.notes == null) notes = List.of(note);
-        else notes.add(note);
+        if (this.notes == null) this.notes = new ArrayList<>();
+        notes.add(note);
     }
 
     public void addSubFolder(Folder subFolder) {
+        if (this.subFolders == null) this.subFolders = new ArrayList<>();
         subFolders.add(subFolder);
+    }
+
+    public boolean containsFolderWithName(String name) {
+        return getSubFolders().stream().map(Folder::getName).toList().contains(name);
+    }
+
+    public boolean containsNoteWithName(String name){
+        return getNotes().stream().map(Note::getName).toList().contains(name);
     }
 }
 

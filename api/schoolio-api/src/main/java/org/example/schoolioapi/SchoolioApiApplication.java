@@ -1,23 +1,15 @@
 package org.example.schoolioapi;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.schoolioapi.domain.Folder;
-import org.example.schoolioapi.service.FolderService;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.io.File;
-import java.util.List;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @SpringBootApplication()
 @EnableCaching
 @EnableScheduling
+//@EnableWebSecurity
 public class SchoolioApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(SchoolioApiApplication.class, args);

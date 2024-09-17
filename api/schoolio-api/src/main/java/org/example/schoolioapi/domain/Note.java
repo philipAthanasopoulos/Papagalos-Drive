@@ -35,4 +35,7 @@ public class Note {
         this.parentFolder = parentFolder;
     }
 
+    public Note(String name) {
+        this.name = name;
+    }
 }

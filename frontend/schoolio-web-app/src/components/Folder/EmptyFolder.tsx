@@ -1,4 +1,3 @@
-import React from 'react'
 import emptyFolderImage from "../../images/Empty-amico.png"
 import { Image } from 'react-bootstrap'
 

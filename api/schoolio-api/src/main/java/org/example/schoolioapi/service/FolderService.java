@@ -7,8 +7,6 @@ import org.example.schoolioapi.repository.FolderRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 @Service
 @Transactional
 public class FolderService {
@@ -21,28 +19,35 @@ public class FolderService {
         this.noteService = noteService;
     }
 
+    public Folder saveFolder(Folder folder) {
+        return folderRepository.save(folder);
+    }
+
     public Folder getFolderById(Long id) {
         return folderRepository.findById(id).orElse(null);
     }
 
-    public List<Folder> getAllFolders() {
-        return folderRepository.findAll();
+    public FolderDTO getFolderByIdAsDTO(Long id) {
+        return FolderDTO.from(this.getFolderById(id));
     }
 
-    public Folder getRootFolder() {
-        return folderRepository.findByName("root");
-    }
-
-    public void addNoteToFolder(Folder folder, Note note) {
-        folder.addNote(note);
+    public Folder addNoteToFolder(Folder folder, Note note) throws Exception {
         noteService.saveNote(note);
-        folderRepository.save(folder);
+        folder.addNote(note);
+        return folderRepository.save(folder);
     }
 
-    public void addSubFolderToFolder(Folder folder, Folder subFolder) {
-        subFolder.setParent(folder);
-        folder.addSubFolder(subFolder);
-        folderRepository.saveAll(List.of(subFolder, folder));
+    public Folder addSubFolderToFolder(Folder folder, Folder subFolder) throws Exception {
+        if (folder.containsFolderWithName(subFolder.getName()))
+            throw new Exception("Folder with name *" + subFolder.getName() + "* already exists in folder *" + subFolder.getName() + "*");
+        else if (isFolderNameInvalid(subFolder.getName()))
+            throw new Exception("Invalid name");
+        else {
+            subFolder.setParent(folder);
+            folder.addSubFolder(subFolder);
+            folderRepository.save(subFolder);
+            return folderRepository.save(folder);
+        }
     }
 
     public Folder getFolderByName(String name) {
@@ -51,33 +56,28 @@ public class FolderService {
         );
     }
 
-    public Folder saveFolder(Folder folder) {
-
-        return folderRepository.save(folder);
-    }
-
-    public FolderDTO getFolderDTOById(Long id) {
-        return convertToDTO(this.getFolderById(id));
-    }
-
-    //TODO
-    //Check if the stream method is optimal
-    //Maybe a select query should be used instead
-    private FolderDTO convertToDTO(Folder folder) {
-        return FolderDTO.builder()
-                .Id(folder.getId())
-                .name(folder.getName())
-                .subFolderIds(folder.getSubFolders().stream().map(Folder::getId).toList())
-                .subFolderNames(folder.getSubFolders().stream().map(Folder::getName).toList())
-                .notes(folder.getNotes().stream().map(note -> noteService.getNoteDTOById(note.getId())).toList())
-                .path(folder.getPath())
-                .build();
-    }
-
     public void deleteNoteFromFolderById(Note note) {
         Folder parent = folderRepository.findFolderByNotesContaining(note);
         parent.getNotes().remove(note);
         folderRepository.save(parent);
         noteService.deleteNote(note);
+    }
+
+    public Folder updateFields(Long id, FolderDTO updatedFolder) throws Exception {
+        Folder folderToPatch = this.getFolderById(id);
+        if (folderToPatch == null) return null;
+        if (updatedFolder.name() != null) {
+            if (folderToPatch.containsFolderWithName(updatedFolder.name()))
+                throw new Exception("Folder with name *" + updatedFolder.name() + "* already exists in folder *" + updatedFolder.name() + "*");
+            else if (!isFolderNameInvalid(updatedFolder.name())) {
+                throw new Exception("Folder name is invalid");
+            } else
+                folderToPatch.setName(updatedFolder.name());
+        }
+        return this.saveFolder(folderToPatch);
+    }
+
+    private boolean isFolderNameInvalid(String name) {
+        return name.isBlank() || name.isEmpty() || name.strip().equals("undefined");
     }
 }

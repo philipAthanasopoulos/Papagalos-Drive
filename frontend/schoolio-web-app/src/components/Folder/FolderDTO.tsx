@@ -1,5 +1,6 @@
 import { NoteDTO } from "../Note/NoteDTO";
 
+
 export class FolderDTO {
     id: number;
     name: string;
@@ -8,16 +9,16 @@ export class FolderDTO {
     notes: NoteDTO[];
     path: string;
 
-    constructor(id: number) {
-        this.id = id;
-        this.name = '';
-        this.subFolderIds = [];
-        this.subFolderNames = [];
-        this.notes = [];
-        this.path = "";
+    public constructor(data: any) {
+        this.id = data.id;
+        this.name = data.name;
+        this.subFolderIds = data.subFolderIds;
+        this.subFolderNames = data.subFolderNames;
+        this.notes = data.notes;
+        this.path = data.path;
     }
 
-    isEmpty(): boolean {
+    public isEmpty():boolean {
         return this.notes.length === 0 && this.subFolderIds.length === 0;
     }
 }

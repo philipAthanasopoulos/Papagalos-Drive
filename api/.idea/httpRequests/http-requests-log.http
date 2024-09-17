@@ -1,3 +1,74 @@
+PATCH http://localhost:8080/folder/1
+Content-Type: {"id":1,"name":"newRoot"}
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2024-09-09T113930.415.json
+
+###
+
+GET http://localhost:8080/folder/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+cookie: __Host-GAPS=1%3AFG9JsupQyd0Hrg-aQm6-Oah8lAGa7jgi%3AwVgu2XUvZv5sKpuP
+content-length: 0
+
+<> 2024-09-08T162012.200.html
+
+###
+
+GET http://localhost:8080/folder/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+cookie: __Host-GAPS=1%3AQNgq1rw0rPm9Jhr9PSsZrZNVVzkw8A%3AxY9_SUd7zzU49rEI
+content-length: 0
+
+<> 2024-09-08T161900.200.html
+
+###
+
+GET http://localhost:8080/folder/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-09-08T160407.200.json
+
+###
+
+GET http://localhost:8080/folder/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-09-08T160402.200.json
+
+###
+
+GET http://localhost:8080/folder/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
+GET http://localhost:8080/folder/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
 POST http://localhost:8080/folder/1/addSubFolder
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4
 Accept-Encoding: br, deflate, gzip, x-gzip

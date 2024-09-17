@@ -5,12 +5,14 @@ import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.service.FolderService;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@CrossOrigin()
+@CrossOrigin
 public class FolderController {
     private final FolderService folderService;
 
@@ -21,24 +23,30 @@ public class FolderController {
     @GetMapping("/folder/{id}")
     @Cacheable(value = "folderDTO", key = "#id")
     public FolderDTO getFolderById(@PathVariable Long id) {
-        return folderService.getFolderDTOById(id);
+        return folderService.getFolderByIdAsDTO(id);
     }
 
-    @GetMapping("/folder/all")
-    public List<Folder> getAllFolders() {
-        return folderService.getAllFolders();
-    }
-
-    @GetMapping("/folder/root")
-    public Folder getRootFolder() {
-        return folderService.getRootFolder();
-    }
-
-    @PostMapping("/folder/{id}/addSubFolder")
+    @PatchMapping("/folder/{id}")
     @CacheEvict(value = "folderDTO", key = "#id")
-    public void addSubFolder(@PathVariable Long id, @RequestParam String subFolderName) {
+    public ResponseEntity<FolderDTO> updateFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
+        try {
+            Folder patched = this.folderService.updateFields(id, folderDTO);
+            return ResponseEntity.ok(FolderDTO.from(patched));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+        }
+    }
+
+    @PostMapping("/folder/{id}/subfolders")
+    @CacheEvict(value = "folderDTO", key = "#id")
+    public ResponseEntity<String> addSubFolder(@PathVariable Long id, @RequestParam String subFolderName) {
         Folder parentFolder = folderService.getFolderById(id);
         Folder newFolder = new Folder(subFolderName);
-        folderService.addSubFolderToFolder(parentFolder, newFolder);
+        try {
+            Folder updatedFolder = folderService.addSubFolderToFolder(parentFolder, newFolder);
+            return ResponseEntity.ok(FolderDTO.from(updatedFolder).toString());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+        }
     }
 }

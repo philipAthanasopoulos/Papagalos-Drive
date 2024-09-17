@@ -1,58 +1,58 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import notesImage from '../../images/notes.jpg'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
-import notes from '../../images/notes.jpg'
-import study from '../../images/undraw_Reading_time_re_phf7.png'
-import grades from '../../images/undraw_Teacher_re_sico.png'
-import college from "../../images/college.gif"
+import students from "../../images/Students-cuate.svg"
+import browsing from "../../images/Devices-cuate.svg"
+import glasses from "../../images/Reading glasses-cuate.svg"
 import colors from '../../colors'
+import dottedArrow from "../../images/dottedArrow.jpg"
 import { Link } from 'react-router-dom'
-import { Youtube } from 'react-bootstrap-icons'
 
 const Hero = () => {
   return (
     <div>
-        <div className="d-flex flex-column align-items-center justify-content-center bg-white text-dark" >
-            <Image src={college} width={370}></Image>
-            <h1 className="display-4 text-center">
-                <b>Βρές σημειώσεις από όλη την Ελλάδα</b>
+      <Container fluid className="bg-light text-dark">
+        <Row className="align-items-center justify-content-center text-center">
+          <Col xs={12} md={6}>
+            <Image src={students} className="mb-4" />
+          </Col>
+          <Col xs={12} md={6}>
+            <h1 className="display-4">
+              <b>Σημειώσεις από κάθε γωνιά της Ελλάδας, στα χέρια σου!</b>
             </h1>
-            <Col>
-            </Col>
-            <p className="lead text-center">We are glad to have you here.</p>
-            <Link to={"/"}>
-                <Button size='lg' style={{background:`${colors.yellow}`,border:"none"}}>Δες δωρεάν!</Button>
+            <Link to={"/folder/1"}>
+              <Button size='lg' className="mt-3 mt-md-0 rounded-pill" style={{ background: `${colors.carrot_orange}`, border: "none" }}>Μπες τώρα, δωρεάν!</Button>
             </Link>
-        </div>
+            <br />
+            {/* <ArrowDown size={50} className='mt-5 text-muted' /> */}
+            <Image src={dottedArrow}/>
+          </Col>
+        </Row>
+      </Container>
 
-        <div className="d-flex vw-100 vh-100 align-items-center justify-content-center bg-light text-dark">
-            <Container>
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} className="mb-4 mb-md-0">
-                        <Image src={study} alt="Notes" className="w-100 shadow-lg" />
-                    </Col>
-                    <Col xs={12} md={6} className="text-center text-md-start">
-                        <h2>Discover Notes from All Over Greece</h2>
-                        <p className="lead">Find notes from various subjects and universities.</p>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
+        <Container fluid className="d-flex vw-100 vh-100 align-items-center justify-content-center bg-light text-dark">
+        <Row className="align-items-center">
+            <Col xs={12} md={6} className="mb-4 mb-md-0">
+            <Image src={glasses} alt="Notes" className="w-100 shadow-lg" />
+            </Col>
+            <Col xs={12} md={6} className="text-center text-md-start">
+            <h2>Διάβασε έξυπνα και γρήγορα</h2>
+            <p className="lead">Απόκτησε άμεση πρόσβαση σε σημειώσεις από <b>300+</b> πανεπιστημιακά τμήματα!</p>
+            </Col>
+        </Row>
+        </Container>
 
-        <div className="d-flex vw-100 vh-100 align-items-center justify-content-center bg-light text-dark">
-            <Container>
-                <Row className="align-items-center">
-                    <Col xs={12} md={6} className="text-center text-md-start mb-4 mb-md-0">
-                        <h2>Discover Notes from All Over Greece</h2>
-                        <p className="lead">Find notes from various subjects and universities.</p>
-                    </Col>
-                    <Col xs={12} md={6}>
-                        <Image src={grades} alt="Notes" className="w-100 shadow-lg" />
-                    </Col>
-                </Row>
-            </Container>
-        </div>
+        <Container fluid className="d-flex vw-100 vh-100 align-items-center justify-content-center bg-light text-dark">
+        <Row className="align-items-center">
+            <Col xs={12} md={6} className="text-center text-md-start mb-4 mb-md-0">
+            <h2>Σημειώσεις παντού, κάθε στιγμή!</h2>
+            <p className="lead">Μελέτησε από τον υπολογιστή, το laptop ή το κινητό σου, όπου κι αν βρίσκεσαι.</p>
+            </Col>
+            <Col xs={12} md={6}>
+            <Image src={browsing} alt="Notes" className="w-100 shadow-lg" />
+            </Col>
+        </Row>
+        </Container>
     </div>
   )
 }

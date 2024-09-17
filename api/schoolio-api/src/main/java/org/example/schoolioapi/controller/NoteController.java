@@ -1,6 +1,7 @@
 package org.example.schoolioapi.controller;
 
 import org.bson.types.Binary;
+import org.example.schoolioapi.DTO.FolderDTO;
 import org.example.schoolioapi.DTO.NoteDTO;
 import org.example.schoolioapi.domain.FileType;
 import org.example.schoolioapi.domain.Folder;
@@ -10,6 +11,8 @@ import org.example.schoolioapi.service.FolderService;
 import org.example.schoolioapi.service.NoteBlobService;
 import org.example.schoolioapi.service.NoteService;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,7 +20,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@CrossOrigin()
+@CrossOrigin
 public class NoteController {
     private final NoteService noteService;
     private final FolderService folderService;
@@ -29,18 +32,23 @@ public class NoteController {
         this.noteBlobService = mongoRepository;
     }
 
-    @PostMapping("/folder/{id}/addNote")
+    @PostMapping("/folder/{id}/notes")
     @CacheEvict(value = "folderDTO", key = "#id")
-    public void uploadNote(@PathVariable Long id, @RequestParam("title") String title, @RequestParam("file") MultipartFile file) throws IOException {
+    public ResponseEntity<FolderDTO> uploadNote(
+            @PathVariable Long id,
+            @RequestParam("title") String title,
+            @RequestParam("file") MultipartFile file) throws IOException
+
+    {
         Folder folder = folderService.getFolderById(id);
         NoteBlob blob = noteBlobService.saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
-        Note note = noteService.saveNote(new Note(
-                title,
-                FileType.valueOf(getFileExtension(file)),
-                blob.getId(),
-                folder)
-        );
-        folderService.addNoteToFolder(folder, note);
+        try {
+            Note note = new Note(title, FileType.valueOf(getFileExtension(file)), blob.getId(), folder);
+            Folder updatedFolder = folderService.addNoteToFolder(folder, note);
+            return ResponseEntity.ok(FolderDTO.from(updatedFolder));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+        }
     }
 
     private String getFileExtension(MultipartFile file) {

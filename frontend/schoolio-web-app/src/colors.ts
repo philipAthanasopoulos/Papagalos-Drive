@@ -1,13 +1,12 @@
 const colors = {
-    darkGray: '#282826',
-    lightGray: '#fafafa',
-    brownishGray: '#675046',
-    green: '#1a9e54',
-    red: '#da3a31',
-    yellow: '#f5bc1c',
-    mediumGray: '#979796',
-    tealBlue: '#207a95'
-  } as const;
-  
-  export default colors;
-  
+  sky_blue: '#65C7E8',       // Default sky blue
+  shamrock_green: '#2B9B52', // Default shamrock green
+  champagne: '#FDE6C7',      // Default champagne
+  sandy_brown: '#F49C50',    // Default sandy brown
+  black: '#010001',          // Default black
+  carrot_orange: '#EA8D0C',  // Default carrot orange
+  polynesian_blue: '#054B8B',// Default polynesian blue
+  jonquil: '#FBCA12'         // Default jonquil
+} as const;
+
+export default colors;

@@ -1,13 +1,10 @@
 package org.example.schoolioapi.service;
 
-import org.example.schoolioapi.domain.FileType;
 import org.example.schoolioapi.domain.Folder;
-import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.repository.FolderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,28 +23,17 @@ class FolderServiceTest {
     private Folder animalsFolder;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         animalsFolder = folderRepository.save(new Folder("animals"));
-
     }
 
     @Test
     void getFolderById() {
         Long id = animalsFolder.getId();
-        assertEquals(animalsFolder,folderService.getFolderById(id));
-        assertNull(folderService.getFolderById(2L));
+        assertEquals(animalsFolder, folderService.getFolderById(id));
+        assertNull(folderService.getFolderById(15L));
     }
 
-    @Test
-    void getAllFolders() {
-    }
-
-    @Test
-    void getRootFolder() {
-        folderRepository.save(new Folder("root"));
-        Folder root = folderService.getRootFolder();
-        assertEquals(root.getName(), "root");
-    }
 
     @Test
     void addNoteToFolder() {
@@ -59,25 +45,24 @@ class FolderServiceTest {
     }
 
     @Test
-    void addSubFolderToFolder() {
-        folderService.addSubFolderToFolder(animalsFolder, new Folder("dogs"));
-
-    }
-
-    @Test
     void getFolderByName() {
         assertNotNull(folderService.getFolderByName("animals"));
     }
 
     @Test
     void saveFolder() {
-    }
-
-    @Test
-    void getFolderDTOById() {
+        Folder newFolder = folderService.saveFolder(new Folder("new folder"));
+        assertNotNull(newFolder);
     }
 
     @Test
     void deleteNoteFromFolderById() {
+    }
+
+    @Test
+    void testDuplicateSubFolderName() throws Exception {
+        Folder parent = folderRepository.save(new Folder("parent"));
+        folderService.addSubFolderToFolder(parent, new Folder("child"));
+        assertThrows(Exception.class, () -> folderService.addSubFolderToFolder(parent, new Folder("child")));
     }
 }

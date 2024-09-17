@@ -1,35 +1,46 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
-import { FloatingLabel, FormControl, FormLabel, ListGroup, ListGroupItem } from 'react-bootstrap'
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
+import { Col, Container, FloatingLabel, FormControl, FormLabel, InputGroup, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import cosineSimilarity from 'compute-cosine-similarity'
 import { FolderDTO } from '../Folder/FolderDTO'
+import { Bank, Bank2, Folder, Search } from 'react-bootstrap-icons'
+import colors from '../../colors'
 
 type Props = {folder?: FolderDTO}
 
 export const SearchBar = (props: Props) => {
   const [query,setQuery] = useState<string>('');
   const [results, setResults] = useState<string[]>([]);
+  const [isSearchBarActive, setIsSearchBarActive] = useState<boolean>(false);
 
   useEffect(() => {
     search();
   },[query])
-  
+
   const getFolderId = (folderName:string) => {
     const index = props.folder?.subFolderNames.indexOf(folderName);
     return props.folder?.subFolderIds[index || 0];
   }
   
-  //GOATED
   const search = () => {
-    const matchingResults = props.folder?.subFolderNames
-    .map(folderName => ({
-      name: folderName,
-      similarity: calculateSimilarity(replaceTonus(folderName.replace("Πανεπιστήμιο","")), replaceTonus(query))
-    }))
-    .filter(result => result.similarity > 0.5)
-    .sort((a, b) => b.similarity - a.similarity)
-    .map(result => result.name);    
-    setResults(matchingResults || []);
+    const folderResults = props.folder?.subFolderNames
+      .map(folderName => ({
+        name: folderName,
+        similarity: calculateSimilarity(replaceTonus(folderName.replace("Πανεπιστήμιο","")), replaceTonus(query))
+      })) || [];
+
+    const noteResults = props.folder?.notes
+      .map(note => ({
+        name: note.name,
+        similarity: calculateSimilarity(replaceTonus(note.name.replace("Πανεπιστήμιο","")), replaceTonus(query))
+      })) || [];
+
+    const combinedResults = [...folderResults,...noteResults]
+      .filter(result => result.similarity > 0.5)
+      .sort((a, b) => b.similarity - a.similarity)
+      .map(result => result.name);    
+
+    setResults(combinedResults || []);
   }
 
   const reset = () => {
@@ -106,21 +117,47 @@ export const SearchBar = (props: Props) => {
   }
   
   return (
-    <div >
-        <FloatingLabel label="Αναζήτησε εδώ..." controlId='floatingInput'>
-          <FormControl placeholder=''  size='lg' value={query} as={'input'} onChange={(e) => setQuery(e.target.value)} />
-        </FloatingLabel>
-        <ListGroup style={{position: "absolute",zIndex: "10",backgroundColor: "white" }} >
-          {
-            results.map((result) => (
-              <Link to={`/folder/${getFolderId(result)}`} onClick={()=>reset()} style={{color:'black',textDecoration:'none'}}>
-                <ListGroupItem >
-                  {result}
-                </ListGroupItem>
-              </Link>
-            ))
-          }
-        </ListGroup>
-    </div>    
+      <Container>
+        <Row>
+          <Col xs={12}>
+          <InputGroup>
+            <FloatingLabel label="Αναζήτησε εδώ..." controlId='floatingInput'>
+              <FormControl
+                placeholder=''
+                size='lg'
+                value={query}
+                as={'input'}
+                onChange={(e) => setQuery(e.target.value)}
+                onFocus={() => setIsSearchBarActive(true)}
+                onBlur={() => setIsSearchBarActive(false)}
+              />
+            </FloatingLabel>
+            <InputGroup.Text style={{background:colors.carrot_orange}}>
+              <Search color='white' />
+            </InputGroup.Text>
+          </InputGroup>
+          </Col>
+          <Col xs={12}>
+          {isSearchBarActive && 
+            <ListGroup style={{ position: "absolute", zIndex: "10", backgroundColor: "white" }}>
+              {
+                results.map((result) => (
+                  <Link 
+                    to={`/folder/${getFolderId(result)}`}
+                    onClick={() => reset()}
+                    style={{ color: 'black', textDecoration: 'none' }}
+                    key={result}
+                  >
+                    <ListGroupItem>
+                      {result}
+                    </ListGroupItem>
+                  </Link>
+                ))
+              }
+            </ListGroup>
+            } 
+          </Col>
+        </Row>
+      </Container>   
   )
 }

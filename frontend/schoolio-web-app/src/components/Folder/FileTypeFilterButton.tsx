@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { Button, Dropdown, DropdownDivider, DropdownItem, DropdownMenu, Form } from 'react-bootstrap'
+import { Dropdown, DropdownDivider} from 'react-bootstrap'
 import { fileIcons } from '../FileIcons'
 
 type Props = {
