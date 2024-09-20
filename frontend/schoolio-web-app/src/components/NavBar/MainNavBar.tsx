@@ -1,12 +1,12 @@
+import { Image, NavDropdown } from 'react-bootstrap';
+import { Headset, InfoCircle } from 'react-bootstrap-icons';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import papagalos_png from '../../images/cool.png'
-import papagalos_title from '../../images/textLogo.png';
-import { Image, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Headset, InfoCircle} from 'react-bootstrap-icons';
 import colors from '../../colors';
+import papagalos_png from '../../images/cool.png';
+import papagalos_title from '../../images/textLogo.png';
 
 const MainNavBar = () => {
 

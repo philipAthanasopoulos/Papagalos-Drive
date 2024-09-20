@@ -1,7 +1,6 @@
+import { Col, Container, Row } from 'react-bootstrap';
 import { Facebook, Github, Google, Instagram, Linkedin, Twitter } from 'react-bootstrap-icons';
-import { Container, Row, Col, Image } from 'react-bootstrap';
 import colors from '../colors';
-import papagalosImage from '../images/papagalos.svg'
 
 
 export const Footer = () => {

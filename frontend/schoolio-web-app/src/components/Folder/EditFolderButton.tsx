@@ -1,11 +1,11 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { FolderDTO } from './FolderDTO';
 import { Button, FormControl, InputGroup, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
 import { PencilSquare } from 'react-bootstrap-icons';
-import colors from '../../colors';
 import InputGroupText from 'react-bootstrap/esm/InputGroupText';
-import axios from 'axios';
+import colors from '../../colors';
 import { webApi } from '../../env/env';
+import { FolderDTO } from './FolderDTO';
 
 type Props = {
   folder?: FolderDTO;

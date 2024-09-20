@@ -1,11 +1,11 @@
-import React, { FormEvent, useState } from 'react'
-import {webApi} from '../../env/env'
-import { Button, FloatingLabel, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
 import axios from 'axios';
-import { FileEarmarkArrowUp} from 'react-bootstrap-icons';
+import React, { FormEvent, useState } from 'react';
+import { Button, FloatingLabel, Form, FormControl, Modal, ModalBody, ModalFooter, ModalHeader, ModalTitle } from 'react-bootstrap';
+import { FileEarmarkArrowUp } from 'react-bootstrap-icons';
 import colors from '../../colors';
-import { NotificationComponent } from '../Notifications/NotificationComponent';
+import { webApi } from '../../env/env';
 import { FolderDTO } from '../Folder/FolderDTO';
+import { NotificationComponent } from '../Notifications/NotificationComponent';
 
 type Props = {
     folder?:FolderDTO,

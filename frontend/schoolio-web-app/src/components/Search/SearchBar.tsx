@@ -1,17 +1,17 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
-import { Col, Container, FloatingLabel, FormControl, FormLabel, InputGroup, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import cosineSimilarity from 'compute-cosine-similarity'
-import { FolderDTO } from '../Folder/FolderDTO'
-import { Bank, Bank2, Folder, Search } from 'react-bootstrap-icons'
+import { useEffect, useState } from 'react'
+import { Col, Container, FloatingLabel, FormControl, InputGroup, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
+import { Search } from 'react-bootstrap-icons'
+import { Link } from 'react-router-dom'
 import colors from '../../colors'
+import { FolderDTO } from '../Folder/FolderDTO'
 
 type Props = {folder?: FolderDTO}
 
 export const SearchBar = (props: Props) => {
   const [query,setQuery] = useState<string>('');
   const [results, setResults] = useState<string[]>([]);
-  const [isSearchBarActive, setIsSearchBarActive] = useState<boolean>(true);
+  const [isSearchBarActive] = useState<boolean>(true);
 
   useEffect(() => {
     search();

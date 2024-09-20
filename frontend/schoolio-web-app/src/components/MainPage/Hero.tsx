@@ -1,12 +1,11 @@
-import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button, Col, Container, Image, Row } from 'react-bootstrap'
-import students from "../../images/Students-cuate.svg"
-import browsing from "../../images/Devices-cuate.svg"
-import glasses from "../../images/Reading glasses-cuate.svg"
-import colors from '../../colors'
-import dottedArrow from "../../images/dottedArrow.jpg"
 import { Link } from 'react-router-dom'
+import colors from '../../colors'
+import browsing from "../../images/Devices-cuate.svg"
+import dottedArrow from "../../images/dottedArrow.jpg"
+import glasses from "../../images/Reading glasses-cuate.svg"
+import students from "../../images/Students-cuate.svg"
 
 const Hero = () => {
   return (

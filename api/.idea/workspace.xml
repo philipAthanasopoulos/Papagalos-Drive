@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="big update">
-      <change beforePath="$PROJECT_DIR$/../.github/workflows/firebase-hosting-merge.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../.github/workflows/firebase-hosting-merge.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/docker-compose.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Search/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Search/SearchBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,27 +165,11 @@
     <option name="myCommands">
       <command value="mvn build" />
       <command value="mvn package" />
-      <command value="mvn clean package" />
       <command value="mvn package -DskipTests" />
+      <command value="mvn clean package" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.SchoolioApiApplication">
-    <configuration name="FolderServiceTest.getFolderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="schoolio-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.schoolioapi.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.schoolioapi.service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.service.FolderServiceTest" />
-      <option name="METHOD_NAME" value="getFolderById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FolderServiceTest.getFolderByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="schoolio-api" />
       <extension name="coverage">
@@ -260,13 +245,29 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="schoolio-api/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="schoolio-api/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.schoolio-api/Dockerfile" />
+      <item itemvalue="JUnit.FolderServiceTest.getFolderByName" />
+      <item itemvalue="JUnit.FolderServiceTest.testDuplicateSubFolderName" />
+      <item itemvalue="JUnit.java in schoolio-api" />
+      <item itemvalue="JUnit.NoteServiceTest.saveNote" />
+      <item itemvalue="Spring Boot.SchoolioApiApplication" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.schoolio-api/Dockerfile" />
         <item itemvalue="JUnit.java in schoolio-api" />
         <item itemvalue="JUnit.NoteServiceTest.saveNote" />
         <item itemvalue="JUnit.FolderServiceTest.testDuplicateSubFolderName" />
         <item itemvalue="JUnit.FolderServiceTest.getFolderByName" />
-        <item itemvalue="JUnit.FolderServiceTest.getFolderById" />
       </list>
     </recent_temporary>
   </component>
@@ -466,7 +467,7 @@
       <workItem from="1726405796630" duration="2296000" />
       <workItem from="1726465664400" duration="9562000" />
       <workItem from="1726578029812" duration="775000" />
-      <workItem from="1726820391353" duration="1129000" />
+      <workItem from="1726820391353" duration="2129000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />

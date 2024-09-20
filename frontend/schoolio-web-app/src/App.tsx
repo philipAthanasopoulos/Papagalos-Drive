@@ -1,15 +1,15 @@
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MainNavBar from './components/NavBar/MainNavBar';
-import { Container } from 'react-bootstrap';
-import { FolderComponent } from './components/Folder/FolderComponent';
-import { BrowserRouter as Router, Routes, Route, Navigate, ScrollRestoration, useLocation } from 'react-router-dom';
-import {Footer} from './components/Footer';
 import { useEffect } from 'react';
-import { SupportSection } from './components/SupportSection';
-import { NoteComponent } from './components/Note/NoteComponent';
-import Hero from './components/MainPage/Hero';
+import { Container } from 'react-bootstrap';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import './App.css';
+import { FolderComponent } from './components/Folder/FolderComponent';
+import { Footer } from './components/Footer';
 import { LoginForm } from './components/Login/LoginForm';
+import Hero from './components/MainPage/Hero';
+import MainNavBar from './components/NavBar/MainNavBar';
+import { NoteComponent } from './components/Note/NoteComponent';
+import { SupportSection } from './components/SupportSection';
 
 
 function App() {

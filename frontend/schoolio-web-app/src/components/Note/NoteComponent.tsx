@@ -1,16 +1,14 @@
 import axios from 'axios';
-import React,{ReactNode, useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
-import { webApi } from '../../env/env';
-import ReactLoading from 'react-loading';
-import DocViewer, { DocViewerRenderers, PDFRenderer } from 'react-doc-viewer';
-import { NoteDTO } from "./NoteDTO";
-import colors from '../../colors';
-import Skeleton from 'react-loading-skeleton';
-import { File } from 'react-bootstrap-icons';
+import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import ReactLoading from 'react-loading';
+import Skeleton from 'react-loading-skeleton';
+import { useParams } from 'react-router-dom';
+import colors from '../../colors';
+import { webApi } from '../../env/env';
 import { fileIcons } from '../FileIcons';
 import { DownloadFileButton } from './DownloadFileButton';
+import { NoteDTO } from "./NoteDTO";
 
 export const NoteComponent = () => {
   const id = Number(useParams<{ id: string }>().id);

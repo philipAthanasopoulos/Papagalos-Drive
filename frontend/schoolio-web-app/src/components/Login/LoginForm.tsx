@@ -1,7 +1,6 @@
-import React from 'react'
 import { Button, Col, Container, FloatingLabel, Form, FormControl, Image, Row } from 'react-bootstrap'
-import papagalos from "../../images/cool.png"
 import { Link } from 'react-router-dom'
+import papagalos from "../../images/cool.png"
 
 export const LoginForm = () => {
   return (

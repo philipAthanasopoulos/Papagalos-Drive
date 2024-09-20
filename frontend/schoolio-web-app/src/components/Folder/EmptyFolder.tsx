@@ -1,5 +1,5 @@
-import emptyFolderImage from "../../images/Empty-amico.png"
-import { Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap';
+import emptyFolderImage from "../../images/Empty-amico.png";
 
 const EmptyFolder = () => {
   return (

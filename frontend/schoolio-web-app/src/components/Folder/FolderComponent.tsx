@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { webApi } from '../../env/env';
-import { FolderDTO } from './FolderDTO';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { FolderFill } from 'react-bootstrap-icons';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import { Link, useParams } from 'react-router-dom';
-import AddSubFolderButton from './AddSubFolderButton';
-import AddFileButton from '../Note/AddFileButton';
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-import EmptyFolder from './EmptyFolder';
-import { SearchBar } from '../Search/SearchBar';
 import colors from '../../colors';
-import {  Col, Container, Row } from 'react-bootstrap';
-import FileTypeFilterButton from './FileTypeFilterButton';
+import { webApi } from '../../env/env';
 import { fileIcons } from '../FileIcons';
-import {  FolderFill } from 'react-bootstrap-icons';
+import AddFileButton from '../Note/AddFileButton';
 import { NoteDTO } from '../Note/NoteDTO';
+import { SearchBar } from '../Search/SearchBar';
+import AddSubFolderButton from './AddSubFolderButton';
 import { EditFolderButton } from './EditFolderButton';
+import EmptyFolder from './EmptyFolder';
+import FileTypeFilterButton from './FileTypeFilterButton';
+import { FolderDTO } from './FolderDTO';
 
 export const FolderComponent: React.FC = () => {
     const pathId= useParams<{ id: string }>().id;

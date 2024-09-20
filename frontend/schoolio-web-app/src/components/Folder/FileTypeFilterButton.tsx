@@ -1,5 +1,5 @@
-import { Dropdown, DropdownDivider} from 'react-bootstrap'
-import { fileIcons } from '../FileIcons'
+import { Dropdown, DropdownDivider } from 'react-bootstrap';
+import { fileIcons } from '../FileIcons';
 
 type Props = {
     fileTypes:string[];

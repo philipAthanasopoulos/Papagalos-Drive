@@ -1,7 +1,5 @@
-import axios from 'axios'
-import React from 'react'
-import { Alert, Button, Col, Container, ListGroup, ListGroupItem, Row } from 'react-bootstrap'
-import { Bug, ChatLeftText, Image, Laptop, Lightbulb, Pc, PcDisplay } from 'react-bootstrap-icons';
+import { Alert, Button, Col, Container, Row } from 'react-bootstrap';
+import { Bug, ChatLeftText, Image, Laptop, Lightbulb, PcDisplay } from 'react-bootstrap-icons';
 import colors from '../colors';
 
 
