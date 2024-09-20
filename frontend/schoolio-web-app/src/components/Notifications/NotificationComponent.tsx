@@ -14,7 +14,7 @@ export const NotificationComponent = (props: Props) => {
 
     useEffect(() => {
         setTimeout(() => setShow(false), props.timeOut || 5000);
-    }, [])
+    })
 
   return (
         <Toast show={show} onClose={() => setShow(false)} className='toast-entry' style={{ zIndex: "11", position: "fixed", background:`${props.color}` }}>

@@ -79,6 +79,7 @@ export const NoteComponent = () => {
   const displayMedia = () => {
     return (
       <iframe
+        title="note"
         className='flex-grow-1 vh-100'
         style={{ width: '100%', border: 'none' }}
         src={`data:${mimeTypes[note?.type.toLowerCase() ?? '']};base64,${blob}`}

@@ -12,35 +12,49 @@ export const SearchBar = (props: Props) => {
   const [query,setQuery] = useState<string>('');
   const [results, setResults] = useState<string[]>([]);
   const [isSearchBarActive] = useState<boolean>(true);
-
-  useEffect(() => {
-    search();
-  },[query])
-
-  const getFolderId = (folderName:string) => {
-    const index = props.folder?.subFolderNames.indexOf(folderName);
-    return props.folder?.subFolderIds[index || 0];
-  }
   
-  const search = () => {
-    const folderResults = props.folder?.subFolderNames
+  useEffect(() => {
+    function calculateSimilarity(sentence:string,anotherSentence:string) {
+      const matrix = new Array(24).fill(0);
+      const anotherMatrix = new Array(24).fill(0);
+  
+      for(let letter of sentence)
+        if(isGreekCharacter(letter))
+          matrix[letter.charCodeAt(0) - 945]++;
+      
+      for(let letter of anotherSentence)
+        if(isGreekCharacter(letter))
+          anotherMatrix[letter.charCodeAt(0) - 945]++;
+      
+      return cosineSimilarity(matrix,anotherMatrix) || 0;
+    }
+
+    const search = () => {
+      const folderResults = props.folder?.subFolderNames
       .map(folderName => ({
         name: folderName,
         similarity: calculateSimilarity(replaceTonus(folderName.replace("Πανεπιστήμιο","")), replaceTonus(query))
       })) || [];
-
-    const noteResults = props.folder?.notes
+      
+      const noteResults = props.folder?.notes
       .map(note => ({
         name: note.name,
         similarity: calculateSimilarity(replaceTonus(note.name.replace("Πανεπιστήμιο","")), replaceTonus(query))
       })) || [];
-
-    const combinedResults = [...folderResults,...noteResults]
+      
+      const combinedResults = [...folderResults,...noteResults]
       .filter(result => result.similarity > 0.5)
       .sort((a, b) => b.similarity - a.similarity)
       .map(result => result.name);    
-
-    setResults(combinedResults || []);
+      
+      setResults(combinedResults || []);
+    }
+    search();
+  },[query,props])
+  
+  const getFolderId = (folderName:string) => {
+    const index = props.folder?.subFolderNames.indexOf(folderName);
+    return props.folder?.subFolderIds[index || 0];
   }
 
   const reset = () => {
@@ -101,20 +115,7 @@ export const SearchBar = (props: Props) => {
     return charCode>944 && charCode < 944+24;
   }
 
-  function calculateSimilarity(sentence:string,anotherSentence:string) {
-    const matrix = new Array(24).fill(0);
-    const anotherMatrix = new Array(24).fill(0);
-
-    for(let letter of sentence)
-      if(isGreekCharacter(letter))
-        matrix[letter.charCodeAt(0) - 945]++;
-    
-    for(let letter of anotherSentence)
-      if(isGreekCharacter(letter))
-        anotherMatrix[letter.charCodeAt(0) - 945]++;
-    
-    return cosineSimilarity(matrix,anotherMatrix) || 0;
-  }
+  
   
   return (
       <Container>

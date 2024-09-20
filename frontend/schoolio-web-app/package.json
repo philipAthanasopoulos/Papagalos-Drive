@@ -62,6 +62,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
     "react-router-dom": "^6.26.0"
   }
 }
