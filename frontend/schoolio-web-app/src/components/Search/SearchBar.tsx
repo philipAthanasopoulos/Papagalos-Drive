@@ -11,7 +11,7 @@ type Props = {folder?: FolderDTO}
 export const SearchBar = (props: Props) => {
   const [query,setQuery] = useState<string>('');
   const [results, setResults] = useState<string[]>([]);
-  const [isSearchBarActive, setIsSearchBarActive] = useState<boolean>(false);
+  const [isSearchBarActive, setIsSearchBarActive] = useState<boolean>(true);
 
   useEffect(() => {
     search();
@@ -128,8 +128,7 @@ export const SearchBar = (props: Props) => {
                 value={query}
                 as={'input'}
                 onChange={(e) => setQuery(e.target.value)}
-                onFocus={() => setIsSearchBarActive(true)}
-                onBlur={() => setIsSearchBarActive(false)}
+                
               />
             </FloatingLabel>
             <InputGroup.Text style={{background:colors.carrot_orange}}>
