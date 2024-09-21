@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="big update">
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="test new jarfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -466,7 +464,8 @@
       <workItem from="1726465664400" duration="9562000" />
       <workItem from="1726578029812" duration="775000" />
       <workItem from="1726820391353" duration="5208000" />
-      <workItem from="1726937182831" duration="385000" />
+      <workItem from="1726937182831" duration="1568000" />
+      <workItem from="1726939704442" duration="616000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -668,7 +667,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726583813430</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="test new jarfile">
+      <option name="closed" value="true" />
+      <created>1726937906161</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1726937906161</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -707,10 +714,15 @@
     <MESSAGE value="updated espresso link" />
     <MESSAGE value="updated application.properties" />
     <MESSAGE value="big update" />
-    <option name="LAST_COMMIT_MESSAGE" value="big update" />
+    <MESSAGE value="test new jarfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="test new jarfile" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
+    {
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
+    },
     {
       &quot;branch&quot;: &quot;main&quot;,
       &quot;currentBranchFilter&quot;: true
