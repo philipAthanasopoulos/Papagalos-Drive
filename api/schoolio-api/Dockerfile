@@ -14,4 +14,4 @@ ENV PSQL_DATABASE_USERNAME=${PSQL_DATABASE_USERNAME}
 ENV PSQL_DATABASE_PASSWORD=${PSQL_DATABASE_PASSWORD}
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-D\"spring.profiles.active\"=prod", "-jar", "/api.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "/api.jar"]
