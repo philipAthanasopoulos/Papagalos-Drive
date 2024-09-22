@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="test new jarfile">
-      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/repository/FolderRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/repository/FolderRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,39 +160,38 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn build" />
-      <command value="mvn package" />
       <command value="mvn package -DskipTests" />
       <command value="mvn clean package" />
+      <command value="mvn package" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.SchoolioApiApplication">
-    <configuration name="FolderServiceTest.getFolderByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FolderRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="schoolio-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.schoolioapi.service.*" />
+          <option name="PATTERN" value="org.example.schoolioapi.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.schoolioapi.service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.service.FolderServiceTest" />
-      <option name="METHOD_NAME" value="getFolderByName" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="org.example.schoolioapi.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.repository.FolderRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FolderServiceTest.testDuplicateSubFolderName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FolderRepositoryTest.findByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="schoolio-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.schoolioapi.service.*" />
+          <option name="PATTERN" value="org.example.schoolioapi.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.example.schoolioapi.service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.service.FolderServiceTest" />
-      <option name="METHOD_NAME" value="testDuplicateSubFolderName" />
+      <option name="PACKAGE_NAME" value="org.example.schoolioapi.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.repository.FolderRepositoryTest" />
+      <option name="METHOD_NAME" value="findByName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -251,19 +251,19 @@
     </configuration>
     <list>
       <item itemvalue="Docker.schoolio-api/Dockerfile" />
-      <item itemvalue="JUnit.FolderServiceTest.getFolderByName" />
-      <item itemvalue="JUnit.FolderServiceTest.testDuplicateSubFolderName" />
+      <item itemvalue="JUnit.FolderRepositoryTest" />
+      <item itemvalue="JUnit.FolderRepositoryTest.findByName" />
       <item itemvalue="JUnit.java in schoolio-api" />
       <item itemvalue="JUnit.NoteServiceTest.saveNote" />
       <item itemvalue="Spring Boot.SchoolioApiApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.schoolio-api/Dockerfile" />
+        <item itemvalue="JUnit.FolderRepositoryTest" />
+        <item itemvalue="JUnit.FolderRepositoryTest.findByName" />
         <item itemvalue="JUnit.java in schoolio-api" />
+        <item itemvalue="Docker.schoolio-api/Dockerfile" />
         <item itemvalue="JUnit.NoteServiceTest.saveNote" />
-        <item itemvalue="JUnit.FolderServiceTest.testDuplicateSubFolderName" />
-        <item itemvalue="JUnit.FolderServiceTest.getFolderByName" />
       </list>
     </recent_temporary>
   </component>
@@ -466,7 +466,7 @@
       <workItem from="1726820391353" duration="5208000" />
       <workItem from="1726937182831" duration="1568000" />
       <workItem from="1726939704442" duration="1757000" />
-      <workItem from="1726989142553" duration="1057000" />
+      <workItem from="1726989142553" duration="2606000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -708,7 +708,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726989843491</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="test new jarfile">
+      <option name="closed" value="true" />
+      <created>1726990241154</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1726990241155</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
