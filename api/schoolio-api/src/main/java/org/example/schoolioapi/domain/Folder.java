@@ -43,14 +43,6 @@ public class Folder {
         if (this.subFolders == null) this.subFolders = new ArrayList<>();
         subFolders.add(subFolder);
     }
-
-    public boolean containsFolderWithName(String name) {
-        return getSubFolders().stream().map(Folder::getName).toList().contains(name);
-    }
-
-    public boolean containsNoteWithName(String name){
-        return getNotes().stream().map(Note::getName).toList().contains(name);
-    }
 }
 
 

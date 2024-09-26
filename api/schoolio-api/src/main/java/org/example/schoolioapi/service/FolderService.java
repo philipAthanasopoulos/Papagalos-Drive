@@ -38,7 +38,7 @@ public class FolderService {
     }
 
     public Folder addSubFolderToFolder(Folder folder, Folder subFolder) throws Exception {
-        if (folder.containsFolderWithName(subFolder.getName()))
+        if (folderContainsSubFolderWithName(folder.getName(), subFolder.getName()))
             throw new Exception("Folder with name *" + subFolder.getName() + "* already exists in folder *" + subFolder.getName() + "*");
         else if (isFolderNameInvalid(subFolder.getName()))
             throw new Exception("Invalid name");
@@ -67,7 +67,7 @@ public class FolderService {
         Folder folderToPatch = this.getFolderById(id);
         if (folderToPatch == null) return null;
         if (updatedFolder.name() != null) {
-            if (folderToPatch.containsFolderWithName(updatedFolder.name()))
+            if (folderContainsSubFolderWithName(folderToPatch.getName(), updatedFolder.name()))
                 throw new Exception("Folder with name *" + updatedFolder.name() + "* already exists in folder *" + updatedFolder.name() + "*");
             else if (!isFolderNameInvalid(updatedFolder.name())) {
                 throw new Exception("Folder name is invalid");
@@ -75,6 +75,10 @@ public class FolderService {
                 folderToPatch.setName(updatedFolder.name());
         }
         return this.saveFolder(folderToPatch);
+    }
+
+    private boolean folderContainsSubFolderWithName(String parentName, String subFolderName) {
+        return folderRepository.findByParentNameAndName(parentName, subFolderName);
     }
 
     private boolean isFolderNameInvalid(String name) {

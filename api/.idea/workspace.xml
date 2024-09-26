@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="test new jarfile">
+      <change afterPath="$PROJECT_DIR$/schoolio-api/UML/users.svg.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.env.production" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Folder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/FolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/FolderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/NoteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/NoteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NoteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/env/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/env/env.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -469,7 +478,9 @@
       <workItem from="1726989142553" duration="3172000" />
       <workItem from="1727003282167" duration="2060000" />
       <workItem from="1727083891236" duration="734000" />
-      <workItem from="1727084638765" duration="2436000" />
+      <workItem from="1727084638765" duration="2826000" />
+      <workItem from="1727099966461" duration="4851000" />
+      <workItem from="1727180575707" duration="680000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -767,7 +778,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727086872375</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="test new jarfile">
+      <option name="closed" value="true" />
+      <created>1727087133590</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1727087133590</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -809,66 +828,70 @@
     <MESSAGE value="test new jarfile" />
     <option name="LAST_COMMIT_MESSAGE" value="test new jarfile" />
   </component>
-  <component name="WfRunsListSearchHistory"><![CDATA[{
-  "history": [
+  <component name="WfRunsListSearchHistory">{
+  &quot;history&quot;: [
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
+    },
+    {
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     }
   ],
-  "lastFilter": {
-    "branch": "main",
-    "currentBranchFilter": true
+  &quot;lastFilter&quot;: {
+    &quot;branch&quot;: &quot;main&quot;,
+    &quot;currentBranchFilter&quot;: true
   }
-}]]></component>
+}</component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/api$FolderServiceTest.ic" NAME="FolderServiceTest Coverage Results" MODIFIED="1726140323498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>org.example.schoolioapi.service.*</FILTER>

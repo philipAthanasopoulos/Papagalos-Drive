@@ -26,6 +26,7 @@ export const FolderComponent: React.FC = () => {
 
     useEffect(() => {
         const fetchFolder = async () => {
+            console.log(webApi)
             try {
                 const response = await axios.get<FolderDTO>(`${webApi}/folder/${id}`);
                 setFolder(new FolderDTO(response.data));

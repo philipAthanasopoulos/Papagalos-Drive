@@ -21,14 +21,18 @@ public class NoteService {
         this.noteBlobService = noteBlobService;
     }
 
-    public Note saveNote(Note note) throws Exception {
-
+    public void saveNote(Note note) throws Exception {
         if (isNoteNameInvalid(note.getName()))
             throw new Exception("Invalid note name");
-        else if (note.getParentFolder().containsNoteWithName(note.getName()))
+        else if (fileWithNameExistsInParentFolder(note.getName(), note.getParentFolder().getName()))
             throw new Exception("File with name *"+ note.getName() +"* already exists");
-        else
-            return noteRepository.save(note);
+        else {
+            noteRepository.save(note);
+        }
+    }
+
+    private boolean fileWithNameExistsInParentFolder(String fileName, String parentFolderName){
+        return noteRepository.findByNameAndParentFolderName(fileName,parentFolderName);
     }
 
     private boolean isNoteNameInvalid(String name) {

@@ -1,3 +1,2 @@
-export const webApi = "https://schoolio.onrender.com";
-// export const webApi = "http://localhost:8080";
+export const webApi = process.env.REACT_APP_WEB_API;
     
