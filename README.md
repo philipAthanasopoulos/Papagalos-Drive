@@ -9,7 +9,7 @@ This is a more sophisticated rework of the [uni-drive](https://github.com/philip
 **[Try it here](https://papagalos-drive.web.app/)**  
 
 
-![diagram-export-08-08-2024-01_03_18](https://github.com/user-attachments/assets/b4b66287-c114-42ba-b91b-39f8c37bd7de)  
+![diagram-export-26-09-2024-10_20_46](https://github.com/user-attachments/assets/f1ca984e-ffae-4eba-a0d3-629101928270)
 
 
     
