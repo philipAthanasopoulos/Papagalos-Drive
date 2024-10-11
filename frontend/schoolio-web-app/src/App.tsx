@@ -10,7 +10,6 @@ import Hero from './components/MainPage/Hero';
 import MainNavBar from './components/NavBar/MainNavBar';
 import { NoteComponent } from './components/Note/NoteComponent';
 import { SupportSection } from './components/SupportSection';
-import {NewsArticleComponent} from "./components/News/NewsArticleComponent";
 import {NewsArticleHolder} from "./components/News/NewsArticleHolder";
 
 

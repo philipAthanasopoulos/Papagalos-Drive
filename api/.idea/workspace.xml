@@ -4,25 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="test new jarfile">
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NewsArticleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/NewsArticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/NewsArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NewsArticleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/ArticleDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleHolder.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added news articles">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/FolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/FolderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/templates/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/templates/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/service/FolderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/service/FolderServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,9 +159,9 @@
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn build" />
-      <command value="mvn package -DskipTests" />
       <command value="mvn package" />
       <command value="mvn clean package" />
+      <command value="mvn package -DskipTests" />
     </option>
   </component>
   <component name="RunManager" selected="JUnit.FolderServiceTest.getFolderById">
@@ -505,7 +488,7 @@
       <workItem from="1728468410436" duration="2437000" />
       <workItem from="1728476091436" duration="1429000" />
       <workItem from="1728651355765" duration="562000" />
-      <workItem from="1728655741819" duration="999000" />
+      <workItem from="1728655741819" duration="1944000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -819,7 +802,23 @@
       <option name="project" value="LOCAL" />
       <updated>1727335457983</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="added news articles">
+      <option name="closed" value="true" />
+      <created>1728657305234</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1728657305234</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added news articles">
+      <option name="closed" value="true" />
+      <created>1728657335274</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1728657335274</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -859,7 +858,8 @@
     <MESSAGE value="updated application.properties" />
     <MESSAGE value="big update" />
     <MESSAGE value="test new jarfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="test new jarfile" />
+    <MESSAGE value="added news articles" />
+    <option name="LAST_COMMIT_MESSAGE" value="added news articles" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
