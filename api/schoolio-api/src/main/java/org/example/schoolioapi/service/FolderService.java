@@ -78,7 +78,7 @@ public class FolderService {
     }
 
     private boolean folderContainsSubFolderWithName(String parentName, String subFolderName) {
-        return folderRepository.findByParentNameAndName(parentName, subFolderName);
+        return folderRepository.findByParentNameAndName(parentName, subFolderName) != null;
     }
 
     private boolean isFolderNameInvalid(String name) {

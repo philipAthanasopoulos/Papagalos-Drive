@@ -30,10 +30,10 @@ public class FolderController {
     @CacheEvict(value = "folderDTO", key = "#id")
     public ResponseEntity<FolderDTO> updateFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
         try {
-            Folder patched = this.folderService.updateFields(id, folderDTO);
-            return ResponseEntity.ok(FolderDTO.from(patched));
+            Folder updateFolder = this.folderService.updateFields(id, folderDTO);
+            return ResponseEntity.ok(FolderDTO.from(updateFolder));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
     }
 
@@ -46,7 +46,7 @@ public class FolderController {
             Folder updatedFolder = folderService.addSubFolderToFolder(parentFolder, newFolder);
             return ResponseEntity.ok(FolderDTO.from(updatedFolder).toString());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 }

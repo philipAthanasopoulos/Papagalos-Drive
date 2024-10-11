@@ -5,18 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="test new jarfile">
-      <change afterPath="$PROJECT_DIR$/schoolio-api/UML/users.svg.drawio" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.env.production" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/NewsArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/NewsArticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/NewsArticleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NewsArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/ArticleDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleHolder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Folder.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Folder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/FolderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/FolderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/NoteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/NoteRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/NoteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/env/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/env/env.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/templates/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/templates/hello.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/service/FolderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/test/java/org/example/schoolioapi/service/FolderServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +36,8 @@
         <option value="Kotlin Class" />
         <option value="Interface" />
         <option value="Record" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -139,7 +145,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Dell\\Downloads\\ideaIU-2024.1.4.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -175,7 +181,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SchoolioApiApplication">
+  <component name="RunManager" selected="JUnit.FolderServiceTest.getFolderById">
     <configuration name="FolderRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="schoolio-api" />
       <extension name="coverage">
@@ -191,23 +197,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FolderRepositoryTest.findByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="schoolio-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.schoolioapi.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.schoolioapi.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.repository.FolderRepositoryTest" />
-      <option name="METHOD_NAME" value="findByName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NoteServiceTest.saveNote" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FolderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="schoolio-api" />
       <extension name="coverage">
         <pattern>
@@ -216,8 +206,39 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.example.schoolioapi.service" />
-      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.service.NoteServiceTest" />
-      <option name="METHOD_NAME" value="saveNote" />
+      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.service.FolderServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FolderServiceTest.getFolderById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="schoolio-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.schoolioapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.schoolioapi.service" />
+      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.service.FolderServiceTest" />
+      <option name="METHOD_NAME" value="getFolderById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FolderServiceTest.testDuplicateSubFolderName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="schoolio-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.schoolioapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.schoolioapi.service" />
+      <option name="MAIN_CLASS_NAME" value="org.example.schoolioapi.service.FolderServiceTest" />
+      <option name="METHOD_NAME" value="testDuplicateSubFolderName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -250,29 +271,21 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="schoolio-api/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="schoolio-api/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.schoolio-api/Dockerfile" />
+      <item itemvalue="JUnit.FolderServiceTest.getFolderById" />
+      <item itemvalue="JUnit.FolderServiceTest" />
+      <item itemvalue="JUnit.FolderServiceTest.testDuplicateSubFolderName" />
       <item itemvalue="JUnit.FolderRepositoryTest" />
-      <item itemvalue="JUnit.FolderRepositoryTest.findByName" />
       <item itemvalue="JUnit.java in schoolio-api" />
-      <item itemvalue="JUnit.NoteServiceTest.saveNote" />
       <item itemvalue="Spring Boot.SchoolioApiApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FolderServiceTest.getFolderById" />
+        <item itemvalue="JUnit.FolderServiceTest" />
         <item itemvalue="JUnit.FolderRepositoryTest" />
-        <item itemvalue="JUnit.FolderRepositoryTest.findByName" />
         <item itemvalue="JUnit.java in schoolio-api" />
-        <item itemvalue="Docker.schoolio-api/Dockerfile" />
-        <item itemvalue="JUnit.NoteServiceTest.saveNote" />
+        <item itemvalue="JUnit.FolderServiceTest.testDuplicateSubFolderName" />
       </list>
     </recent_temporary>
   </component>
@@ -481,6 +494,18 @@
       <workItem from="1727084638765" duration="2826000" />
       <workItem from="1727099966461" duration="4851000" />
       <workItem from="1727180575707" duration="680000" />
+      <workItem from="1727335415241" duration="999000" />
+      <workItem from="1727427919728" duration="243000" />
+      <workItem from="1727618447823" duration="162000" />
+      <workItem from="1727619738849" duration="143000" />
+      <workItem from="1727688856069" duration="2087000" />
+      <workItem from="1727690987484" duration="2900000" />
+      <workItem from="1728225050648" duration="680000" />
+      <workItem from="1728292881838" duration="398000" />
+      <workItem from="1728468410436" duration="2437000" />
+      <workItem from="1728476091436" duration="1429000" />
+      <workItem from="1728651355765" duration="562000" />
+      <workItem from="1728655741819" duration="999000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -786,7 +811,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727087133590</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="test new jarfile">
+      <option name="closed" value="true" />
+      <created>1727335457983</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1727335457983</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />

@@ -13,6 +13,7 @@ public interface FolderRepository extends JpaRepository<Folder, Long> {
 
     Folder findFolderByNotesContaining(Note note);
 
-    boolean findByParentNameAndName(String parentName, String subFolderName);
+    Folder findByParentNameAndName(String parentName, String subFolderName);
 
+    Folder getByName(String parent);
 }

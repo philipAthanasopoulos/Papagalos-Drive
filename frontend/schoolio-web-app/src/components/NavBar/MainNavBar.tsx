@@ -21,7 +21,7 @@ const MainNavBar = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
                 <Nav.Link className='text-light' href="/folder/1">Σημειώσεις</Nav.Link>
-                <Nav.Link className='text-light' href="/">Νέα</Nav.Link>
+                <Nav.Link className='text-light' href="/news">Νέα</Nav.Link>
                 <NavDropdown title={<span className='text-light'>Ενέργειες</span>} >
                   <NavDropdown.Item href="/">Action</NavDropdown.Item>
                   <NavDropdown.Item href="/">Another action</NavDropdown.Item>

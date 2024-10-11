@@ -61,8 +61,10 @@ class FolderServiceTest {
 
     @Test
     void testDuplicateSubFolderName() throws Exception {
-        Folder parent = folderRepository.save(new Folder("parent"));
+        folderRepository.save(new Folder("parent"));
+        Folder parent = folderRepository.getByName("parent");
         folderService.addSubFolderToFolder(parent, new Folder("child"));
         assertThrows(Exception.class, () -> folderService.addSubFolderToFolder(parent, new Folder("child")));
+        assertDoesNotThrow(() -> folderService.addSubFolderToFolder(parent,new Folder("child2")));
     }
 }

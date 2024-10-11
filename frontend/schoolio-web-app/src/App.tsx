@@ -10,6 +10,8 @@ import Hero from './components/MainPage/Hero';
 import MainNavBar from './components/NavBar/MainNavBar';
 import { NoteComponent } from './components/Note/NoteComponent';
 import { SupportSection } from './components/SupportSection';
+import {NewsArticleComponent} from "./components/News/NewsArticleComponent";
+import {NewsArticleHolder} from "./components/News/NewsArticleHolder";
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
               <Route path="/help" element={<SupportSection />} />
               <Route path="/main" element={<Hero />} />
               <Route path="/login" element={<LoginForm />} />
+              <Route path="/news" element={<NewsArticleHolder/>} />
             </Routes>
           </Container>
           <Footer />
