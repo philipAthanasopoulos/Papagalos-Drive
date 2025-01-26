@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGO_DB_CONNECTION_URL}
+      database: ${MONGO_DB_DATABASE_NAME}
+  datasource:
+    url: ${PSQL_DATABASE_URL}
+    username: ${PSQL_DATABASE_USERNAME}
+    password: ${PSQL_DATABASE_PASSWORD}

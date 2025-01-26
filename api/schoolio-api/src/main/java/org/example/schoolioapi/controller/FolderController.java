@@ -26,16 +26,18 @@ public class FolderController {
         return folderService.getFolderByIdAsDTO(id);
     }
 
-    @PatchMapping("/folder/{id}")
-    @CacheEvict(value = "folderDTO", key = "#id")
-    public ResponseEntity<FolderDTO> updateFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
-        try {
-            Folder updateFolder = this.folderService.updateFields(id, folderDTO);
-            return ResponseEntity.ok(FolderDTO.from(updateFolder));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-        }
-    }
+    //TODO
+    //Enable when production ready
+//    @PatchMapping("/folder/{id}")
+//    @CacheEvict(value = "folderDTO", key = "#id")
+//    public ResponseEntity<FolderDTO> updateFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
+//        try {
+//            Folder updateFolder = this.folderService.updateFields(id, folderDTO);
+//            return ResponseEntity.ok(FolderDTO.from(updateFolder));
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+//        }
+//    }
 
     @PostMapping("/folder/{id}/subfolders")
     @CacheEvict(value = "folderDTO", key = "#id")

@@ -4,8 +4,8 @@ import papagalos from "../../images/cool.png"
 
 export const LoginForm = () => {
   return (
-    <div>
-      <Container className='border rounded' >
+    <div className="pt-5">
+      <Container className='border rounded pt-5' >
         <Row className="justify-content-center align-items-center">
           <Col xs={12} sm={10} md={8} lg={6} className='justify-content-center align-items-center'>
             <Form>

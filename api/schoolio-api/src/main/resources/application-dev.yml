@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: Notes
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rel_database
+    username: postgres
+    password: root

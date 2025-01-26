@@ -11,6 +11,7 @@ import MainNavBar from './components/NavBar/MainNavBar';
 import { NoteComponent } from './components/Note/NoteComponent';
 import { SupportSection } from './components/SupportSection';
 import {NewsArticleHolder} from "./components/News/NewsArticleHolder";
+import {RegisterForm} from "./components/Register/RegisterForm";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route path="/main" element={<Hero />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/news" element={<NewsArticleHolder/>} />
+              <Route path="/register" element={<RegisterForm/>} />
             </Routes>
           </Container>
           <Footer />
