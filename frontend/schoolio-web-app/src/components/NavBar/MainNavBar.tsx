@@ -1,5 +1,5 @@
-import {DropdownButton, DropdownDivider, DropdownItem, Image, NavDropdown} from 'react-bootstrap';
-import {BookmarkHeart, BoxArrowLeft, FileEarmarkPerson, Headset, InfoCircle, PersonCircle} from 'react-bootstrap-icons';
+import {Image, NavDropdown} from 'react-bootstrap';
+import {Headset, InfoCircle} from 'react-bootstrap-icons';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
