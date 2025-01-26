@@ -39,18 +39,18 @@ const MainNavBar = () => {
                         <Nav.Link className='text-light' eventKey={2} href="/help">
                             <Headset/> Υποστήριξη
                         </Nav.Link>
-                        <DropdownButton size='lg' title={<PersonCircle/>} className='me-4'>
-                            <DropdownItem>
-                                <FileEarmarkPerson/> Το προφίλ μου
-                            </DropdownItem>
-                            <DropdownItem>
-                                <BookmarkHeart/> Οι σημειώσεις μου
-                            </DropdownItem>
-                            <DropdownDivider/>
-                            <DropdownItem>
-                                <BoxArrowLeft/> Αποσύνδεση
-                            </DropdownItem>
-                        </DropdownButton>
+                        {/*<DropdownButton size='lg' title={<PersonCircle/>} className='me-4'>*/}
+                        {/*    <DropdownItem>*/}
+                        {/*        <FileEarmarkPerson/> Το προφίλ μου*/}
+                        {/*    </DropdownItem>*/}
+                        {/*    <DropdownItem>*/}
+                        {/*        <BookmarkHeart/> Οι σημειώσεις μου*/}
+                        {/*    </DropdownItem>*/}
+                        {/*    <DropdownDivider/>*/}
+                        {/*    <DropdownItem>*/}
+                        {/*        <BoxArrowLeft/> Αποσύνδεση*/}
+                        {/*    </DropdownItem>*/}
+                        {/*</DropdownButton>*/}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
