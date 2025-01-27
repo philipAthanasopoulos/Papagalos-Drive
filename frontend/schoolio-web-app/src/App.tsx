@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useEffect} from 'react';
-import {Alert, Container, Row} from 'react-bootstrap';
+import {Alert, Container} from 'react-bootstrap';
 import {Navigate, Route, Routes, useLocation} from 'react-router-dom';
 import './App.css';
 import {FolderComponent} from './components/Folder/FolderComponent';

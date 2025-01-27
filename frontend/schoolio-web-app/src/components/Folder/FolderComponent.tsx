@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {Col, Container, Image, Row} from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import {FolderFill} from 'react-bootstrap-icons';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
