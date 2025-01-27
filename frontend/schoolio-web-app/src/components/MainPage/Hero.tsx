@@ -6,6 +6,7 @@ import browsing from "../../images/Devices-cuate.svg"
 import dottedArrow from "../../images/dottedArrow.jpg"
 import glasses from "../../images/Reading glasses-cuate.svg"
 import students from "../../images/Students-cuate.svg"
+import "./hero.css"
 
 const Hero = () => {
   return (
@@ -20,7 +21,7 @@ const Hero = () => {
               <b>Σημειώσεις από κάθε γωνιά της Ελλάδας, στα χέρια σου!</b>
             </h1>
             <Link to={"/folder/1"}>
-              <Button size='lg' className="mt-3 mt-md-0 rounded-pill" style={{ background: `${colors.carrot_orange}`, border: "none" }}>Μπες τώρα, δωρεάν!</Button>
+              <Button size='lg' className="mt-3 mt-md-0 rounded-pill " style={{ background: `${colors.carrot_orange}`, border: "none" }}>Μπες τώρα, δωρεάν! 🚀</Button>
             </Link>
             <br />
             <Image src={dottedArrow}/>

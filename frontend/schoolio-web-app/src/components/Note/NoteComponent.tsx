@@ -9,6 +9,7 @@ import { webApi } from '../../env/env';
 import { fileIcons } from '../FileIcons';
 import { DownloadFileButton } from './DownloadFileButton';
 import { NoteDTO } from "./NoteDTO";
+import LoadingComponent from "../Loading/LoadingComponent";
 
 export const NoteComponent = () => {
   const id = Number(useParams<{ id: string }>().id);
@@ -92,9 +93,7 @@ export const NoteComponent = () => {
     <Row className='pt-5'>
       <Col xs={12}>
         {loading ? (
-          <div className='d-flex justify-content-center'>
-            <ReactLoading type='bubbles' color={getRandomColor()} />
-          </div>
+          <LoadingComponent />
         ) : (
           <div>
             <div className='d-flex text-primary mb-4 align-items-center '>

@@ -1,0 +1,18 @@
+/* Add this CSS to your stylesheet */
+.button-hover-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.button-hover-effect::after {
+    content: '🚀';
+    position: absolute;
+    right: -30px;
+    transition: right 0.3s ease-in-out;
+}
+
+.button-hover-effect:hover::after {
+    right: 10px;
+}

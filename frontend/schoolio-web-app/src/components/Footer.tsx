@@ -5,7 +5,7 @@ import colors from '../colors';
 
 export const Footer = () => {
   return (
-    <div  className="text-white py-4" style={{background:`${colors.sandy_brown}`, flexShrink:"0"}}>
+    <div className="text-white py-4" style={{background:`${colors.sandy_brown}`, flexShrink:"0"}}>
       <Container>
         <Row>
           <Col md={6} className="text-center text-md-left">

@@ -28,8 +28,8 @@ function App() {
                 <br/>
                 <br/>
                 <Alert variant={"warning"} className="text-center mt-5 justify-content-center">
-                    🚧👷‍♂️ Αυτή η σελίδα είναι ακόμα υπό κατασκευή. Ορισμένες λειτουργίες μπορεί να μην λειτουργούν
-                    ακόμα, αλλά δουλεύουμε σκληρά! 🏗️🔧
+                    🚧👷‍♂️ Ο Παπαγάλος είναι ακόμα <u>υπό κατασκευή</u>. Ορισμένες λειτουργίες μπορεί να μην δουλεύουν
+                    ακόμα.👷‍♂️🚧
                 </Alert>
                 <Container className="d-flex flex-column  align-items-center"
                            style={{marginTop: "70px", minHeight: "100vh"}}>
