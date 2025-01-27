@@ -15,5 +15,4 @@ public record UserDTO(String firstName,
                 .email(user.getEmail())
                 .build();
     }
-
 }

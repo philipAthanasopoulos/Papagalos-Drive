@@ -7,7 +7,7 @@ spring:
     url: ${PSQL_DATABASE_URL}
     username: ${PSQL_DATABASE_USERNAME}
     password: ${PSQL_DATABASE_PASSWORD}
-
+#
 #spring:
 #  data:
 #    mongodb:
