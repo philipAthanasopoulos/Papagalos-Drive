@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Skeleton from 'react-loading-skeleton';
 import { useParams } from 'react-router-dom';
-import colors from '../../colors';
 import { webApi } from '../../env/env';
 import { fileIcons } from '../FileIcons';
 import { DownloadFileButton } from './DownloadFileButton';
