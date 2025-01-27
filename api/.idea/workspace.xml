@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="fixed note repository query">
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Loading/LoadingComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/hero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/templates/hello.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/templates/hello.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -522,7 +514,7 @@
       <workItem from="1737992283174" duration="1963000" />
       <workItem from="1737998113222" duration="2070000" />
       <workItem from="1738010854960" duration="388000" />
-      <workItem from="1738012978206" duration="2874000" />
+      <workItem from="1738012978206" duration="3475000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />

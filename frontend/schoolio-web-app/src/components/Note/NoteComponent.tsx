@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import ReactLoading from 'react-loading';
 import Skeleton from 'react-loading-skeleton';
 import { useParams } from 'react-router-dom';
 import colors from '../../colors';
@@ -70,11 +69,6 @@ export const NoteComponent = () => {
     wav: "audio/wav",
     zip: "application/zip",
     rar: "application/x-rar-compressed"
-  };
-
-  const getRandomColor = () => {
-    const colorValues= Object.values(colors);
-    return colorValues[Math.floor(Math.random() * colorValues.length)];
   };
   
   const displayMedia = () => {
