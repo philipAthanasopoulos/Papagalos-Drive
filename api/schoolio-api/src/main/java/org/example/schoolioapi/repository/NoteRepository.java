@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface NoteRepository extends JpaRepository<Note, Long> {
 
-    boolean findByNameAndParentFolderName(String noteName, String parentFolderName);
+    boolean existsByNameAndParentFolderName(String noteName, String parentFolderName);
+
 }

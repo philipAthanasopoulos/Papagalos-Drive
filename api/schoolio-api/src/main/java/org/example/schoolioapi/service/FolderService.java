@@ -32,9 +32,10 @@ public class FolderService {
     }
 
     public Folder addNoteToFolder(Folder folder, Note note) throws Exception {
-        noteService.saveNote(note);
+        note = noteService.saveNote(note);
         folder.addNote(note);
-        return folderRepository.save(folder);
+        Folder saved = folderRepository.save(folder);
+        return saved;
     }
 
     public Folder addSubFolderToFolder(Folder folder, Folder subFolder) throws Exception {

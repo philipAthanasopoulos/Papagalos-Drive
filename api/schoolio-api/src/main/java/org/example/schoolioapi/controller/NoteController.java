@@ -37,16 +37,15 @@ public class NoteController {
     public ResponseEntity<FolderDTO> uploadNote(
             @PathVariable Long id,
             @RequestParam("title") String title,
-            @RequestParam("file") MultipartFile file) throws IOException
-
-    {
+            @RequestParam("file") MultipartFile file) throws IOException {
         Folder folder = folderService.getFolderById(id);
         NoteBlob blob = noteBlobService.saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
+        Note note = new Note(title, FileType.valueOf(getFileExtension(file)), blob.getId(), folder);
         try {
-            Note note = new Note(title, FileType.valueOf(getFileExtension(file)), blob.getId(), folder);
             Folder updatedFolder = folderService.addNoteToFolder(folder, note);
             return ResponseEntity.ok(FolderDTO.from(updatedFolder));
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         }
     }
