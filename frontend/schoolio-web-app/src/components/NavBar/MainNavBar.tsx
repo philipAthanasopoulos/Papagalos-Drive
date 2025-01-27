@@ -8,6 +8,7 @@ import colors from '../../colors';
 import papagalos_png from '../../images/cool.png';
 import papagalos_title from '../../images/textLogo.png';
 import React from "react";
+import under_construction from '../../images/under_construction.png';
 
 const MainNavBar = () => {
 

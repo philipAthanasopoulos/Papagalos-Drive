@@ -23,7 +23,6 @@ const Hero = () => {
               <Button size='lg' className="mt-3 mt-md-0 rounded-pill" style={{ background: `${colors.carrot_orange}`, border: "none" }}>Μπες τώρα, δωρεάν!</Button>
             </Link>
             <br />
-            {/* <ArrowDown size={50} className='mt-5 text-muted' /> */}
             <Image src={dottedArrow}/>
           </Col>
         </Row>

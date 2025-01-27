@@ -1,47 +1,47 @@
-spring:
-  data:
-    mongodb:
-      uri: ${MONGO_DB_CONNECTION_URL}
-      database: ${MONGO_DB_DATABASE_NAME}
-  datasource:
-    url: ${PSQL_DATABASE_URL}
-    username: ${PSQL_DATABASE_USERNAME}
-    password: ${PSQL_DATABASE_PASSWORD}
-#
 #spring:
 #  data:
 #    mongodb:
-#      host: localhost
-#      port: 27017
-#      database: Notes
+#      uri: ${MONGO_DB_CONNECTION_URL}
+#      database: ${MONGO_DB_DATABASE_NAME}
 #  datasource:
-#    url: jdbc:postgresql://localhost:5432/rel_database
-#    username: postgres
-#    password: root
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        format_sql: true
-#  servlet:
-#    multipart:
-#      max-file-size: 10MB
-#      max-request-size: 10MB
+#    url: ${PSQL_DATABASE_URL}
+#    username: ${PSQL_DATABASE_USERNAME}
+#    password: ${PSQL_DATABASE_PASSWORD}
 #
-#logging:
-#  level:
-#    org:
-#      hibernate:
-#        SQL: DEBUG
-#        type:
-#          descriptor:
-#            sql:
-#              BasicBinder: TRACE
-#      springframework:
-#        data:
-#          mongodb:
-#            core:
-#              MongoTemplate: DEBUG
-#              MongoOperations: DEBUG
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: Notes
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rel_database
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+              MongoOperations: DEBUG

@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="disabled folder field updating endpoint">
+      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/under_construction.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/security/SecurityConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -523,7 +520,8 @@
       <workItem from="1737560407736" duration="621000" />
       <workItem from="1737811429062" duration="3000" />
       <workItem from="1737924556424" duration="2956000" />
-      <workItem from="1737974803434" duration="469000" />
+      <workItem from="1737974803434" duration="919000" />
+      <workItem from="1737983253554" duration="1689000" />
     </task>
     <task id="LOCAL-00003" summary="added JsonIgnoreProperties for subfolder objects so that only ids are returned">
       <option name="closed" value="true" />
@@ -877,7 +875,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737925945101</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="disabled folder field updating endpoint">
+      <option name="closed" value="true" />
+      <created>1737975375004</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1737975375004</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -921,78 +927,78 @@
     <MESSAGE value="disabled folder field updating endpoint" />
     <option name="LAST_COMMIT_MESSAGE" value="disabled folder field updating endpoint" />
   </component>
-  <component name="WfRunsListSearchHistory"><![CDATA[{
-  "history": [
+  <component name="WfRunsListSearchHistory">{
+  &quot;history&quot;: [
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     },
     {
-      "branch": "main",
-      "currentBranchFilter": true
+      &quot;branch&quot;: &quot;main&quot;,
+      &quot;currentBranchFilter&quot;: true
     }
   ],
-  "lastFilter": {
-    "branch": "main",
-    "currentBranchFilter": true
+  &quot;lastFilter&quot;: {
+    &quot;branch&quot;: &quot;main&quot;,
+    &quot;currentBranchFilter&quot;: true
   }
-}]]></component>
+}</component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/api$FolderServiceTest.ic" NAME="FolderServiceTest Coverage Results" MODIFIED="1726140323498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>org.example.schoolioapi.service.*</FILTER>
