@@ -1,14 +1,9 @@
 package org.example.schoolioapi.controller;
 
-import org.bson.types.Binary;
 import org.example.schoolioapi.DTO.FolderDTO;
 import org.example.schoolioapi.DTO.NoteDTO;
-import org.example.schoolioapi.domain.FileType;
-import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.domain.Note;
-import org.example.schoolioapi.domain.NoteBlob;
 import org.example.schoolioapi.service.FolderService;
-import org.example.schoolioapi.service.NoteBlobService;
 import org.example.schoolioapi.service.NoteService;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.http.HttpStatus;
@@ -24,12 +19,10 @@ import java.util.List;
 public class NoteController {
     private final NoteService noteService;
     private final FolderService folderService;
-    private final NoteBlobService noteBlobService;
 
-    public NoteController(NoteService noteService, FolderService folderService, NoteBlobService mongoRepository) {
+    public NoteController(NoteService noteService, FolderService folderService) {
         this.noteService = noteService;
         this.folderService = folderService;
-        this.noteBlobService = mongoRepository;
     }
 
     @PostMapping("/folder/{id}/notes")
@@ -38,21 +31,14 @@ public class NoteController {
             @PathVariable Long id,
             @RequestParam("title") String title,
             @RequestParam("file") MultipartFile file) throws IOException {
-        Folder folder = folderService.getFolderById(id);
-        NoteBlob blob = noteBlobService.saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
-        Note note = new Note(title, FileType.valueOf(getFileExtension(file)), blob.getId(), folder);
         try {
-            Folder updatedFolder = folderService.addNoteToFolder(folder, note);
-            return ResponseEntity.ok(FolderDTO.from(updatedFolder));
+            Note note = noteService.saveNote(title, file);
+            folderService.addNoteToFolder(id, note.getId());
+            return ResponseEntity.ok(FolderDTO.from(folderService.getFolderById(id)));
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
         }
-    }
-
-    private String getFileExtension(MultipartFile file) {
-        String name = file.getOriginalFilename();
-        return name.substring(name.lastIndexOf(".") + 1).toUpperCase();
     }
 
     @GetMapping("/note/{id}")

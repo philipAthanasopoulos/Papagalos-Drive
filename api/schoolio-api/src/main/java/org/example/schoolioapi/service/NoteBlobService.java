@@ -1,9 +1,13 @@
 package org.example.schoolioapi.service;
 
+import org.bson.types.Binary;
 import org.example.schoolioapi.domain.NoteBlob;
 import org.example.schoolioapi.repository.NoteBlobRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Service
 @Transactional
@@ -24,5 +28,9 @@ public class NoteBlobService {
 
     public void deleteNoteBlobById(String id) {
         noteBlobRepository.deleteById(id);
+    }
+
+    public NoteBlob saveNoteBlob(MultipartFile file) throws IOException {
+        return saveNoteBlob(new NoteBlob(new Binary(file.getBytes())));
     }
 }

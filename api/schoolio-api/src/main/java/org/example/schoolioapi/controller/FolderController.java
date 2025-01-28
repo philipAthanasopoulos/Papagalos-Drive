@@ -42,11 +42,11 @@ public class FolderController {
     @PostMapping("/folder/{id}/subfolders")
     @CacheEvict(value = "folderDTO", key = "#id")
     public ResponseEntity<String> addSubFolder(@PathVariable Long id, @RequestParam String subFolderName) {
-        Folder parentFolder = folderService.getFolderById(id);
-        Folder newFolder = new Folder(subFolderName);
         try {
-            Folder updatedFolder = folderService.addSubFolderToFolder(parentFolder, newFolder);
-            return ResponseEntity.ok(FolderDTO.from(updatedFolder).toString());
+            Folder newFolder = folderService.saveFolder(Folder.builder().name(subFolderName).build());
+            folderService.addSubFolderToFolder(id, newFolder.getId());
+            Folder parent = folderService.getFolderById(id);
+            return ResponseEntity.ok(FolderDTO.from(parent).toString());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

@@ -31,11 +31,11 @@ public class FolderService {
         return FolderDTO.from(this.getFolderById(id));
     }
 
-    public Folder addNoteToFolder(Folder folder, Note note) throws Exception {
-        note = noteService.saveNote(note);
+    public void addNoteToFolder(Long folderId, Long noteId){
+        Folder folder= getFolderById(folderId);
+        Note note = noteService.getNoteById(noteId).orElse(null);
         folder.addNote(note);
-        Folder saved = folderRepository.save(folder);
-        return saved;
+        folderRepository.save(folder);
     }
 
     public Folder addSubFolderToFolder(Folder folder, Folder subFolder) throws Exception {
@@ -49,6 +49,14 @@ public class FolderService {
             folderRepository.save(subFolder);
             return folderRepository.save(folder);
         }
+    }
+
+    public void addSubFolderToFolder(Long parentFolderId, Long subFolderId){
+        Folder parentFolder = getFolderById(parentFolderId);
+        Folder subFolder = getFolderById(subFolderId);
+        parentFolder.addSubFolder(subFolder);
+        saveFolder(subFolder);
+        saveFolder(parentFolder);
     }
 
     public Folder getFolderByName(String name) {

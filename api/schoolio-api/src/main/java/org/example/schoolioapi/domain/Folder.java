@@ -37,11 +37,13 @@ public class Folder {
     public void addNote(Note note) {
         if (this.notes == null) this.notes = new ArrayList<>();
         notes.add(note);
+        note.setParentFolder(this);
     }
 
     public void addSubFolder(Folder subFolder) {
         if (this.subFolders == null) this.subFolders = new ArrayList<>();
         subFolders.add(subFolder);
+        subFolder.setParent(this);
     }
 }
 
