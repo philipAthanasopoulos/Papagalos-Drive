@@ -1,5 +1,5 @@
 import {Button, Card, Container, FloatingLabel, Form, FormControl} from "react-bootstrap";
-import {webApi} from "../../env/env";
+import {apiBaseURL} from "../../env/env";
 import colors from "../../colors";
 
 export const RegisterForm = () => {
@@ -9,7 +9,7 @@ export const RegisterForm = () => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        const response = await fetch(`${webApi}/register`, {
+        const response = await fetch(`${apiBaseURL}/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

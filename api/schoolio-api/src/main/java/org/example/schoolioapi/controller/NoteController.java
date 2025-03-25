@@ -1,18 +1,20 @@
 package org.example.schoolioapi.controller;
 
-import org.example.schoolioapi.DTO.FolderDTO;
-import org.example.schoolioapi.DTO.NoteDTO;
+import org.example.schoolioapi.DTO.Folder.FolderDTO;
+import org.example.schoolioapi.DTO.Note.NoteDTODetailed;
 import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.service.FolderService;
 import org.example.schoolioapi.service.NoteService;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.List;
+
+import static org.springframework.http.HttpStatus.CONFLICT;
+import static org.springframework.http.ResponseEntity.ok;
+import static org.springframework.http.ResponseEntity.status;
 
 @RestController
 @CrossOrigin
@@ -29,29 +31,29 @@ public class NoteController {
     @CacheEvict(value = "folderDTO", key = "#id")
     public ResponseEntity<FolderDTO> uploadNote(
             @PathVariable Long id,
-            @RequestParam("title") String title,
-            @RequestParam("file") MultipartFile file) throws IOException {
+            @RequestBody Note note) {
         try {
-            Note note = noteService.saveNote(title, file);
+            note.setParentFolder(folderService.getFolderById(id));
+            note = noteService.save(note);
             folderService.addNoteToFolder(id, note.getId());
-            return ResponseEntity.ok(FolderDTO.from(folderService.getFolderById(id)));
+            return ok(FolderDTO.from(folderService.getFolderById(id)));
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+            return status(CONFLICT).body(null);
         }
     }
 
-    @GetMapping("/note/{id}")
-    public NoteDTO getNoteById(@PathVariable Long id) {
-        return this.noteService.getNoteDTOById(id);
+    @GetMapping("notes/{id}")
+    public NoteDTODetailed getNoteById(@PathVariable Long id) {
+        return NoteDTODetailed.from(this.noteService.getNoteById(id).orElse(null));
     }
 
-    @GetMapping("/notes")
+    @GetMapping("notes/all")
     public List<Note> getAllNotes() {
         return this.noteService.getAllNotes();
     }
 
-    @DeleteMapping("/notes/{id}")
+    @DeleteMapping("notes/{id}")
     public void deleteNoteById(@PathVariable Long id) {
         folderService.deleteNoteFromFolderById(noteService.getNoteById(id).orElseThrow());
     }

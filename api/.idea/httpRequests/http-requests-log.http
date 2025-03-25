@@ -1,3 +1,399 @@
+GET http://localhost:8080/folders/2002
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T225804.200.json
+
+###
+
+GET http://localhost:8080/folders/2002
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T225318.500.json
+
+###
+
+GET http://localhost:8080/folders/2002
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T225316.500.json
+
+###
+
+GET http://localhost:8080/folders/2002
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T224810.500.json
+
+###
+
+GET http://localhost:8080/folders/2002
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T224752.500.json
+
+###
+
+POST http://localhost:8080/folder/2002/notes
+Content-Type: application/json
+Content-Length: 111
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "bbbbbbbbbbb",
+  "type": "PDF",
+  "uploadDate": "",
+  "parentFolder": {},
+  "data": []
+}
+
+<> 2025-03-13T224729.200.json
+
+###
+
+POST http://localhost:8080/folder/2002/notes
+Content-Type: application/json
+Content-Length: 112
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "aaaaaaaaaaaa",
+  "type": "PDF",
+  "uploadDate": "",
+  "parentFolder": {},
+  "data": []
+}
+
+<> 2025-03-13T224724.200.json
+
+###
+
+POST http://localhost:8080/folder/2002/notes
+Content-Type: application/json
+Content-Length: 112
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "asdfasdfasdf",
+  "type": "PDF",
+  "uploadDate": "",
+  "parentFolder": {},
+  "data": []
+}
+
+<> 2025-03-13T224716.200.json
+
+###
+
+DELETE http://localhost:8080/notes/702
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+###
+
+GET http://localhost:8080/notes/all
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T224431.200.json
+
+###
+
+GET http://localhost:8080/notes/702
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T224409.200.json
+
+###
+
+GET http://localhost:8080/folders/2002
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T224148.500.json
+
+###
+
+GET http://localhost:8080/notes/all
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T224000.200.json
+
+###
+
+POST http://localhost:8080/folder/2002/notes
+Content-Type: application/json
+Content-Length: 127
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "cool file of folder to test",
+  "type": "PDF",
+  "uploadDate": "",
+  "parentFolder": {},
+  "data": []
+}
+
+<> 2025-03-13T223931.200.json
+
+###
+
+GET http://localhost:8080/folders/2002/subfolders
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 27
+
+{
+  "id": 0,
+  "name": ""
+}
+
+<> 2025-03-13T223602.200.json
+
+###
+
+POST http://localhost:8080/folders/2002/subfolders
+Content-Type: application/json
+Content-Length: 55
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "name": "child folder of cool folder to test api"
+}
+
+<> 2025-03-13T223554.200.txt
+
+###
+
+POST http://localhost:8080/folders/2002/subfolders
+Content-Type: application/json
+Content-Length: 56
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "name": "child folder of cool folder to test api",
+}
+
+<> 2025-03-13T223450.400.json
+
+###
+
+GET http://localhost:8080/folders/2002/subfolders
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 27
+
+{
+  "id": 0,
+  "name": ""
+}
+
+<> 2025-03-13T223238.200.json
+
+###
+
+GET http://localhost:8080/folders/2002
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+<> 2025-03-13T223156.200.json
+
+###
+
+POST http://localhost:8080/folders
+Content-Type: application/json
+Content-Length: 39
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "name": "cool folder to test api"
+}
+
+<> 2025-03-13T223031.201.json
+
+###
+
+POST http://localhost:8080/folders/123123/subfolders
+Content-Type: application/json
+Content-Length: 36
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "newnewnew"
+}
+
+<> 2025-02-21T205927.400.txt
+
+###
+
+POST http://localhost:8080/folders/123123/subfolders
+Content-Type: application/json
+Content-Length: 36
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "newnewnew"
+}
+
+<> 2025-02-21T205750.400.txt
+
+###
+
+POST http://localhost:8080/folders/702/subfolders
+Content-Type: application/json
+Content-Length: 36
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "newnewnew"
+}
+
+<> 2025-02-21T205724.200.txt
+
+###
+
+POST http://localhost:8080/folders/702/subfolders
+Content-Type: application/json
+Content-Length: 36
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "newnewnew"
+}
+
+<> 2025-02-21T205456.200.txt
+
+###
+
+GET http://localhost:8080/folders/700
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+content-length: 0
+
+###
+
+POST http://localhost:8080/folders/700/subfolders
+Content-Type: application/json
+Content-Length: 36
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": 0,
+  "name": "newnewnew"
+}
+
+<> 2025-02-21T204806.400.txt
+
+###
+
+POST http://localhost:8080/folders
+Content-Type: application/json
+Content-Length: 39
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=CD4B9AE0984636D946383E71D63ED6B8
+
+{
+  "id": "",
+  "name": "omegafolder"
+}
+
+<> 2025-02-21T204041.201.json
+
+###
+
 PATCH http://localhost:8080/folder/1
 Content-Type: {"id":1,"name":"newRoot"}
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.4

@@ -1,11 +1,13 @@
 package org.example.schoolioapi.service;
 
-import org.example.schoolioapi.DTO.FolderDTO;
+import org.example.schoolioapi.DTO.Folder.FolderDTO;
 import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.repository.FolderRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -17,6 +19,16 @@ public class FolderService {
     public FolderService(FolderRepository folderRepository, NoteService noteService) {
         this.folderRepository = folderRepository;
         this.noteService = noteService;
+    }
+
+    public Long create(FolderDTO folderDTO) {
+        final Folder folder = new Folder();
+        mapToEntity(folderDTO, folder);
+        return folderRepository.save(folder).getId();
+    }
+
+    private void mapToEntity(final FolderDTO folderDTO, final Folder folder) {
+        folder.setName(folderDTO.name());
     }
 
     public Folder saveFolder(Folder folder) {
@@ -31,8 +43,8 @@ public class FolderService {
         return FolderDTO.from(this.getFolderById(id));
     }
 
-    public void addNoteToFolder(Long folderId, Long noteId){
-        Folder folder= getFolderById(folderId);
+    public void addNoteToFolder(Long folderId, Long noteId) {
+        Folder folder = getFolderById(folderId);
         Note note = noteService.getNoteById(noteId).orElse(null);
         folder.addNote(note);
         folderRepository.save(folder);
@@ -51,9 +63,9 @@ public class FolderService {
         }
     }
 
-    public void addSubFolderToFolder(Long parentFolderId, Long subFolderId){
-        Folder parentFolder = getFolderById(parentFolderId);
-        Folder subFolder = getFolderById(subFolderId);
+    public void addSubFolderToFolder(Long parentFolderId, Long subFolderId) throws Exception {
+        Folder parentFolder = folderRepository.findById(parentFolderId).orElseThrow();
+        Folder subFolder = folderRepository.findById(subFolderId).orElseThrow();
         parentFolder.addSubFolder(subFolder);
         saveFolder(subFolder);
         saveFolder(parentFolder);
@@ -69,7 +81,7 @@ public class FolderService {
         Folder parent = folderRepository.findFolderByNotesContaining(note);
         parent.getNotes().remove(note);
         folderRepository.save(parent);
-        noteService.deleteNote(note);
+        noteService.delete(note);
     }
 
     public Folder updateFields(Long id, FolderDTO updatedFolder) throws Exception {
@@ -93,4 +105,15 @@ public class FolderService {
     private boolean isFolderNameInvalid(String name) {
         return name.isBlank() || name.isEmpty() || name.strip().equals("undefined");
     }
+
+    public List<FolderDTO> getFolderSubfolders(Long id) {
+        Folder folder = getFolderById(id);
+        return folder.getSubFolders().stream().map(FolderDTO::from).toList();
+    }
+
+    public void addSubFolder(Long id, FolderDTO subfolderDTO) {
+        Folder subfolder = new Folder();
+        mapToEntity(subfolderDTO,subfolder);
+    }
+
 }

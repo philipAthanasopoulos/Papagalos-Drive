@@ -1,6 +1,6 @@
 package org.example.schoolioapi.controller;
 
-import org.example.schoolioapi.DTO.UserDTO;
+import org.example.schoolioapi.DTO.User.UserDTO;
 import org.example.schoolioapi.domain.User;
 import org.example.schoolioapi.service.UserService;
 import org.springframework.http.ResponseEntity;

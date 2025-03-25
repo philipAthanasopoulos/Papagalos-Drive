@@ -12,7 +12,7 @@ import React from "react";
 const MainNavBar = () => {
 
     return (
-        <Navbar style={{background: colors.shamrock_green,}} fixed='top' collapseOnSelect expand="lg">
+        <Navbar style={{background: colors.shamrock_green,}} collapseOnSelect expand="lg">
             <Container>
                 <Link to={"/main"} className='me-5'>
                     <Image src={papagalos_png} width={80} className='me-1'/>

@@ -1,10 +1,7 @@
 package org.example.schoolioapi.service;
 
-import org.bson.types.Binary;
-import org.example.schoolioapi.DTO.NoteDTO;
-import org.example.schoolioapi.domain.FileType;
+import org.example.schoolioapi.DTO.Note.NoteDTO;
 import org.example.schoolioapi.domain.Note;
-import org.example.schoolioapi.domain.NoteBlob;
 import org.example.schoolioapi.repository.NoteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,25 +15,9 @@ import java.util.Optional;
 public class NoteService {
 
     private final NoteRepository noteRepository;
-    private final NoteBlobService noteBlobService;
 
-    public NoteService(NoteRepository noteRepository, NoteBlobService noteBlobService) {
+    public NoteService(NoteRepository noteRepository) {
         this.noteRepository = noteRepository;
-        this.noteBlobService = noteBlobService;
-    }
-
-    public Note saveNote(String title, MultipartFile file) throws Exception {
-        NoteBlob blob = noteBlobService.saveNoteBlob(file);
-        Note note = Note.builder()
-                .name(title)
-                .type(FileType.valueOf(getFileExtension(file)))
-                .mongoId(blob.getId())
-                .build();
-        return saveNote(note);
-    }
-
-    public Note saveNote(Note note) throws Exception {
-        return noteRepository.save(note);
     }
 
     private boolean fileWithNameExistsInParentFolder(String fileName, String parentFolderName) {
@@ -55,19 +36,11 @@ public class NoteService {
         return noteRepository.findAll();
     }
 
-    public void deleteNote(Note note) {
-        noteBlobService.deleteNoteBlobById(note.getMongoId());
+    public void delete(Note note) {
         noteRepository.delete(note);
     }
 
-    public NoteDTO getNoteDTOById(Long id) {
-        Note note = getNoteById(id).orElse(null);
-        return NoteDTO.from(note);
+    public Note save(Note note) {
+        return noteRepository.save(note);
     }
-
-    private String getFileExtension(MultipartFile file) {
-        String name = file.getOriginalFilename();
-        return name.substring(name.lastIndexOf(".") + 1).toUpperCase();
-    }
-
 }

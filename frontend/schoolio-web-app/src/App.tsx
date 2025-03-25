@@ -25,9 +25,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <MainNavBar/>
-                <br/>
-                <br/>
-                <Alert variant={"warning"} className="text-center mt-5 justify-content-center">
+                <Alert variant={"warning"} className="text-center justify-content-center">
                     🚧👷‍♂️ Ο Παπαγάλος είναι ακόμα <u>υπό κατασκευή</u>. Ορισμένες λειτουργίες μπορεί να μην δουλεύουν
                     ακόμα.👷‍♂️🚧
                 </Alert>

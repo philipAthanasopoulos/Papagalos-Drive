@@ -4,7 +4,7 @@ import { Button, FormControl, InputGroup, Modal, ModalBody, ModalFooter, ModalHe
 import { PencilSquare } from 'react-bootstrap-icons';
 import InputGroupText from 'react-bootstrap/esm/InputGroupText';
 import colors from '../../colors';
-import { webApi } from '../../env/env';
+import { apiBaseURL } from '../../env/env';
 import { FolderDTO } from './FolderDTO';
 
 type Props = {
@@ -23,7 +23,7 @@ export const EditFolderButton = (props: Props) => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.patch(`${webApi}/folder/${props?.folder?.id}`, {name:folderName});
+      const response = await axios.patch(`${apiBaseURL}/folder/${props?.folder?.id}`, {name:folderName});
       props.setFolder(new FolderDTO(response.data))
     } catch (error) {
       if (axios.isAxiosError(error) && error.response?.status === 409) {

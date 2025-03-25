@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {Col, Container, Row} from 'react-bootstrap';
 import {FolderFill} from 'react-bootstrap-icons';
@@ -6,50 +5,47 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import {Link, useParams} from 'react-router-dom';
 import colors from '../../colors';
-import {webApi} from '../../env/env';
 import {fileIcons} from '../FileIcons';
-import AddFileButton from '../Note/AddFileButton';
 import {NoteDTO} from '../Note/NoteDTO';
-import {SearchBar} from '../Search/SearchBar';
-import AddSubFolderButton from './AddSubFolderButton';
-import {EditFolderButton} from './EditFolderButton';
 import EmptyFolder from './EmptyFolder';
 import FileTypeFilterButton from './FileTypeFilterButton';
-import {FolderDTO} from './FolderDTO';
+import {getFolderById} from "../../api/api";
+import {FolderDetailedDTO} from "./FolderDetailedDTO";
+import AddSubFolderButton from "./AddSubFolderButton";
+import AddFileButton from "../Note/AddFileButton";
+import {SearchBar} from "../Search/SearchBar";
 
 export const FolderComponent: React.FC = () => {
     const pathId = useParams<{ id: string }>().id;
     const id = Number(pathId);
-    const [folder, setFolder] = useState<FolderDTO>();
+    const [folder, setFolder] = useState<FolderDetailedDTO>();
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [selectedFileType, setSelectedFileType] = useState<string>("");
 
     useEffect(() => {
         const fetchFolder = async () => {
-            console.log(webApi)
             try {
-                const response = await axios.get<FolderDTO>(`${webApi}/folder/${id}`);
-                setFolder(new FolderDTO(response.data));
+                const response = await getFolderById(id).then();
+                setFolder(new FolderDetailedDTO(response));
                 setSelectedFileType("All");
                 setIsLoading(false);
             } catch (error) {
                 console.log(error)
-                fetchFolder();
             }
         };
         fetchFolder();
-    }, [id]);
+    }, [id, folder]);
 
     const displaySubFolderLinks = (): React.ReactNode => {
         if (!folder) return null;
-        const {subFolderIds, subFolderNames} = folder;
+        const {subFolders} = folder;
 
         if (selectedFileType === "All" || selectedFileType === "Folder")
-            return subFolderNames?.map((name, index) => (
+            return subFolders?.map((subFolder, index) => (
                 <div key={index}>
                     <hr/>
-                    <Link to={`/folder/${subFolderIds[index]}`} className='btn btn-light btn-lg'>
-                        <FolderFill color={colors.carrot_orange}/> {name}
+                    <Link to={`/folder/${subFolder.id}`} className='btn btn-light btn-lg'>
+                        <FolderFill color={colors.carrot_orange}/> {subFolder.name}
                     </Link>
                 </div>
             ));
@@ -114,14 +110,14 @@ export const FolderComponent: React.FC = () => {
                 <Row>
                     <Col className='d-flex'>
                         <div className='me-5'>
-                            <AddSubFolderButton folder={folder} setFolder={setFolder}/>
+                            <AddSubFolderButton folder={folder}/>
                         </div>
                         <div className='me-5'>
-                            <AddFileButton folder={folder} setFodler={setFolder}/>
+                            <AddFileButton folder={folder}/>
                         </div>
-                        <div className='me-5'>
-                            <EditFolderButton folder={folder} setFolder={setFolder}/>
-                        </div>
+                        {/*<div className='me-5'>*/}
+                        {/*    <EditFolderButton folder={folder} setFolder={setFolder}/>*/}
+                        {/*</div>*/}
                     </Col>
                 </Row>
             </Container>
@@ -140,8 +136,6 @@ export const FolderComponent: React.FC = () => {
         )
     }
 
-    console.log(folder instanceof FolderDTO)
-
     return (
         <Container className='mb-5'>
             <Row className='pt-5'>
@@ -152,10 +146,13 @@ export const FolderComponent: React.FC = () => {
                         </div>
                     }
 
-                    <h5 className='pe-5 d-flex text-dark mb-4 text-decoration-underline'>
+                    <h5 className='pe-5 d-flex text-dark mb-4 '>
                         <Col>
                             <FolderFill className='me-2' color={colors.carrot_orange}/>
-                            {folder?.path || <Skeleton width={100}/>}
+                            &gt;
+                            <span className="text-decoration-underline">
+                                {folder?.name || <Skeleton width={100}/>}
+                            </span>
                         </Col>
                     </h5>
                     {folder &&

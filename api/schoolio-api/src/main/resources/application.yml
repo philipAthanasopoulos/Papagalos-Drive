@@ -1,23 +1,13 @@
-#spring:
-#  data:
-#    mongodb:
-#      uri: ${MONGO_DB_CONNECTION_URL}
-#      database: ${MONGO_DB_DATABASE_NAME}
-#  datasource:
-#    url: ${PSQL_DATABASE_URL}
-#    username: ${PSQL_DATABASE_USERNAME}
-#    password: ${PSQL_DATABASE_PASSWORD}
-#
 spring:
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: Notes
   datasource:
-    url: jdbc:postgresql://localhost:5432/rel_database
-    username: postgres
-    password: root
+    #    url: jdbc:postgresql://localhost:5432/rel_database
+    #    username: postgres
+    #    password: root
+    url: ${PSQL_DATABASE_URL}
+    username: ${PSQL_DATABASE_USERNAME}
+    password: ${PSQL_DATABASE_PASSWORD}
+    hikari:
+      auto-commit: false
   jpa:
     hibernate:
       ddl-auto: update

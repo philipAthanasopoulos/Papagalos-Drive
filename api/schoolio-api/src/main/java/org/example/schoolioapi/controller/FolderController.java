@@ -1,6 +1,7 @@
 package org.example.schoolioapi.controller;
 
-import org.example.schoolioapi.DTO.FolderDTO;
+import org.example.schoolioapi.DTO.Folder.FolderDTO;
+import org.example.schoolioapi.DTO.Folder.FolderDetailedDTO;
 import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.service.FolderService;
 import org.springframework.cache.annotation.CacheEvict;
@@ -11,8 +12,12 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import static org.springframework.http.HttpStatus.BAD_REQUEST;
+import static org.springframework.http.ResponseEntity.status;
+
 @RestController
 @CrossOrigin
+@RequestMapping("/folders")
 public class FolderController {
     private final FolderService folderService;
 
@@ -20,35 +25,34 @@ public class FolderController {
         this.folderService = folderService;
     }
 
-    @GetMapping("/folder/{id}")
+    @GetMapping("/{id}")
     @Cacheable(value = "folderDTO", key = "#id")
-    public FolderDTO getFolderById(@PathVariable Long id) {
-        return folderService.getFolderByIdAsDTO(id);
+    public FolderDetailedDTO getFolderById(@PathVariable Long id) {
+        return FolderDetailedDTO.from(folderService.getFolderById(id));
     }
 
-    //TODO
-    //Enable when production ready
-//    @PatchMapping("/folder/{id}")
-//    @CacheEvict(value = "folderDTO", key = "#id")
-//    public ResponseEntity<FolderDTO> updateFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
-//        try {
-//            Folder updateFolder = this.folderService.updateFields(id, folderDTO);
-//            return ResponseEntity.ok(FolderDTO.from(updateFolder));
-//        } catch (Exception e) {
-//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-//        }
-//    }
+    @PostMapping
+    public ResponseEntity<Long> createFolder(@RequestBody final FolderDTO folderDTO) {
+        final Long createdId = folderService.create(folderDTO);
+        return new ResponseEntity<>(createdId, HttpStatus.CREATED);
+    }
 
-    @PostMapping("/folder/{id}/subfolders")
+    @GetMapping("/{id}/subfolders")
+    public List<FolderDTO> getFolderSubfolders(@PathVariable Long id) {
+        return folderService.getFolderSubfolders(id);
+    }
+
+    //TODO transaction should undo invalid folder creation
+    @PostMapping("/{id}/subfolders")
     @CacheEvict(value = "folderDTO", key = "#id")
-    public ResponseEntity<String> addSubFolder(@PathVariable Long id, @RequestParam String subFolderName) {
+    public ResponseEntity<String> addSubFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
         try {
-            Folder newFolder = folderService.saveFolder(Folder.builder().name(subFolderName).build());
-            folderService.addSubFolderToFolder(id, newFolder.getId());
+            Long childFolderId = folderService.create(folderDTO);
+            folderService.addSubFolderToFolder(id, childFolderId);
             Folder parent = folderService.getFolderById(id);
             return ResponseEntity.ok(FolderDTO.from(parent).toString());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return status(BAD_REQUEST).body(e.getMessage());
         }
     }
 }
