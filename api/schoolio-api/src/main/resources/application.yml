@@ -1,8 +1,5 @@
 spring:
   datasource:
-#    url: jdbc:postgresql://localhost:5432/rel_database
-#    username: postgres
-#    password: root
     hikari:
       auto-commit: false
   jpa:

@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="new jarfile">
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-test.yml" afterDir="false" />
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="updated application properties files and Dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
@@ -193,16 +190,14 @@
       <command value="mvn package -DskipTests" />
       <command value="mvn clean package -DskipTests" />
       <command value="mvn clean package -Dspring.profiles.active=prodmvn clean package -Dspring.profiles.active=prod" />
+      <command value="mvn clean package -Dspring.profiles.active=prod" />
     </option>
   </component>
-  <component name="RunManager" selected="JAR Application.schoolio-api-0.0.1-SNAPSHOT.jar">
+  <component name="RunManager" selected="Docker.schoolio-api/Dockerfile">
     <configuration name="generated-requests | #17" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="17" requestIdentifier="#17" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #22" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="22" requestIdentifier="#22" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #25" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="25" requestIdentifier="#25" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #26" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="26" requestIdentifier="#26" runType="Run single request">
@@ -231,21 +226,45 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="schoolio-api/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="envVars">
+            <list>
+              <DockerEnvVarImpl>
+                <option name="name" value="PSQL_DATABASE_URL" />
+                <option name="value" value="asdfasdf" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="PSQL_DATABASE_USERNAME" />
+                <option name="value" value="asdfasdf" />
+              </DockerEnvVarImpl>
+              <DockerEnvVarImpl>
+                <option name="name" value="PSQL_DATABASE_PASSWORD" />
+                <option name="value" value="asdfasdf" />
+              </DockerEnvVarImpl>
+            </list>
+          </option>
+          <option name="sourceFilePath" value="schoolio-api/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.schoolio-api/Dockerfile" />
       <item itemvalue="HTTP Request.generated-requests | #17" />
       <item itemvalue="HTTP Request.generated-requests | #22" />
-      <item itemvalue="HTTP Request.generated-requests | #25" />
       <item itemvalue="HTTP Request.generated-requests | #26" />
       <item itemvalue="JAR Application.schoolio-api-0.0.1-SNAPSHOT.jar" />
       <item itemvalue="Spring Boot.SchoolioApiApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.schoolio-api/Dockerfile" />
         <item itemvalue="JAR Application.schoolio-api-0.0.1-SNAPSHOT.jar" />
         <item itemvalue="HTTP Request.generated-requests | #17" />
         <item itemvalue="HTTP Request.generated-requests | #22" />
         <item itemvalue="HTTP Request.generated-requests | #26" />
-        <item itemvalue="HTTP Request.generated-requests | #25" />
       </list>
     </recent_temporary>
   </component>
@@ -507,15 +526,7 @@
       <workItem from="1742928380954" duration="1670000" />
       <workItem from="1742973326096" duration="679000" />
       <workItem from="1742983525673" duration="1017000" />
-      <workItem from="1742987591731" duration="892000" />
-    </task>
-    <task id="LOCAL-00006" summary="updated jarfile">
-      <option name="closed" value="true" />
-      <created>1722936374305</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1722936374305</updated>
+      <workItem from="1742987591731" duration="2985000" />
     </task>
     <task id="LOCAL-00007" summary="updated jarfile">
       <option name="closed" value="true" />
@@ -893,7 +904,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742984511790</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="updated application properties files and Dockerfile">
+      <option name="closed" value="true" />
+      <created>1742988618125</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1742988618125</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -940,7 +959,8 @@
     <MESSAGE value="reworked note file object, rest api and services" />
     <MESSAGE value="removed mongo depedencies&#10;fixed Espresso endpoint" />
     <MESSAGE value="new jarfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="new jarfile" />
+    <MESSAGE value="updated application properties files and Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated application properties files and Dockerfile" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
