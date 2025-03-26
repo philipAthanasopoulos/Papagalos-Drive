@@ -16,7 +16,7 @@ public class Espresso {
     @Scheduled(fixedDelay = 3 * 60000)
     public void drinkEspresso() {
         RestTemplate restTemplate = new RestTemplate();
-        String localhost = "https://schoolio.onrender.com/folder/1";
+        String localhost = "https://schoolio.onrender.com/folders/1";
         try {
             restTemplate.getForEntity(localhost, String.class);
             System.out.println("Ping");
