@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="reworked note file object, rest api and services">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="new jarfile">
+      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-test.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/heartbeat/Espresso.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/heartbeat/Espresso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application-prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,86 +84,89 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Docker.compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.schoolio-api/Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.schoolio-api/compose.yaml.redis: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.schoolio-api/compose.yaml.spring-boot: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.schoolio-api/compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.schoolio-api/docker-compose.yaml.spring-boot: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.schoolio-api/docker-compose.yaml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #1.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #11.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #12.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #13.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #16.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #17.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #18.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #19.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #20.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #21.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #22.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #23.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #24.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #25.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #26.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.generated-requests | #3.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderRepositoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderRepositoryTest.findByName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderServiceTest.addNoteToFolder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderServiceTest.getFolderById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderServiceTest.getFolderByName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderServiceTest.getRootFolder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FolderServiceTest.testDuplicateSubFolderName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NoteBlobServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NoteBlobServiceTest.saveNoteBlob.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NoteServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.NoteServiceTest.saveNote.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SchoolioApiApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in schoolio-api.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.schoolio-api [build].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.schoolio-api [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.schoolio-api [package,-DskipTests].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.schoolio-api [package].executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
-    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.SchoolioApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dell/Desktop/GitHub projects/Schoolio/api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;swagger&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Dell\\Downloads\\ideaIU-2024.1.4.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Docker.compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.schoolio-api/Dockerfile.executor": "Run",
+    "Docker.schoolio-api/compose.yaml.redis: Compose Deployment.executor": "Run",
+    "Docker.schoolio-api/compose.yaml.spring-boot: Compose Deployment.executor": "Run",
+    "Docker.schoolio-api/compose.yaml: Compose Deployment.executor": "Run",
+    "Docker.schoolio-api/docker-compose.yaml.spring-boot: Compose Deployment.executor": "Run",
+    "Docker.schoolio-api/docker-compose.yaml: Compose Deployment.executor": "Run",
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #11.executor": "Run",
+    "HTTP Request.generated-requests | #12.executor": "Run",
+    "HTTP Request.generated-requests | #13.executor": "Run",
+    "HTTP Request.generated-requests | #16.executor": "Run",
+    "HTTP Request.generated-requests | #17.executor": "Run",
+    "HTTP Request.generated-requests | #18.executor": "Run",
+    "HTTP Request.generated-requests | #19.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #20.executor": "Run",
+    "HTTP Request.generated-requests | #21.executor": "Run",
+    "HTTP Request.generated-requests | #22.executor": "Run",
+    "HTTP Request.generated-requests | #23.executor": "Run",
+    "HTTP Request.generated-requests | #24.executor": "Run",
+    "HTTP Request.generated-requests | #25.executor": "Run",
+    "HTTP Request.generated-requests | #26.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "JAR Application.schoolio-api-0.0.1-SNAPSHOT.jar.executor": "Run",
+    "JUnit.FolderRepositoryTest.executor": "Run",
+    "JUnit.FolderRepositoryTest.findByName.executor": "Run",
+    "JUnit.FolderServiceTest.addNoteToFolder.executor": "Run",
+    "JUnit.FolderServiceTest.executor": "Run",
+    "JUnit.FolderServiceTest.getFolderById.executor": "Run",
+    "JUnit.FolderServiceTest.getFolderByName.executor": "Run",
+    "JUnit.FolderServiceTest.getRootFolder.executor": "Run",
+    "JUnit.FolderServiceTest.testDuplicateSubFolderName.executor": "Run",
+    "JUnit.NoteBlobServiceTest.executor": "Run",
+    "JUnit.NoteBlobServiceTest.saveNoteBlob.executor": "Run",
+    "JUnit.NoteServiceTest.executor": "Run",
+    "JUnit.NoteServiceTest.saveNote.executor": "Run",
+    "JUnit.SchoolioApiApplicationTests.executor": "Run",
+    "JUnit.java in schoolio-api.executor": "Run",
+    "Maven.schoolio-api [build].executor": "Run",
+    "Maven.schoolio-api [clean,package,-DskipTests].executor": "Run",
+    "Maven.schoolio-api [clean,package...].executor": "Run",
+    "Maven.schoolio-api [clean,package].executor": "Run",
+    "Maven.schoolio-api [package,-DskipTests].executor": "Run",
+    "Maven.schoolio-api [package].executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.SchoolioApiApplication.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "22",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Dell/Desktop/GitHub projects/Schoolio/api",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "swagger",
+    "ts.external.directory.path": "C:\\Users\\Dell\\Downloads\\ideaIU-2024.1.4.win\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "redis"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.schoolioapi.security" />
@@ -188,22 +191,25 @@
       <command value="mvn package" />
       <command value="mvn clean package" />
       <command value="mvn package -DskipTests" />
+      <command value="mvn clean package -DskipTests" />
+      <command value="mvn clean package -Dspring.profiles.active=prodmvn clean package -Dspring.profiles.active=prod" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.SchoolioApiApplication">
+  <component name="RunManager" selected="JAR Application.schoolio-api-0.0.1-SNAPSHOT.jar">
     <configuration name="generated-requests | #17" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="17" requestIdentifier="#17" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #22" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="22" requestIdentifier="#22" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #24" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="24" requestIdentifier="#24" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="generated-requests | #25" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="25" requestIdentifier="#25" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #26" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="26" requestIdentifier="#26" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="schoolio-api-0.0.1-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" />
       <method v="2" />
     </configuration>
     <configuration name="SchoolioApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -228,18 +234,18 @@
     <list>
       <item itemvalue="HTTP Request.generated-requests | #17" />
       <item itemvalue="HTTP Request.generated-requests | #22" />
-      <item itemvalue="HTTP Request.generated-requests | #24" />
       <item itemvalue="HTTP Request.generated-requests | #25" />
       <item itemvalue="HTTP Request.generated-requests | #26" />
+      <item itemvalue="JAR Application.schoolio-api-0.0.1-SNAPSHOT.jar" />
       <item itemvalue="Spring Boot.SchoolioApiApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.schoolio-api-0.0.1-SNAPSHOT.jar" />
         <item itemvalue="HTTP Request.generated-requests | #17" />
         <item itemvalue="HTTP Request.generated-requests | #22" />
         <item itemvalue="HTTP Request.generated-requests | #26" />
         <item itemvalue="HTTP Request.generated-requests | #25" />
-        <item itemvalue="HTTP Request.generated-requests | #24" />
       </list>
     </recent_temporary>
   </component>
@@ -500,23 +506,8 @@
       <workItem from="1742902398062" duration="3817000" />
       <workItem from="1742928380954" duration="1670000" />
       <workItem from="1742973326096" duration="679000" />
-      <workItem from="1742983525673" duration="779000" />
-    </task>
-    <task id="LOCAL-00004" summary="generated new jarfile">
-      <option name="closed" value="true" />
-      <created>1722936053511</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1722936053511</updated>
-    </task>
-    <task id="LOCAL-00005" summary="commented out local api url">
-      <option name="closed" value="true" />
-      <created>1722936103205</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1722936103205</updated>
+      <workItem from="1742983525673" duration="1017000" />
+      <workItem from="1742987591731" duration="892000" />
     </task>
     <task id="LOCAL-00006" summary="updated jarfile">
       <option name="closed" value="true" />
@@ -886,7 +877,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742929908872</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="removed mongo depedencies&#10;fixed Espresso endpoint">
+      <option name="closed" value="true" />
+      <created>1742984457960</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1742984457960</updated>
+    </task>
+    <task id="LOCAL-00053" summary="new jarfile">
+      <option name="closed" value="true" />
+      <created>1742984511790</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1742984511790</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -931,7 +938,9 @@
     <MESSAGE value="fixed note repository query" />
     <MESSAGE value="updated controllers and services to follow REST architecture" />
     <MESSAGE value="reworked note file object, rest api and services" />
-    <option name="LAST_COMMIT_MESSAGE" value="reworked note file object, rest api and services" />
+    <MESSAGE value="removed mongo depedencies&#10;fixed Espresso endpoint" />
+    <MESSAGE value="new jarfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="new jarfile" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
