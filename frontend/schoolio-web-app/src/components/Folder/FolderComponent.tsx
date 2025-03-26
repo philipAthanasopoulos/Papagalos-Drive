@@ -34,7 +34,7 @@ export const FolderComponent: React.FC = () => {
             }
         };
         fetchFolder();
-    }, [id, folder]);
+    }, [id]);
 
     const displaySubFolderLinks = (): React.ReactNode => {
         if (!folder) return null;

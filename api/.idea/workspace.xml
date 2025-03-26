@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="updated application properties files and Dockerfile">
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added spring profile flag in Dockerfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/target/schoolio-api-0.0.1-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +190,7 @@
       <command value="mvn clean package -Dspring.profiles.active=prod" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.schoolio-api/Dockerfile">
+  <component name="RunManager" selected="Spring Boot.SchoolioApiApplication">
     <configuration name="generated-requests | #17" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="17" requestIdentifier="#17" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -208,6 +205,7 @@
       <method v="2" />
     </configuration>
     <configuration name="SchoolioApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="dev" />
       <module name="schoolio-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.schoolioapi.SchoolioApiApplication" />
       <method v="2">
@@ -526,15 +524,7 @@
       <workItem from="1742928380954" duration="1670000" />
       <workItem from="1742973326096" duration="679000" />
       <workItem from="1742983525673" duration="1017000" />
-      <workItem from="1742987591731" duration="2985000" />
-    </task>
-    <task id="LOCAL-00007" summary="updated jarfile">
-      <option name="closed" value="true" />
-      <created>1722946005211</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1722946005211</updated>
+      <workItem from="1742987591731" duration="4658000" />
     </task>
     <task id="LOCAL-00008" summary="updated gh actions">
       <option name="closed" value="true" />
@@ -912,7 +902,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742988618125</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="added spring profile flag in Dockerfile">
+      <option name="closed" value="true" />
+      <created>1742991028012</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1742991028012</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -960,7 +958,8 @@
     <MESSAGE value="removed mongo depedencies&#10;fixed Espresso endpoint" />
     <MESSAGE value="new jarfile" />
     <MESSAGE value="updated application properties files and Dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated application properties files and Dockerfile" />
+    <MESSAGE value="added spring profile flag in Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="added spring profile flag in Dockerfile" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [
