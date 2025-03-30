@@ -53,12 +53,11 @@ export const NoteComponent = () => {
     const displayMedia = () => {
         const defaultMimeType = "application/octet-stream";
         const mimeType = mimeTypes[note?.type.toLowerCase() ?? ''] || defaultMimeType;
-
         return (
             <iframe
                 title="note"
-                className='flex-grow-1 vh-100'
-                style={{width: '90%', height: '90%', border: 'none', objectFit: 'contain'}}
+                className='vh-100'
+                style={{width: '100%', height: '100%', border: 'none', objectFit: 'contain'}}
                 src={`data:${mimeType};base64,${note?.data}`}
             />
         );
@@ -66,7 +65,7 @@ export const NoteComponent = () => {
 
     return (
         <Container fluid>
-            <Row className=''>
+            <Row className='mb-5'>
                 <Col xs={12}>
                     {loading ? (
                         <LoadingComponent/>
@@ -74,10 +73,6 @@ export const NoteComponent = () => {
                         <div>
                             <div className='d-flex text-primary mb-4 align-items-center '>
                                 <div className='d-flex text-primary mb-4 align-items-center'>
-                                    {/*<h5>*/}
-                                    {/*    {note?.path + "." + note?.type.toLowerCase() || <Skeleton width={100}/>}*/}
-                                    {/*</h5>*/}
-
                                     {fileIcons[note?.type.toLowerCase() || ""]}
                                     <div className='ms-3'>
                                         <DownloadFileButton filename={note?.name || "file"}

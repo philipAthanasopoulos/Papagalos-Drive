@@ -82,7 +82,7 @@ export const FolderComponent: React.FC = () => {
             <div>
                 <Row>
                     <Col className="d-flex align-items-center">
-                        <h5 className="me-2">Όνομα</h5>
+                        <h5 className="me-2">Αρχεία</h5>
                     </Col>
                 </Row>
             </div>
@@ -113,7 +113,7 @@ export const FolderComponent: React.FC = () => {
                             <AddSubFolderButton folder={folder}/>
                         </div>
                         <div className='me-5'>
-                            <AddFileButton folder={folder}/>
+                            <AddFileButton folder={folder} setFolder={setFolder}/>
                         </div>
                         {/*<div className='me-5'>*/}
                         {/*    <EditFolderButton folder={folder} setFolder={setFolder}/>*/}
@@ -138,7 +138,7 @@ export const FolderComponent: React.FC = () => {
 
     return (
         <Container className='mb-5'>
-            <Row className='pt-5'>
+            <Row className=''>
                 <Col xs={12}>
                     {isLoading &&
                         <div>

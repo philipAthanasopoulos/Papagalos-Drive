@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import colors from '../../colors';
-import papagalos_png from '../../images/cool.png';
-import papagalos_title from '../../images/textLogo.png';
+import papagalos_png from '../../images/papagalos_comic.png';
+import papagalos_title from '../../images/papagalos_sign.png';
 import React from "react";
 
 const MainNavBar = () => {

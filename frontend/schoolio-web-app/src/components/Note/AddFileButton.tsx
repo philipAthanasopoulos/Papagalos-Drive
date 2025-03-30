@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, {FormEvent, useState} from 'react';
 import {
     Button,
@@ -19,7 +18,8 @@ import {getFolderById} from "../../api/api";
 import {uploadNote} from "../../api/api";
 
 type Props = {
-    folder?: FolderDetailedDTO
+    folder?: FolderDetailedDTO,
+    setFolder?: React.Dispatch<React.SetStateAction<FolderDetailedDTO | undefined>>
 }
 
 const AddFileButton = (props: Props) => {
@@ -28,6 +28,8 @@ const AddFileButton = (props: Props) => {
     const [showErrorAlert, setshowErrorAlert] = useState<boolean>(false);
     const [file, setFile] = useState<File>();
     const [fileName, setFileName] = useState<string>("")
+
+
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
         if (file) {
@@ -40,15 +42,12 @@ const AddFileButton = (props: Props) => {
                 data: Array.from(fileBytes),
                 parentFolderId: props.folder?.id
             };
-
-            console.log(note);
             uploadNote(props.folder?.id!, note)
                 .then(() => {
                     setshowSuccessAlert(true);
                     setTimeout(() => {
                         setshowSuccessAlert(false);
                         getFolderById(props.folder?.id!).then((folder) => {
-                            console.log(props.folder)
                             setshowSuccessAlert(false);
                         });
                     }, 3000);

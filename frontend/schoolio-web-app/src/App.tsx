@@ -29,8 +29,7 @@ function App() {
                     🚧👷‍♂️ Ο Παπαγάλος είναι ακόμα <u>υπό κατασκευή</u>. Ορισμένες λειτουργίες μπορεί να μην δουλεύουν
                     ακόμα.👷‍♂️🚧
                 </Alert>
-                <Container className="d-flex flex-column  align-items-center"
-                           style={{marginTop: "70px", minHeight: "100vh"}}>
+                <Container className="d-flex flex-column  align-items-center min-vh-100">
                     <Routes>
                         <Route path="/" element={<Navigate to="/main"/>}/>
                         <Route path="/folder/:id" element={<FolderComponent/>}/>

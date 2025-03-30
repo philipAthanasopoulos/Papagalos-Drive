@@ -4,8 +4,6 @@
     overflow: hidden;
 }
 
-
-
 .button-hover-effect::after {
     content: '🚀';
     position: absolute;
@@ -15,4 +13,12 @@
 
 .button-hover-effect:hover::after {
     right: 10px;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    padding: 0;
 }
