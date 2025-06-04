@@ -25,6 +25,7 @@ public record NoteDTO(
 
     public static Note toNote(NoteDTO noteDTO){
         return Note.builder()
+                .id(noteDTO.id)
                 .name(noteDTO.name)
                 .type(noteDTO.type)
                 .uploadDate(noteDTO.uploadDate)

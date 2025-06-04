@@ -1,11 +1,11 @@
 import cosineSimilarity from 'compute-cosine-similarity'
 import {useEffect, useState} from 'react'
 import {Col, Container, FloatingLabel, FormControl, InputGroup, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
-import {Search} from 'react-bootstrap-icons'
 import {Link} from 'react-router-dom'
 import colors from '../../colors'
 import {FolderDetailedDTO} from "../Folder/FolderDetailedDTO";
 import {FolderDTO} from "../Folder/FolderDTO";
+import {Search} from "react-bootstrap-icons";
 
 type Props = { folder?: FolderDetailedDTO }
 
@@ -115,6 +115,9 @@ export const SearchBar = (props: Props) => {
             <Row>
                 <Col xs={12}>
                     <InputGroup>
+                        <InputGroup.Text style={{backgroundColor:colors.shamrock_green}}>
+                            <Search color={"white"} />
+                        </InputGroup.Text>
                         <FloatingLabel label="Αναζήτησε εδώ..." controlId='floatingInput'>
                             <FormControl
                                 placeholder=''
@@ -124,9 +127,6 @@ export const SearchBar = (props: Props) => {
                                 onChange={(e) => setQuery(e.target.value)}
                             />
                         </FloatingLabel>
-                        <InputGroup.Text style={{background: colors.carrot_orange}}>
-                            <Search color='white'/>
-                        </InputGroup.Text>
                     </InputGroup>
                 </Col>
                 <Col xs={12}>

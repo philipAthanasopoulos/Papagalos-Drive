@@ -10,11 +10,11 @@ import {
     ModalHeader,
     ModalTitle
 } from 'react-bootstrap';
-import {FolderPlus} from 'react-bootstrap-icons';
 import colors from '../../colors';
 import {NotificationComponent} from '../Notifications/NotificationComponent';
 import {addSubFolder, getFolderById} from "../../api/api";
 import {FolderDetailedDTO} from "./FolderDetailedDTO";
+import "./AddSubFolderButton.css"
 
 type Props = {
     folder?: FolderDetailedDTO
@@ -89,17 +89,19 @@ const AddSubFolderButton = (props: Props) => {
                         <ModalFooter>
                             <Button className='border-0' style={{background: colors.carrot_orange}}
                                     onClick={() => setShowModal(false)}>
-                                Ακύρωση
+                                <div className="emoji-text">✖ Ακύρωση</div>
                             </Button>
                             <Button type='submit' className='border-0' style={{background: colors.shamrock_green}}>
-                                <FolderPlus className='me-1'/> Δημιουργία
+                                <div className="emoji-text">✅ Δημιουργία</div>
                             </Button>
                         </ModalFooter>
                     </Form>
                 </Modal>
             </div>
             <Button variant='light' size='lg' onClick={() => setShowModal(true)}>
-                <FolderPlus color={colors.carrot_orange}/> Νέος φάκελος
+                <span className={"emoji-text"}>
+                📁Νέος φάκελος
+                </span>
             </Button>
         </div>
     )

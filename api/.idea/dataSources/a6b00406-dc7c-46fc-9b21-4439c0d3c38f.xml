@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Notes@localhost">
-  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.52">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.53">
     <root id="1">
       <ServerVersion>7.0.12</ServerVersion>
     </root>
@@ -16,60 +16,60 @@
     <table id="8" parent="2" name="notes"/>
     <table id="9" parent="2" name="user"/>
     <column id="10" parent="6" name="_id">
-      <DasType>ObjectId|12s</DasType>
       <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
     </column>
     <column id="11" parent="6" name="_class">
-      <DasType>String|12s</DasType>
       <Position>1</Position>
+      <StoredType>String|12s</StoredType>
     </column>
     <column id="12" parent="6" name="name">
-      <DasType>String|12s</DasType>
       <Position>1</Position>
+      <StoredType>String|12s</StoredType>
     </column>
     <column id="13" parent="6" name="notes">
-      <DasType>list|4999545s</DasType>
       <Position>2</Position>
+      <StoredType>list|4999545s</StoredType>
     </column>
     <column id="14" parent="6" name="subFolders">
-      <DasType>list|4999545s</DasType>
       <Position>4</Position>
+      <StoredType>list|4999545s</StoredType>
     </column>
     <column id="15" parent="7" name="_id">
-      <DasType>ObjectId|12s</DasType>
       <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
     </column>
     <column id="16" parent="7" name="_class">
-      <DasType>String|12s</DasType>
       <Position>1</Position>
+      <StoredType>String|12s</StoredType>
     </column>
     <column id="17" parent="7" name="data">
-      <DasType>BinData|12s</DasType>
       <Position>1</Position>
+      <StoredType>BinData|12s</StoredType>
     </column>
     <column id="18" parent="8" name="_id">
-      <DasType>ObjectId|12s</DasType>
       <Position>1</Position>
+      <StoredType>ObjectId|12s</StoredType>
     </column>
     <column id="19" parent="8" name="file">
-      <DasType>String|12s</DasType>
       <Position>1</Position>
+      <StoredType>String|12s</StoredType>
     </column>
     <column id="20" parent="8" name="_class">
-      <DasType>String|12s</DasType>
       <Position>2</Position>
+      <StoredType>String|12s</StoredType>
     </column>
     <column id="21" parent="8" name="fileName">
-      <DasType>String|12s</DasType>
       <Position>2</Position>
+      <StoredType>String|12s</StoredType>
     </column>
     <column id="22" parent="9" name="_id">
-      <DasType>String|12s</DasType>
       <Position>1</Position>
+      <StoredType>String|12s</StoredType>
     </column>
     <column id="23" parent="9" name="_class">
-      <DasType>String|12s</DasType>
       <Position>1</Position>
+      <StoredType>String|12s</StoredType>
     </column>
   </database-model>
 </dataSource>

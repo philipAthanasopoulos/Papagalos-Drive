@@ -12,6 +12,8 @@ import {NoteComponent} from './components/Note/NoteComponent';
 import {SupportSection} from './components/SupportSection';
 import {NewsArticleHolder} from "./components/News/NewsArticleHolder";
 import {RegisterForm} from "./components/Register/RegisterForm";
+import {ForumComponent} from "./components/Forum/ForumComponent";
+import {UserProfile} from "./components/Profile/UserProfile";
 
 
 function App() {
@@ -26,8 +28,8 @@ function App() {
             <header className="App-header">
                 <MainNavBar/>
                 <Alert variant={"warning"} className="text-center justify-content-center">
-                    🚧👷‍♂️ Ο Παπαγάλος είναι ακόμα <u>υπό κατασκευή</u>. Ορισμένες λειτουργίες μπορεί να μην δουλεύουν
-                    ακόμα.👷‍♂️🚧
+                    🚧🦺 Ο Παπαγάλος είναι ακόμα <u>υπό κατασκευή</u>. Ορισμένες λειτουργίες μπορεί να μην δουλεύουν
+                    ακόμα.🏗️🚧
                 </Alert>
                 <Container className="d-flex flex-column  align-items-center min-vh-100">
                     <Routes>
@@ -39,6 +41,8 @@ function App() {
                         <Route path="/login" element={<LoginForm/>}/>
                         <Route path="/news" element={<NewsArticleHolder/>}/>
                         <Route path="/register" element={<RegisterForm/>}/>
+                        <Route path="/forum" element={<ForumComponent/>}/>
+                        <Route path="/profile" element={<UserProfile/>}/>
                     </Routes>
                 </Container>
                 <Footer/>

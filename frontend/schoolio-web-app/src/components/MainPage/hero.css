@@ -1,4 +1,6 @@
 /* Add this CSS to your stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 .button-hover-effect {
     position: relative;
     overflow: hidden;
@@ -9,6 +11,24 @@
     position: absolute;
     right: -30px;
     transition: right 0.3s ease-in-out;
+}
+
+/* In your CSS file */
+/* In your CSS file */
+.smudged-text {
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:rgba(0,0,0,0.1);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(0,0,0,0.05);stop-opacity:0.5'/></linearGradient></defs><path d='M10,10 Q50,50 90,10 T200,90' stroke='url(#grad)' stroke-width='15' fill='none'/><path d='M20,30 Q70,70 120,30 T250,70' stroke='url(#grad)' stroke-width='10' fill='none'/></svg>");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .button-hover-effect:hover::after {
@@ -22,3 +42,55 @@ body, html {
 .container-fluid {
     padding: 0;
 }
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.mainbutton {
+    font-size: 30px;
+}
+
+.rubik-text {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 900;
+}
+
+.mainbutton:hover {
+    color: #EA8D0C;
+    background-color: white !important;
+}
+
+* {
+    font-family: "Rubik", sans-serif;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+

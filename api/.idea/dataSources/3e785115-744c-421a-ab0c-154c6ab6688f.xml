@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="rel_database@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.52">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.53">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>25656</IntrospectionStateNumber>
+      <Grants>1||-9223372036854775808|c|G
+1||10|c|G
+1||10|C|G
+1||10|T|G
+4||-9223372036854775808|c|G
+4||10|c|G
+4||10|C|G
+4||10|T|G</Grants>
+      <IntrospectionStateNumber>27925</IntrospectionStateNumber>
       <ServerVersion>16.3</ServerVersion>
-      <StartupTime>1741859377</StartupTime>
+      <StartupTime>1748862681</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -46,15 +54,15 @@ false Africa/Bissau
 false Africa/Blantyre
 false Africa/Brazzaville
 false Africa/Bujumbura
-false Africa/Cairo
-true Africa/Casablanca
-false Africa/Ceuta
+true Africa/Cairo
+false Africa/Casablanca
+true Africa/Ceuta
 false Africa/Conakry
 false Africa/Dakar
 false Africa/Dar_es_Salaam
 false Africa/Djibouti
 false Africa/Douala
-true Africa/El_Aaiun
+false Africa/El_Aaiun
 false Africa/Freetown
 false Africa/Gaborone
 false Africa/Harare
@@ -149,7 +157,7 @@ false America/Fort_Nelson
 true America/Fort_Wayne
 false America/Fortaleza
 true America/Glace_Bay
-false America/Godthab
+true America/Godthab
 true America/Goose_Bay
 true America/Grand_Turk
 false America/Grenada
@@ -209,7 +217,7 @@ false America/Noronha
 true America/North_Dakota/Beulah
 true America/North_Dakota/Center
 true America/North_Dakota/New_Salem
-false America/Nuuk
+true America/Nuuk
 true America/Ojinaga
 false America/Panama
 true America/Pangnirtung
@@ -230,10 +238,10 @@ false America/Rio_Branco
 false America/Rosario
 true America/Santa_Isabel
 false America/Santarem
-true America/Santiago
+false America/Santiago
 false America/Santo_Domingo
 false America/Sao_Paulo
-false America/Scoresbysund
+true America/Scoresbysund
 true America/Shiprock
 true America/Sitka
 false America/St_Barthelemy
@@ -258,16 +266,16 @@ true America/Yellowknife
 false Antarctica/Casey
 false Antarctica/Davis
 false Antarctica/DumontDUrville
-true Antarctica/Macquarie
+false Antarctica/Macquarie
 false Antarctica/Mawson
-true Antarctica/McMurdo
+false Antarctica/McMurdo
 false Antarctica/Palmer
 false Antarctica/Rothera
-true Antarctica/South_Pole
+false Antarctica/South_Pole
 false Antarctica/Syowa
-false Antarctica/Troll
+true Antarctica/Troll
 false Antarctica/Vostok
-false Arctic/Longyearbyen
+true Arctic/Longyearbyen
 false Asia/Aden
 false Asia/Almaty
 false Asia/Amman
@@ -282,7 +290,7 @@ false Asia/Bahrain
 false Asia/Baku
 false Asia/Bangkok
 false Asia/Barnaul
-false Asia/Beirut
+true Asia/Beirut
 false Asia/Bishkek
 false Asia/Brunei
 false Asia/Calcutta
@@ -297,10 +305,10 @@ false Asia/Dhaka
 false Asia/Dili
 false Asia/Dubai
 false Asia/Dushanbe
-false Asia/Famagusta
-false Asia/Gaza
+true Asia/Famagusta
+true Asia/Gaza
 false Asia/Harbin
-false Asia/Hebron
+true Asia/Hebron
 false Asia/Ho_Chi_Minh
 false Asia/Hong_Kong
 false Asia/Hovd
@@ -308,7 +316,7 @@ false Asia/Irkutsk
 false Asia/Istanbul
 false Asia/Jakarta
 false Asia/Jayapura
-false Asia/Jerusalem
+true Asia/Jerusalem
 false Asia/Kabul
 false Asia/Kamchatka
 false Asia/Karachi
@@ -327,7 +335,7 @@ false Asia/Magadan
 false Asia/Makassar
 false Asia/Manila
 false Asia/Muscat
-false Asia/Nicosia
+true Asia/Nicosia
 false Asia/Novokuznetsk
 false Asia/Novosibirsk
 false Asia/Omsk
@@ -351,7 +359,7 @@ false Asia/Taipei
 false Asia/Tashkent
 false Asia/Tbilisi
 false Asia/Tehran
-false Asia/Tel_Aviv
+true Asia/Tel_Aviv
 false Asia/Thimbu
 false Asia/Thimphu
 false Asia/Tokyo
@@ -367,41 +375,41 @@ false Asia/Yakutsk
 false Asia/Yangon
 false Asia/Yekaterinburg
 false Asia/Yerevan
-false Atlantic/Azores
+true Atlantic/Azores
 true Atlantic/Bermuda
-false Atlantic/Canary
+true Atlantic/Canary
 false Atlantic/Cape_Verde
-false Atlantic/Faeroe
-false Atlantic/Faroe
-false Atlantic/Jan_Mayen
-false Atlantic/Madeira
+true Atlantic/Faeroe
+true Atlantic/Faroe
+true Atlantic/Jan_Mayen
+true Atlantic/Madeira
 false Atlantic/Reykjavik
 false Atlantic/South_Georgia
 false Atlantic/St_Helena
 false Atlantic/Stanley
-true Australia/ACT
-true Australia/Adelaide
+false Australia/ACT
+false Australia/Adelaide
 false Australia/Brisbane
-true Australia/Broken_Hill
-true Australia/Canberra
-true Australia/Currie
+false Australia/Broken_Hill
+false Australia/Canberra
+false Australia/Currie
 false Australia/Darwin
 false Australia/Eucla
-true Australia/Hobart
-true Australia/LHI
+false Australia/Hobart
+false Australia/LHI
 false Australia/Lindeman
-true Australia/Lord_Howe
-true Australia/Melbourne
-true Australia/NSW
+false Australia/Lord_Howe
+false Australia/Melbourne
+false Australia/NSW
 false Australia/North
 false Australia/Perth
 false Australia/Queensland
-true Australia/South
-true Australia/Sydney
-true Australia/Tasmania
-true Australia/Victoria
+false Australia/South
+false Australia/Sydney
+false Australia/Tasmania
+false Australia/Victoria
 false Australia/West
-true Australia/Yancowinna
+false Australia/Yancowinna
 true BDST
 false BDT
 false BNT
@@ -428,7 +436,7 @@ false CHAST
 false CHUT
 false CKT
 true CLST
-true CLT
+false CLT
 false COT
 false CST
 true CST6CDT
@@ -441,13 +449,13 @@ true Canada/Newfoundland
 true Canada/Pacific
 false Canada/Saskatchewan
 false Canada/Yukon
-true Chile/Continental
-true Chile/EasterIsland
+false Chile/Continental
+false Chile/EasterIsland
 true Cuba
 false DAVT
 false DDUT
-true EASST
-true EAST
+false EASST
+false EAST
 false EAT
 true EDT
 true EEST
@@ -457,8 +465,8 @@ true EGST
 false EGT
 false EST
 true EST5EDT
-false Egypt
-true Eire
+true Egypt
+false Eire
 false Etc/GMT
 false Etc/GMT+0
 false Etc/GMT+1
@@ -494,70 +502,70 @@ false Etc/UCT
 false Etc/UTC
 false Etc/Universal
 false Etc/Zulu
-false Europe/Amsterdam
-false Europe/Andorra
+true Europe/Amsterdam
+true Europe/Andorra
 false Europe/Astrakhan
-false Europe/Athens
-false Europe/Belfast
-false Europe/Belgrade
-false Europe/Berlin
-false Europe/Bratislava
-false Europe/Brussels
-false Europe/Bucharest
-false Europe/Budapest
-false Europe/Busingen
-false Europe/Chisinau
-false Europe/Copenhagen
-true Europe/Dublin
-false Europe/Gibraltar
-false Europe/Guernsey
-false Europe/Helsinki
-false Europe/Isle_of_Man
+true Europe/Athens
+true Europe/Belfast
+true Europe/Belgrade
+true Europe/Berlin
+true Europe/Bratislava
+true Europe/Brussels
+true Europe/Bucharest
+true Europe/Budapest
+true Europe/Busingen
+true Europe/Chisinau
+true Europe/Copenhagen
+false Europe/Dublin
+true Europe/Gibraltar
+true Europe/Guernsey
+true Europe/Helsinki
+true Europe/Isle_of_Man
 false Europe/Istanbul
-false Europe/Jersey
+true Europe/Jersey
 false Europe/Kaliningrad
-false Europe/Kiev
+true Europe/Kiev
 false Europe/Kirov
-false Europe/Kyiv
-false Europe/Lisbon
-false Europe/Ljubljana
-false Europe/London
-false Europe/Luxembourg
-false Europe/Madrid
-false Europe/Malta
-false Europe/Mariehamn
+true Europe/Kyiv
+true Europe/Lisbon
+true Europe/Ljubljana
+true Europe/London
+true Europe/Luxembourg
+true Europe/Madrid
+true Europe/Malta
+true Europe/Mariehamn
 false Europe/Minsk
-false Europe/Monaco
+true Europe/Monaco
 false Europe/Moscow
-false Europe/Nicosia
-false Europe/Oslo
-false Europe/Paris
-false Europe/Podgorica
-false Europe/Prague
-false Europe/Riga
-false Europe/Rome
+true Europe/Nicosia
+true Europe/Oslo
+true Europe/Paris
+true Europe/Podgorica
+true Europe/Prague
+true Europe/Riga
+true Europe/Rome
 false Europe/Samara
-false Europe/San_Marino
-false Europe/Sarajevo
+true Europe/San_Marino
+true Europe/Sarajevo
 false Europe/Saratov
 false Europe/Simferopol
-false Europe/Skopje
-false Europe/Sofia
-false Europe/Stockholm
-false Europe/Tallinn
-false Europe/Tirane
-false Europe/Tiraspol
+true Europe/Skopje
+true Europe/Sofia
+true Europe/Stockholm
+true Europe/Tallinn
+true Europe/Tirane
+true Europe/Tiraspol
 false Europe/Ulyanovsk
-false Europe/Uzhgorod
-false Europe/Vaduz
-false Europe/Vatican
-false Europe/Vienna
-false Europe/Vilnius
+true Europe/Uzhgorod
+true Europe/Vaduz
+true Europe/Vatican
+true Europe/Vienna
+true Europe/Vilnius
 false Europe/Volgograd
-false Europe/Warsaw
-false Europe/Zagreb
-false Europe/Zaporozhye
-false Europe/Zurich
+true Europe/Warsaw
+true Europe/Zagreb
+true Europe/Zaporozhye
+true Europe/Zurich
 false FET
 true FJST
 false FJT
@@ -568,8 +576,8 @@ false FNT
 false Factory
 false GALT
 false GAMT
-false GB
-false GB-Eire
+true GB
+true GB-Eire
 false GEST
 false GET
 false GFT
@@ -603,7 +611,7 @@ false Indian/Mauritius
 false Indian/Mayotte
 false Indian/Reunion
 false Iran
-false Israel
+true Israel
 false JAYT
 false JST
 false Jamaica
@@ -616,7 +624,7 @@ false KRAST
 false KRAT
 false KST
 false Kwajalein
-true LHDT
+false LHDT
 false LHST
 false LIGT
 false LINT
@@ -629,7 +637,7 @@ false MAWT
 true MDT
 true MEST
 true MESZ
-false MET
+true MET
 true METDST
 false MEZ
 false MHT
@@ -653,8 +661,8 @@ false NOVT
 false NPT
 false NST
 false NUT
-true NZ
-true NZ-CHAT
+false NZ
+false NZ-CHAT
 true NZDT
 false NZST
 false NZT
@@ -679,11 +687,11 @@ false PWT
 true PYST
 false PYT
 false Pacific/Apia
-true Pacific/Auckland
+false Pacific/Auckland
 false Pacific/Bougainville
-true Pacific/Chatham
+false Pacific/Chatham
 false Pacific/Chuuk
-true Pacific/Easter
+false Pacific/Easter
 false Pacific/Efate
 false Pacific/Enderbury
 false Pacific/Fakaofo
@@ -704,7 +712,7 @@ false Pacific/Marquesas
 false Pacific/Midway
 false Pacific/Nauru
 false Pacific/Niue
-true Pacific/Norfolk
+false Pacific/Norfolk
 false Pacific/Noumea
 false Pacific/Pago_Pago
 false Pacific/Palau
@@ -722,8 +730,8 @@ false Pacific/Truk
 false Pacific/Wake
 false Pacific/Wallis
 false Pacific/Yap
-false Poland
-false Portugal
+true Poland
+true Portugal
 false RET
 false ROC
 false ROK
@@ -774,7 +782,7 @@ false WAKT
 false WAST
 false WAT
 true WDT
-false WET
+true WET
 true WETDST
 false WFT
 true WGST
@@ -825,7 +833,7 @@ false Zulu
 14697||10|C|G
 14697||-9223372036854775808|U|G
 14697||10|U|G</Grants>
-      <IntrospectionStateNumber>25656</IntrospectionStateNumber>
+      <IntrospectionStateNumber>27925</IntrospectionStateNumber>
       <ObjectId>19721</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4252,42 +4260,42 @@ false Zulu
     <schema id="271" parent="8" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>25656</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2025-03-26.10:19:47</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>27925</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2025-06-04.11:29:16</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="272" parent="271" name="folder_seq">
-      <DasType>bigint|0s</DasType>
       <ObjectId>20701</ObjectId>
       <SequenceIdentity>1+50</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>9725</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="273" parent="271" name="incremental">
-      <DasType>bigint|0s</DasType>
       <ObjectId>20702</ObjectId>
       <SequenceIdentity>1+50</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>9726</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="274" parent="271" name="news_article_seq">
-      <DasType>bigint|0s</DasType>
       <ObjectId>20804</ObjectId>
       <SequenceIdentity>1+50</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>10249</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="275" parent="271" name="users_seq">
-      <DasType>bigint|0s</DasType>
       <ObjectId>20806</ObjectId>
       <SequenceIdentity>1+50</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>10263</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="276" parent="271" name="folder">
@@ -4320,39 +4328,51 @@ false Zulu
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="281" parent="271" name="users">
-      <ObjectId>20807</ObjectId>
-      <StateNumber>10297</StateNumber>
+    <table id="281" parent="271" name="note_users_who_favorite">
+      <ObjectId>59345</ObjectId>
+      <StateNumber>27909</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="282" parent="276" name="id">
-      <DasType>bigint|0s</DasType>
+    <table id="282" parent="271" name="users">
+      <ObjectId>20807</ObjectId>
+      <StateNumber>27895</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <table id="283" parent="271" name="users_favorite_notes">
+      <ObjectId>59329</ObjectId>
+      <StateNumber>27894</StateNumber>
+      <AccessMethodId>2</AccessMethodId>
+      <OwnerName>postgres</OwnerName>
+    </table>
+    <column id="284" parent="276" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>9727</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="283" parent="276" name="parent_id">
-      <DasType>bigint|0s</DasType>
+    <column id="285" parent="276" name="parent_id">
       <Position>2</Position>
       <StateNumber>9727</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="284" parent="276" name="name">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="286" parent="276" name="name">
       <Position>3</Position>
       <StateNumber>9727</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="285" parent="276" name="fkn0cjh1seljcp0mc4tj1ufh99m">
+    <foreign-key id="287" parent="276" name="fkn0cjh1seljcp0mc4tj1ufh99m">
       <ColNames>parent_id</ColNames>
       <ObjectId>20733</ObjectId>
       <StateNumber>9732</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>20703</RefTableId>
     </foreign-key>
-    <index id="286" parent="276" name="folder_pkey">
+    <index id="288" parent="276" name="folder_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20706</ObjectId>
@@ -4361,42 +4381,42 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="287" parent="276" name="folder_pkey">
+    <key id="289" parent="276" name="folder_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20707</ObjectId>
       <Primary>1</Primary>
       <StateNumber>9727</StateNumber>
       <UnderlyingIndexId>20706</UnderlyingIndexId>
     </key>
-    <column id="288" parent="277" name="folder_id">
-      <DasType>bigint|0s</DasType>
+    <column id="290" parent="277" name="folder_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>9728</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="289" parent="277" name="notes_id">
-      <DasType>bigint|0s</DasType>
+    <column id="291" parent="277" name="notes_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>9728</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="290" parent="277" name="fki7pnadbrrjlyak155jueh6wm8">
+    <foreign-key id="292" parent="277" name="fki7pnadbrrjlyak155jueh6wm8">
       <ColNames>folder_id</ColNames>
       <ObjectId>20743</ObjectId>
       <StateNumber>9734</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>20703</RefTableId>
     </foreign-key>
-    <foreign-key id="291" parent="277" name="fk56p1pam1uqveh25v86u37rp0v">
+    <foreign-key id="293" parent="277" name="fk56p1pam1uqveh25v86u37rp0v">
       <ColNames>notes_id</ColNames>
       <ObjectId>20738</ObjectId>
       <StateNumber>9733</StateNumber>
       <RefKeyColPositions>2</RefKeyColPositions>
       <RefTableId>20718</RefTableId>
     </foreign-key>
-    <index id="292" parent="277" name="folder_notes_notes_id_key">
+    <index id="294" parent="277" name="folder_notes_notes_id_key">
       <ColNames>notes_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20711</ObjectId>
@@ -4404,41 +4424,41 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="293" parent="277" name="folder_notes_notes_id_key">
+    <key id="295" parent="277" name="folder_notes_notes_id_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20712</ObjectId>
       <StateNumber>9728</StateNumber>
       <UnderlyingIndexId>20711</UnderlyingIndexId>
     </key>
-    <column id="294" parent="278" name="folder_id">
-      <DasType>bigint|0s</DasType>
+    <column id="296" parent="278" name="folder_id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>9729</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="295" parent="278" name="sub_folders_id">
-      <DasType>bigint|0s</DasType>
+    <column id="297" parent="278" name="sub_folders_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>9729</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <foreign-key id="296" parent="278" name="fkbqm9nw0kai4xy0qlkttsxgv4d">
+    <foreign-key id="298" parent="278" name="fkbqm9nw0kai4xy0qlkttsxgv4d">
       <ColNames>folder_id</ColNames>
       <ObjectId>20753</ObjectId>
       <StateNumber>9736</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>20703</RefTableId>
     </foreign-key>
-    <foreign-key id="297" parent="278" name="fk6fuxr9l7c495jjwfftw7a0yhy">
+    <foreign-key id="299" parent="278" name="fk6fuxr9l7c495jjwfftw7a0yhy">
       <ColNames>sub_folders_id</ColNames>
       <ObjectId>20748</ObjectId>
       <StateNumber>9735</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>20703</RefTableId>
     </foreign-key>
-    <index id="298" parent="278" name="folder_sub_folders_sub_folders_id_key">
+    <index id="300" parent="278" name="folder_sub_folders_sub_folders_id_key">
       <ColNames>sub_folders_id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20716</ObjectId>
@@ -4446,38 +4466,38 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="299" parent="278" name="folder_sub_folders_sub_folders_id_key">
+    <key id="301" parent="278" name="folder_sub_folders_sub_folders_id_key">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20717</ObjectId>
       <StateNumber>9729</StateNumber>
       <UnderlyingIndexId>20716</UnderlyingIndexId>
     </key>
-    <column id="300" parent="279" name="id">
-      <DasType>bigint|0s</DasType>
+    <column id="302" parent="279" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>10247</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="301" parent="279" name="content">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="303" parent="279" name="content">
       <Position>2</Position>
       <StateNumber>10247</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="302" parent="279" name="post_date">
-      <DasType>timestamp(6)|0s</DasType>
+    <column id="304" parent="279" name="post_date">
       <Position>3</Position>
       <StateNumber>10247</StateNumber>
+      <StoredType>timestamp(6)|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="303" parent="279" name="title">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="305" parent="279" name="title">
       <Position>4</Position>
       <StateNumber>10247</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="304" parent="279" name="news_article_pkey">
+    <index id="306" parent="279" name="news_article_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20802</ObjectId>
@@ -4486,70 +4506,70 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="305" parent="279" name="news_article_pkey">
+    <key id="307" parent="279" name="news_article_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20803</ObjectId>
       <Primary>1</Primary>
       <StateNumber>10247</StateNumber>
       <UnderlyingIndexId>20802</UnderlyingIndexId>
     </key>
-    <check id="306" parent="280" name="note_type_check">
+    <check id="308" parent="280" name="note_type_check">
       <ColNames>type</ColNames>
       <ObjectId>20721</ObjectId>
       <Predicate>(type &gt;= 0) AND (type &lt;= 17)</Predicate>
       <StateNumber>9730</StateNumber>
     </check>
-    <column id="307" parent="280" name="type">
-      <DasType>smallint|0s</DasType>
+    <column id="309" parent="280" name="type">
       <Position>1</Position>
       <StateNumber>9730</StateNumber>
+      <StoredType>smallint|0s</StoredType>
       <TypeId>21</TypeId>
     </column>
-    <column id="308" parent="280" name="id">
-      <DasType>bigint|0s</DasType>
+    <column id="310" parent="280" name="id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StateNumber>9730</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="309" parent="280" name="parent_folder_id">
-      <DasType>bigint|0s</DasType>
+    <column id="311" parent="280" name="parent_folder_id">
       <Position>3</Position>
       <StateNumber>9730</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="310" parent="280" name="upload_date">
-      <DasType>timestamp(6)|0s</DasType>
+    <column id="312" parent="280" name="upload_date">
       <Position>4</Position>
       <StateNumber>9730</StateNumber>
+      <StoredType>timestamp(6)|0s</StoredType>
       <TypeId>1114</TypeId>
     </column>
-    <column id="311" parent="280" name="mongo_id">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="313" parent="280" name="mongo_id">
       <Position>5</Position>
       <StateNumber>9730</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="312" parent="280" name="name">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="314" parent="280" name="name">
       <Position>6</Position>
       <StateNumber>9730</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="313" parent="280" name="data">
-      <DasType>oid|0s</DasType>
+    <column id="315" parent="280" name="data">
       <Position>7</Position>
       <StateNumber>25515</StateNumber>
+      <StoredType>oid|0s</StoredType>
       <TypeId>26</TypeId>
     </column>
-    <foreign-key id="314" parent="280" name="fkodgs6lm0pep9e23e0u8ls7x1c">
+    <foreign-key id="316" parent="280" name="fkodgs6lm0pep9e23e0u8ls7x1c">
       <ColNames>parent_folder_id</ColNames>
       <ObjectId>20758</ObjectId>
       <StateNumber>9737</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
       <RefTableId>20703</RefTableId>
     </foreign-key>
-    <index id="315" parent="280" name="note_pkey">
+    <index id="317" parent="280" name="note_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20724</ObjectId>
@@ -4558,45 +4578,73 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <key id="316" parent="280" name="note_pkey">
+    <key id="318" parent="280" name="note_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20725</ObjectId>
       <Primary>1</Primary>
       <StateNumber>9730</StateNumber>
       <UnderlyingIndexId>20724</UnderlyingIndexId>
     </key>
-    <column id="317" parent="281" name="id">
-      <DasType>bigint|0s</DasType>
+    <column id="319" parent="281" name="note_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>27908</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="320" parent="281" name="users_who_favorite_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>27908</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="321" parent="281" name="fknu7ol3m09e88j75lnmgypyvv6">
+      <ColNames>note_id</ColNames>
+      <ObjectId>59353</ObjectId>
+      <StateNumber>27910</StateNumber>
+      <RefKeyColPositions>2</RefKeyColPositions>
+      <RefTableId>20718</RefTableId>
+    </foreign-key>
+    <foreign-key id="322" parent="281" name="fk16j18lyskwb3x3k60lpfen6dp">
+      <ColNames>users_who_favorite_id</ColNames>
+      <ObjectId>59348</ObjectId>
+      <StateNumber>27909</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>20807</RefTableId>
+    </foreign-key>
+    <column id="323" parent="282" name="id">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>10297</StateNumber>
+      <StoredType>bigint|0s</StoredType>
       <TypeId>20</TypeId>
     </column>
-    <column id="318" parent="281" name="email">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="324" parent="282" name="email">
       <Position>2</Position>
       <StateNumber>10297</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="319" parent="281" name="first_name">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="325" parent="282" name="first_name">
       <Position>3</Position>
       <StateNumber>10297</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="320" parent="281" name="last_name">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="326" parent="282" name="last_name">
       <Position>4</Position>
       <StateNumber>10297</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <column id="321" parent="281" name="password">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="327" parent="282" name="password">
       <Position>5</Position>
       <StateNumber>10297</StateNumber>
+      <StoredType>varchar(255)|0s</StoredType>
       <TypeId>1043</TypeId>
     </column>
-    <index id="322" parent="281" name="users_pkey">
+    <index id="328" parent="282" name="users_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20812</ObjectId>
@@ -4605,7 +4653,7 @@ false Zulu
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
-    <index id="323" parent="281" name="uk6dotkott2kjsp8vw4d0m25fb7">
+    <index id="329" parent="282" name="uk6dotkott2kjsp8vw4d0m25fb7">
       <ColNames>email</ColNames>
       <ObjectId>20814</ObjectId>
       <StateNumber>10299</StateNumber>
@@ -4615,17 +4663,57 @@ false Zulu
       <CollationIds>100</CollationIds>
       <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="324" parent="281" name="users_pkey">
+    <key id="330" parent="282" name="users_pkey">
       <NameSurrogate>1</NameSurrogate>
       <ObjectId>20813</ObjectId>
       <Primary>1</Primary>
       <StateNumber>10297</StateNumber>
       <UnderlyingIndexId>20812</UnderlyingIndexId>
     </key>
-    <key id="325" parent="281" name="uk6dotkott2kjsp8vw4d0m25fb7">
+    <key id="331" parent="282" name="uk6dotkott2kjsp8vw4d0m25fb7">
       <ObjectId>20815</ObjectId>
       <StateNumber>10299</StateNumber>
       <UnderlyingIndexId>20814</UnderlyingIndexId>
+    </key>
+    <column id="332" parent="283" name="user_id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StateNumber>27891</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="333" parent="283" name="favorite_notes_id">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StateNumber>27891</StateNumber>
+      <StoredType>bigint|0s</StoredType>
+      <TypeId>20</TypeId>
+    </column>
+    <foreign-key id="334" parent="283" name="fkgnu23tt9qao6aakvjtxt20r6t">
+      <ColNames>user_id</ColNames>
+      <ObjectId>59339</ObjectId>
+      <StateNumber>27895</StateNumber>
+      <RefKeyColPositions>1</RefKeyColPositions>
+      <RefTableId>20807</RefTableId>
+    </foreign-key>
+    <foreign-key id="335" parent="283" name="fklyyk21iwxqte6adh1mlrxi0f">
+      <ColNames>favorite_notes_id</ColNames>
+      <ObjectId>59334</ObjectId>
+      <StateNumber>27894</StateNumber>
+      <RefKeyColPositions>2</RefKeyColPositions>
+      <RefTableId>20718</RefTableId>
+    </foreign-key>
+    <index id="336" parent="283" name="uk2kpw2bl71aytfwg50ke9qerb0">
+      <ColNames>favorite_notes_id</ColNames>
+      <ObjectId>59332</ObjectId>
+      <StateNumber>27893</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <key id="337" parent="283" name="uk2kpw2bl71aytfwg50ke9qerb0">
+      <ObjectId>59333</ObjectId>
+      <StateNumber>27893</StateNumber>
+      <UnderlyingIndexId>59332</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

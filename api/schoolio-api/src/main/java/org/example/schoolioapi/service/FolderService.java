@@ -52,7 +52,7 @@ public class FolderService {
 
     public Folder addSubFolderToFolder(Folder folder, Folder subFolder) throws Exception {
         if (folderContainsSubFolderWithName(folder.getName(), subFolder.getName()))
-            throw new Exception("Folder with name *" + subFolder.getName() + "* already exists in folder *" + subFolder.getName() + "*");
+            throw new Exception("Folder with name *" + subFolder.getName() + "* already exists in folder *" + folder.getName() + "*");
         else if (isFolderNameInvalid(subFolder.getName()))
             throw new Exception("Invalid name");
         else {
@@ -89,8 +89,8 @@ public class FolderService {
         if (folderToPatch == null) return null;
         if (updatedFolder.name() != null) {
             if (folderContainsSubFolderWithName(folderToPatch.getName(), updatedFolder.name()))
-                throw new Exception("Folder with name *" + updatedFolder.name() + "* already exists in folder *" + updatedFolder.name() + "*");
-            else if (!isFolderNameInvalid(updatedFolder.name())) {
+                throw new Exception("Folder with name *" + updatedFolder.name() + "* already exists in folder *" + folderToPatch.getName() + "*");
+            else if (isFolderNameInvalid(updatedFolder.name())) {
                 throw new Exception("Folder name is invalid");
             } else
                 folderToPatch.setName(updatedFolder.name());
@@ -111,9 +111,17 @@ public class FolderService {
         return folder.getSubFolders().stream().map(FolderDTO::from).toList();
     }
 
-    public void addSubFolder(Long id, FolderDTO subfolderDTO) {
+    public void addSubFolder(Long id, FolderDTO subfolderDTO) throws Exception {
+        Folder parentFolder = getFolderById(id);
+        if (parentFolder == null) {
+            throw new Exception("Parent folder not found");
+        }
+
         Folder subfolder = new Folder();
-        mapToEntity(subfolderDTO,subfolder);
+        mapToEntity(subfolderDTO, subfolder);
+        subfolder = saveFolder(subfolder);
+
+        addSubFolderToFolder(parentFolder.getId(), subfolder.getId());
     }
 
 }

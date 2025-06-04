@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
+import {Button, Col, Container, Row} from 'react-bootstrap';
 import {FolderFill} from 'react-bootstrap-icons';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -9,11 +9,12 @@ import {fileIcons} from '../FileIcons';
 import {NoteDTO} from '../Note/NoteDTO';
 import EmptyFolder from './EmptyFolder';
 import FileTypeFilterButton from './FileTypeFilterButton';
-import {getFolderById} from "../../api/api";
+import {addFavoriteNote, getFolderById} from "../../api/api";
 import {FolderDetailedDTO} from "./FolderDetailedDTO";
 import AddSubFolderButton from "./AddSubFolderButton";
 import AddFileButton from "../Note/AddFileButton";
 import {SearchBar} from "../Search/SearchBar";
+
 
 export const FolderComponent: React.FC = () => {
     const pathId = useParams<{ id: string }>().id;
@@ -35,6 +36,14 @@ export const FolderComponent: React.FC = () => {
         };
         fetchFolder();
     }, [id]);
+
+    function addNote(note: NoteDTO) {
+        addFavoriteNote(note).then((responce) => {
+            if (responce.status === 200) alert("saved note")
+            else alert("could not save note")
+        })
+
+    }
 
     const displaySubFolderLinks = (): React.ReactNode => {
         if (!folder) return null;
@@ -71,6 +80,8 @@ export const FolderComponent: React.FC = () => {
                                 </span>
                             </span>
                         </Link>
+                        <Button style={{backgroundColor: "white", border: "none"}}
+                                onClick={() => addNote(note)}>🔖</Button>
                     </div>
                 ))}
             </div>
@@ -82,7 +93,7 @@ export const FolderComponent: React.FC = () => {
             <div>
                 <Row>
                     <Col className="d-flex align-items-center">
-                        <h5 className="me-2">Αρχεία</h5>
+                        <h5 className="">Αρχεία</h5>
                     </Col>
                 </Row>
             </div>
@@ -104,26 +115,6 @@ export const FolderComponent: React.FC = () => {
         )
     }
 
-    const displayButtons = (): React.ReactNode => {
-        return (
-            <Container>
-                <Row>
-                    <Col className='d-flex'>
-                        <div className='me-5'>
-                            <AddSubFolderButton folder={folder}/>
-                        </div>
-                        <div className='me-5'>
-                            <AddFileButton folder={folder} setFolder={setFolder}/>
-                        </div>
-                        {/*<div className='me-5'>*/}
-                        {/*    <EditFolderButton folder={folder} setFolder={setFolder}/>*/}
-                        {/*</div>*/}
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
-
     const displayLoadingSkeleton = (index: number): React.ReactNode => {
         return (
             <div>
@@ -138,45 +129,41 @@ export const FolderComponent: React.FC = () => {
 
     return (
         <Container className='mb-5'>
-            <Row className=''>
-                <Col xs={12}>
-                    {isLoading &&
-                        <div>
-                            {Array.from({length: 30}).map((_, index) => displayLoadingSkeleton(index))}
-                        </div>
-                    }
-
-                    <h5 className='pe-5 d-flex text-dark mb-4 '>
-                        <Col>
+            {isLoading &&
+                <div>
+                    {Array.from({length: 10}).map((_, index) => displayLoadingSkeleton(index))}
+                </div>
+            }
+            {folder &&
+                <Container>
+                    <Row>
+                        <Col className="h2 text-decoration-underline ">
                             <FolderFill className='me-2' color={colors.carrot_orange}/>
-                            &gt;
-                            <span className="text-decoration-underline">
-                                {folder?.name || <Skeleton width={100}/>}
-                            </span>
+                            &gt;{folder?.name}
                         </Col>
-                    </h5>
-                    {folder &&
-                        <>
-                            <Row className='d-flex flex-wrap align-items-center mb-2'>
-                                <Col xs={12} md={4} className='mb-2 mb-md-0'>
-                                    {displayFilterButtons()}
-                                </Col>
-                                <Col xs={12} md={4} className='mb-2 mb-md-0'>
-                                    {displayButtons()}
-                                </Col>
-                                <Col xs={12} md={4}>
-                                    <SearchBar folder={folder}/>
-                                </Col>
-                            </Row>
-                            {folder && displayFilesBar()}
-                            {displayNoteLinks()}
-                            {displaySubFolderLinks()}
-                        </>
-                    }
-
-                    {folder?.isEmpty() && <EmptyFolder/>}
-                </Col>
-            </Row>
+                    </Row>
+                    <Row className='align-items-center mb-4'>
+                        <Col className="w-auto">
+                            {displayFilterButtons()}
+                        </Col>
+                        <Col xs={12} md={6} className="w-auto">
+                            <AddSubFolderButton folder={folder}/>
+                            <AddFileButton folder={folder} setFolder={setFolder}/>
+                        </Col>
+                    </Row>
+                    <Row className="mb-4">
+                        <Col xs={12} md={5}>
+                            <SearchBar folder={folder}/>
+                        </Col>
+                    </Row>
+                    <Container>
+                        {folder && displayFilesBar()}
+                        {displayNoteLinks()}
+                        {displaySubFolderLinks()}
+                    </Container>
+                </Container>
+            }
+            {folder?.isEmpty() && <EmptyFolder/>}
         </Container>
     );
 };

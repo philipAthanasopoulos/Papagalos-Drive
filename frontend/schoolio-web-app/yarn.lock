@@ -1742,6 +1742,27 @@
     hoist-non-react-statics "^3.3.2"
     prop-types "^15.8.1"
 
+"@napi-rs/canvas-win32-x64-msvc@0.1.69":
+  version "0.1.69"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas-win32-x64-msvc/-/canvas-win32-x64-msvc-0.1.69.tgz"
+  integrity sha512-Q4YA8kVnKarApBVLu7F8icGlIfSll5Glswo5hY6gPS4Is2dCI8+ig9OeDM8RlwYevUIxKq8lZBypN8Q1iLAQ7w==
+
+"@napi-rs/canvas@^0.1.67":
+  version "0.1.69"
+  resolved "https://registry.npmjs.org/@napi-rs/canvas/-/canvas-0.1.69.tgz"
+  integrity sha512-ydvNeJMRm+l3T14yCoUKqjYQiEdXDq1isznI93LEBGYssXKfSaLNLHOkeM4z9Fnw9Pkt2EKOCAtW9cS4b00Zcg==
+  optionalDependencies:
+    "@napi-rs/canvas-android-arm64" "0.1.69"
+    "@napi-rs/canvas-darwin-arm64" "0.1.69"
+    "@napi-rs/canvas-darwin-x64" "0.1.69"
+    "@napi-rs/canvas-linux-arm-gnueabihf" "0.1.69"
+    "@napi-rs/canvas-linux-arm64-gnu" "0.1.69"
+    "@napi-rs/canvas-linux-arm64-musl" "0.1.69"
+    "@napi-rs/canvas-linux-riscv64-gnu" "0.1.69"
+    "@napi-rs/canvas-linux-x64-gnu" "0.1.69"
+    "@napi-rs/canvas-linux-x64-musl" "0.1.69"
+    "@napi-rs/canvas-win32-x64-msvc" "0.1.69"
+
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
   resolved "https://registry.npmjs.org/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz"
@@ -6535,6 +6556,15 @@ fs-extra@^11.0.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
+fs-extra@^8.0.1:
+  version "8.1.0"
+  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-8.1.0.tgz"
+  integrity sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
+  dependencies:
+    graceful-fs "^4.2.0"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
 fs-extra@^9.0.0, fs-extra@^9.0.1:
   version "9.1.0"
   resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-9.1.0.tgz"
@@ -8395,6 +8425,22 @@ json5@^2.1.2, json5@^2.2.0, json5@^2.2.3:
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
+jsonfile@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/jsonfile/-/jsonfile-4.0.0.tgz"
+  integrity sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
+jsonfile@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/jsonfile/-/jsonfile-5.0.0.tgz"
+  integrity sha512-NQRZ5CRo74MhMMC3/3r5g2k4fjodJ/wh8MxjFbCViWKFjxrnudWSY5vomh+23ZaXzAS7J3fBZIR2dV6WbmfM0w==
+  dependencies:
+    universalify "^0.1.2"
+  optionalDependencies:
+    graceful-fs "^4.1.6"
+
 jsonfile@^6.0.1:
   version "6.1.0"
   resolved "https://registry.npmjs.org/jsonfile/-/jsonfile-6.1.0.tgz"
@@ -9797,6 +9843,13 @@ pdfjs-dist@^4.5.136:
   optionalDependencies:
     canvas "^2.11.2"
     path2d "^0.2.1"
+
+pdfjs-dist@^5.1.91:
+  version "5.1.91"
+  resolved "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-5.1.91.tgz"
+  integrity sha512-qSIADdagooJB4wWCBnrBJjRvASevmxL0BwafvOuKJG5uTQdYoFBrhrRYnucKNiSc9qS6JIk0hC5y1yktFljXkA==
+  optionalDependencies:
+    "@napi-rs/canvas" "^0.1.67"
 
 pdfjs-dist@4.3.136:
   version "4.3.136"
@@ -12988,6 +13041,21 @@ tty-browserify@0.0.0:
   resolved "https://registry.npmjs.org/tty-browserify/-/tty-browserify-0.0.0.tgz"
   integrity sha512-JVa5ijo+j/sOoHGjw0sxw734b1LhBkQ3bvUGNdxnVXDCX81Yx7TFgnZygxrIIWn23hbfTaMYLwRmAxFyDuFmIw==
 
+twemoji-parser@14.0.0:
+  version "14.0.0"
+  resolved "https://registry.npmjs.org/twemoji-parser/-/twemoji-parser-14.0.0.tgz"
+  integrity sha512-9DUOTGLOWs0pFWnh1p6NF+C3CkQ96PWmEFwhOVmT3WbecRC+68AIqpsnJXygfkFcp4aXbOp8Dwbhh/HQgvoRxA==
+
+twemoji@^14.0.2:
+  version "14.0.2"
+  resolved "https://registry.npmjs.org/twemoji/-/twemoji-14.0.2.tgz"
+  integrity sha512-BzOoXIe1QVdmsUmZ54xbEH+8AgtOKUiG53zO5vVP2iUu6h5u9lN15NcuS6te4OY96qx0H7JK9vjjl9WQbkTRuA==
+  dependencies:
+    fs-extra "^8.0.1"
+    jsonfile "^5.0.0"
+    twemoji-parser "14.0.0"
+    universalify "^0.1.2"
+
 type-check@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/type-check/-/type-check-0.4.0.tgz"
@@ -13193,6 +13261,11 @@ unique-string@^2.0.0:
   dependencies:
     crypto-random-string "^2.0.0"
 
+universalify@^0.1.0, universalify@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.npmjs.org/universalify/-/universalify-0.1.2.tgz"
+  integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
+
 universalify@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/universalify/-/universalify-0.2.0.tgz"
@@ -13393,6 +13466,11 @@ vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
+
+viewerjs@^1.11.7:
+  version "1.11.7"
+  resolved "https://registry.npmjs.org/viewerjs/-/viewerjs-1.11.7.tgz"
+  integrity sha512-0JuVqOmL5v1jmEAlG5EBDR3XquxY8DWFQbFMprOXgaBB0F7Q/X9xWdEaQc59D8xzwkdUgXEMSSknTpriq95igg==
 
 vm-browserify@^1.0.1:
   version "1.1.2"

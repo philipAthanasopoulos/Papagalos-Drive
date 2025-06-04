@@ -6,7 +6,8 @@ const colors = {
   black: '#010001',          // Default black
   carrot_orange: '#EA8D0C',  // Default carrot orange
   polynesian_blue: '#054B8B',// Default polynesian blue
-  jonquil: '#FBCA12'         // Default jonquil
+  jonquil: '#FBCA12',
+  shamrock_green_soft: 'rgba(43,155,82,0.73)' // Default jonquil
 } as const;
 
 export default colors;

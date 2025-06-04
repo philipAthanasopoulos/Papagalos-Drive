@@ -65,6 +65,8 @@ const AddFileButton = (props: Props) => {
 
     const alertSuccess = () => {
         if (showSuccessAlert) return (
+
+
             <NotificationComponent header='Ανέβηκε!' body='🥳🎉Το αρχείο προστέθηκε με επιτυχία!'
                                    color={colors.shamrock_green}/>
         )
@@ -84,7 +86,8 @@ const AddFileButton = (props: Props) => {
             </div>
             <div>
                 <Button variant="light" size='lg' onClick={() => setShowModal(true)}>
-                    <FileEarmarkArrowUp color={colors.shamrock_green}/> Ανέβασμα αρχείου
+                    {/*<FileEarmarkArrowUp color={colors.shamrock_green}/> */}
+                    📒Ανέβασμα αρχείου
                 </Button>
 
                 <Modal show={showModal} onHide={() => setShowModal(false)}>
@@ -108,10 +111,10 @@ const AddFileButton = (props: Props) => {
                         <ModalFooter>
                             <Button className='border-0' onClick={() => setShowModal(false)}
                                     style={{background: colors.carrot_orange}}>
-                                Ακύρωση
+                                ✖ Ακύρωση
                             </Button>
                             <Button className='border-0' type='submit' style={{background: colors.shamrock_green}}>
-                                <FileEarmarkArrowUp className='me-1'/> Ανέβασμα
+                                ✅ Ανέβασμα
                             </Button>
                         </ModalFooter>
                     </Form>

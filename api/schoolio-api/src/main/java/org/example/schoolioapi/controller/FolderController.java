@@ -45,14 +45,14 @@ public class FolderController {
     //TODO transaction should undo invalid folder creation
     @PostMapping("/{id}/subfolders")
     @CacheEvict(value = "folderDTO", key = "#id")
-    public ResponseEntity<String> addSubFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
+    public ResponseEntity<FolderDTO> addSubFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {
         try {
             Long childFolderId = folderService.create(folderDTO);
             folderService.addSubFolderToFolder(id, childFolderId);
             Folder parent = folderService.getFolderById(id);
-            return ResponseEntity.ok(FolderDTO.from(parent).toString());
+            return ResponseEntity.ok(FolderDTO.from(parent));
         } catch (Exception e) {
-            return status(BAD_REQUEST).body(e.getMessage());
+            return status(BAD_REQUEST).body(null);
         }
     }
 }

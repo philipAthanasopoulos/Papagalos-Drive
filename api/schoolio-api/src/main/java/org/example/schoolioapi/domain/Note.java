@@ -6,7 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,4 +26,6 @@ public class Note {
     private Folder parentFolder;
     @Lob
     private byte[] data;
+    @ManyToMany
+    List<User> usersWhoFavorite = new ArrayList<>();
 }

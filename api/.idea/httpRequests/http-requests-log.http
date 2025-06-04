@@ -1,3 +1,26 @@
+POST http://localhost:8080/register
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=D452AC3055B1A15E173BE3D3483316DE
+content-length: 0
+
+<> 2025-06-03T135626.403.json
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2025-06-03T135544.403.json
+
+###
+
 GET http://localhost:8080/folders/2002
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.7
 Accept-Encoding: br, deflate, gzip, x-gzip

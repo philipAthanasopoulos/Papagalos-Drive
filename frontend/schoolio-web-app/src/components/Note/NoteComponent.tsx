@@ -57,7 +57,7 @@ export const NoteComponent = () => {
             <iframe
                 title="note"
                 className='vh-100'
-                style={{width: '100%', height: '100%', border: 'none', objectFit: 'contain'}}
+                style={{width: '100%', height: '100%', border: '5px solid'}}
                 src={`data:${mimeType};base64,${note?.data}`}
             />
         );
@@ -71,15 +71,20 @@ export const NoteComponent = () => {
                         <LoadingComponent/>
                     ) : (
                         <div>
-                            <div className='d-flex text-primary mb-4 align-items-center '>
-                                <div className='d-flex text-primary mb-4 align-items-center'>
-                                    {fileIcons[note?.type.toLowerCase() || ""]}
-                                    <div className='ms-3'>
+                            <Row className='d-flex text-primary mb-4 align-items-center'>
+                                <Col>
+                                    <Row className='text-secondary mb-4'>
+                                        <Col className="h4">
+                                            {fileIcons[note?.type.toLowerCase() || ""]}
+                                            {note?.name}
+                                        </Col>
+                                    </Row>
+                                    <Row>
                                         <DownloadFileButton filename={note?.name || "file"}
                                                             downloadString={`data:${mimeTypes[note?.type.toLowerCase() ?? '']};base64,${note?.data}`}/>
-                                    </div>
-                                </div>
-                            </div>
+                                    </Row>
+                                </Col>
+                            </Row>
                             <div className='embed-responsive embed-responsive-16by9'>
                                 {displayMedia()}
                             </div>
@@ -89,5 +94,4 @@ export const NoteComponent = () => {
             </Row>
         </Container>
     );
-
 }
