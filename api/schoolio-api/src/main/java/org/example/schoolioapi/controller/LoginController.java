@@ -6,27 +6,32 @@ import org.example.schoolioapi.DTO.User.UserDTO;
 import org.example.schoolioapi.domain.User;
 import org.example.schoolioapi.service.UserService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoginController {
 
-    public UserService userService;
+    private UserService userService;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public LoginController(UserService userService) {
+    public LoginController(UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userService = userService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(
-        @RequestBody LoginBody userToCkeck,
-        HttpServletRequest request) {
+            @RequestBody LoginBody userToCkeck,
+            HttpServletRequest request) {
         System.out.println("Got request" + userToCkeck.email);
         User user = userService.findByEmail(userToCkeck.email).orElse(null);
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
-        if (!user.getPassword().equals(userToCkeck.password)) {
+        if (!bCryptPasswordEncoder.matches(userToCkeck.password, user.getPassword())) {
             return ResponseEntity.badRequest().build();
         }
 
@@ -38,6 +43,7 @@ public class LoginController {
     public static class LoginBody {
         public String email;
         public String password;
+
         public LoginBody(String email, String password) {
             this.email = email;
             this.password = password;

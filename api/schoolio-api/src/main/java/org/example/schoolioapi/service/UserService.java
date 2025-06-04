@@ -6,6 +6,7 @@ import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.domain.User;
 import org.example.schoolioapi.repository.NoteRepository;
 import org.example.schoolioapi.repository.UserRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +19,12 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final NoteRepository noteRepository;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public UserService(UserRepository userRepository, NoteRepository noteRepository) {
+    public UserService(UserRepository userRepository, NoteRepository noteRepository,  BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.noteRepository = noteRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     public void saveUser(OAuth2User oAuth2User) {
@@ -36,6 +39,7 @@ public class UserService {
     }
 
     public User save(User user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 

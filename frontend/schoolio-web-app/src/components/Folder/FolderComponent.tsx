@@ -81,7 +81,13 @@ export const FolderComponent: React.FC = () => {
                             </span>
                         </Link>
                         <Button style={{backgroundColor: "white", border: "none"}}
-                                onClick={() => addNote(note)}>🔖</Button>
+                                onClick={() => {
+                                    if (localStorage.getItem("user")) {
+                                        addNote(note);
+                                    } else {
+                                        alert("Please log in to save notes.");
+                                    }
+                                }}>🔖</Button>
                     </div>
                 ))}
             </div>

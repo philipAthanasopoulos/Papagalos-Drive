@@ -5,72 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added users">
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/CustomOAuth2UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/AddSubFolderButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Forum/ForumComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Login/User.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Profile/UserProfile.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/Bookmarks-cuate.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/Grades-cuate-compr.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/Grades-cuate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/Grades-cuate.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/Mic drop-cuate.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/Profile Interface-cuate.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/hacked.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/papagalos_exams-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/papagalos_exams.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/papagalos_reading-removebg-preview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/papagalos_reading.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3e785115-744c-421a-ab0c-154c6ab6688f/storage_v2/_src_/database/rel_database.YSZgqg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/429ce28b-17c6-4158-b7bd-2344e9b96249.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/429ce28b-17c6-4158-b7bd-2344e9b96249.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a6b00406-dc7c-46fc-9b21-4439c0d3c38f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a6b00406-dc7c-46fc-9b21-4439c0d3c38f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/Note/NoteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/Note/NoteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/User/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/User/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/SchoolioApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/FolderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/colors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/AddSubFolderButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/AddSubFolderButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Loading/LoadingComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Loading/LoadingComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Login/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Login/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/Hero.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/hero.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/hero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/AddFileButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/AddFileButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/DownloadFileButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/DownloadFileButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Notifications/NotificationComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Notifications/NotificationComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Register/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Register/RegisterForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Register/RegistrationSuccessCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Search/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Search/SearchBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/SupportSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/SupportSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/papagalos_sign.png" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/images/papagalos_sign.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -626,15 +566,7 @@
       <workItem from="1748882795157" duration="3833000" />
       <workItem from="1748946670371" duration="16428000" />
       <workItem from="1749024200205" duration="593000" />
-      <workItem from="1749035260385" duration="10970000" />
-    </task>
-    <task id="LOCAL-00009" summary="updated gh actions">
-      <option name="closed" value="true" />
-      <created>1723064877945</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1723064877945</updated>
+      <workItem from="1749035260385" duration="12015000" />
     </task>
     <task id="LOCAL-00010" summary="migrating to mongo &amp;&amp; postgres implementation">
       <option name="closed" value="true" />
@@ -1012,7 +944,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749047551319</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="added users">
+      <option name="closed" value="true" />
+      <created>1749047930048</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1749047930048</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
