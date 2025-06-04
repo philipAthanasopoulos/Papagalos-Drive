@@ -40,7 +40,7 @@ export const RegisterForm = () => {
                 <div className='px-5'>
                     <h2 className=" text-center mb-5 mt-4">👋Create account🆕</h2>
                     <Form onSubmit={handleSubmit}>
-                        <FloatingLabel label="First name">
+                        <FloatingLabel label="My name is...">
                             <FormControl name="firstName" id='form1' type='text' placeholder="First name" required
                                          className="mt-4"/>
                         </FloatingLabel>

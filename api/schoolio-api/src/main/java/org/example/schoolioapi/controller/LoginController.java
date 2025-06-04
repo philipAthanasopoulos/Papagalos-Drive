@@ -24,33 +24,21 @@ public class LoginController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(
-            @RequestBody LoginBody userToCkeck,
-            HttpServletRequest request) {
-        System.out.println("Got request" + userToCkeck.email);
-        User user = userService.findByEmail(userToCkeck.email).orElse(null);
+            @RequestBody User userToCkeck,
+            HttpServletRequest request
+    ) {
+        System.out.println("Got request" + userToCkeck.getEmail());
+        User user = userService.findByEmail(userToCkeck.getEmail()).orElse(null);
         if (user == null) {
             return ResponseEntity.notFound().build();
         }
-        if (!bCryptPasswordEncoder.matches(userToCkeck.password, user.getPassword())) {
+        if (!bCryptPasswordEncoder.matches(userToCkeck.getPassword(), user.getPassword())) {
             return ResponseEntity.badRequest().build();
         }
 
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
+
         return ResponseEntity.ok(UserDTO.from(user));
-    }
-
-    public static class LoginBody {
-        public String email;
-        public String password;
-
-        public LoginBody(String email, String password) {
-            this.email = email;
-            this.password = password;
-        }
-
-        public static LoginBody from(User user) {
-            return new LoginBody(user.getEmail(), user.getPassword());
-        }
     }
 }

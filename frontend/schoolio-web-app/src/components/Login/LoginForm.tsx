@@ -19,22 +19,37 @@ export const LoginForm = () => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
 
-        const response = await axios.post(`${apiBaseURL}/login`, data, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            withCredentials: true,
-        });
+        try {
+            const response = await axios.post(`${apiBaseURL}/login`, data, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                withCredentials: true,
+            });
 
-        if (response.status === 200) {
-            setSuccessfull(true);
-            setMessage("Login successful");
-            const userData = response.data;
-            localStorage.setItem("user", JSON.stringify(userData));
-            window.location.href = "/profile";
-        } else {
-            setSuccessfull(false);
-            setMessage("Wrong email or password");
+            if (response.status === 200) {
+                setSuccessfull(true);
+                setMessage("Login successful");
+                const userData = response.data;
+                localStorage.setItem("user", JSON.stringify(userData));
+                window.location.href = "/profile";
+            }
+        } catch (error: any) {
+            if (error.response) {
+                if (error.response.status === 400) {
+                    setSuccessfull(false);
+                    setMessage("🔑❌ Wrong password");
+                } else if (error.response.status === 404) {
+                    setSuccessfull(false);
+                    setMessage("📧❓ Email doesn't exist");
+                } else {
+                    setSuccessfull(false);
+                    setMessage("🌋 An unexpected error occurred");
+                }
+            } else {
+                setSuccessfull(false);
+                setMessage("🌧️ Unable to connect to the server");
+            }
         }
         setAlertVisible(true);
     };

@@ -21,7 +21,7 @@ public class RegisterController {
         if (userService.findByEmail(user.getEmail()).isPresent()) {
             return ResponseEntity.badRequest().body("Email already exists");
         } else {
-            user = userService.save(user);
+            userService.save(user);
             return ResponseEntity.ok().body("User registered successfully");
         }
     }

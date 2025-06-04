@@ -32,3 +32,4 @@ server:
     session:
       cookie:
         secure: true
+        http-only: true
