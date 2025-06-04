@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added users">
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added password encryption">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -566,15 +563,7 @@
       <workItem from="1748882795157" duration="3833000" />
       <workItem from="1748946670371" duration="16428000" />
       <workItem from="1749024200205" duration="593000" />
-      <workItem from="1749035260385" duration="12015000" />
-    </task>
-    <task id="LOCAL-00010" summary="migrating to mongo &amp;&amp; postgres implementation">
-      <option name="closed" value="true" />
-      <created>1723299975017</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1723299975017</updated>
+      <workItem from="1749035260385" duration="12729000" />
     </task>
     <task id="LOCAL-00011" summary="added config file and enabled caching">
       <option name="closed" value="true" />
@@ -952,7 +941,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749047930048</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="added password encryption">
+      <option name="closed" value="true" />
+      <created>1749048933786</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1749048933786</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -977,7 +974,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new commit" />
     <MESSAGE value="migrated note file from binary to string type" />
     <MESSAGE value="added JsonIgnoreProperties for subfolder objects so that only ids are returned" />
     <MESSAGE value="generated new jarfile" />
@@ -1002,7 +998,8 @@
     <MESSAGE value="updated application properties files and Dockerfile" />
     <MESSAGE value="added spring profile flag in Dockerfile" />
     <MESSAGE value="added users" />
-    <option name="LAST_COMMIT_MESSAGE" value="added users" />
+    <MESSAGE value="added password encryption" />
+    <option name="LAST_COMMIT_MESSAGE" value="added password encryption" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

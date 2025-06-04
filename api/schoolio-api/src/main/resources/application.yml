@@ -17,6 +17,7 @@ spring:
 
 
 
+
 logging:
   level:
     org:
@@ -26,3 +27,8 @@ logging:
           descriptor:
             sql:
               BasicBinder: TRACE
+server:
+  servlet:
+    session:
+      cookie:
+        secure: true
