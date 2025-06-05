@@ -33,8 +33,8 @@ export const NewsArticleHolder = () => {
                     <p>Loading...</p>
                 ) : (
                     <ul>
-                        {newsArticles.map((article) => (
-                            <NewsArticleComponent key={article.id} article={article} />
+                        {newsArticles.map((article,index) => (
+                            <NewsArticleComponent key={article.id} article={article} fire={index===0}/>
                         ))}
                     </ul>
                 )}

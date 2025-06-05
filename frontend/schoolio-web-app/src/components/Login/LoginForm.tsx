@@ -6,6 +6,7 @@ import {apiBaseURL} from "../../env/env";
 import {User} from "./User";
 import colors from "../../colors";
 import axios from "axios";
+import {loginUser} from "../../api/api";
 
 export const LoginForm = () => {
 
@@ -20,12 +21,7 @@ export const LoginForm = () => {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await axios.post(`${apiBaseURL}/login`, data, {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                withCredentials: true,
-            });
+            const response = await loginUser(data);
 
             if (response.status === 200) {
                 setSuccessfull(true);

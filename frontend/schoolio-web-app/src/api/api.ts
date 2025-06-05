@@ -12,6 +12,17 @@ const apiClient = axios.create({
     },
 });
 
+apiClient.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response && error.response.status === 401) {
+            localStorage.removeItem("user");
+            window.location.href = "/login";
+        }
+        return Promise.reject(error);
+    }
+);
+
 function getUserId(): number {
     const user: User = JSON.parse(localStorage.getItem("user") || "null");
     return user.id;
@@ -95,8 +106,8 @@ export const getUserFavoriteNotes = async () => {
 };
 
 export const loginUser = async (data: any) => {
-    const response = await apiClient.post(`/login`, data)
-    return response.data;
+    const response = await apiClient.post(`/auth/login`, data)
+    return response;
 };
 
 export const removeFavoriteNote = async (noteId: number) => {
@@ -106,5 +117,10 @@ export const removeFavoriteNote = async (noteId: number) => {
 
 export const addFavoriteNote = async (note: NoteDTO) => {
     const response = await apiClient.post(`/users/${getUserId()}/notes`, JSON.stringify(note))
+    return response;
+}
+
+export const logout = async () => {
+    const response = await apiClient.post(`/auth/logout`);
     return response;
 }

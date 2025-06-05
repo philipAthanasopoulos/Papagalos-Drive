@@ -71,9 +71,21 @@ const Hero = () => {
                         <h2 className="rubik-text">Αμέτρητο ακαδημαϊκό υλικό 📚</h2>
                         <p className="lead">
                             <ul className="fade-in-element">
-                                <li>Διαλέξεις🎬</li>
+                                <li>Διαλέξεις
+                                    <picture>
+                                        <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3ac/512.webp"
+                                                type="image/webp"/>
+                                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3ac/512.gif" alt="🎬"
+                                             width="32" height="32"/>
+                                    </picture>
+                                </li>
                                 <li>Σημειώσεις📒</li>
-                                <li>Παλιά θέματα 📝</li>
+                                <li>Παλιά θέματα <picture>
+                                    <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/270f_fe0f/512.webp"
+                                            type="image/webp"/>
+                                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/270f_fe0f/512.gif" alt="✏"
+                                         width="32" height="32"/>
+                                </picture></li>
                                 <li>Aπό <b>300+</b> τμήματα 🏫</li>
                             </ul>
                         </p>
@@ -85,12 +97,17 @@ const Hero = () => {
                 <Row className="align-items-center p-5">
                     <Col xs={12} md={6}
                          className="text-center text-md-start mb-4 mb-md-0 bg-light rounded-4 shadow fade-in-element">
-                        <h2 className="rubik-text"> Πρόσβαση από παντού, κάθε στιγμή 🤳</h2>
+                        <h2 className="rubik-text"> Πρόσβαση από παντού, κάθε στιγμή <picture>
+                            <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f933_1f3fb/512.webp"
+                                    type="image/webp"/>
+                            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f933_1f3fb/512.gif" alt="🤳"
+                                 width="32" height="32"/>
+                        </picture></h2>
                         <p className="lead">Μελέτησε από τον υπολογιστή, το laptop ή το κινητό σου, όπου κι αν
                             βρίσκεσαι.</p>
                     </Col>
                     <Col xs={12} md={6}>
-                        <Image src={students} alt="Notes" className="w-100"/>
+                    <Image src={students} alt="Notes" className="w-100"/>
                     </Col>
                 </Row>
             </Container>

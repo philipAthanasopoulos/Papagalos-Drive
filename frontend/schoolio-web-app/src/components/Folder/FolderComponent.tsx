@@ -80,14 +80,14 @@ export const FolderComponent: React.FC = () => {
                                 </span>
                             </span>
                         </Link>
-                        <Button style={{backgroundColor: "white", border: "none"}}
+                        <Button className={" ms-3 btn-light border-danger"}
                                 onClick={() => {
                                     if (localStorage.getItem("user")) {
                                         addNote(note);
                                     } else {
                                         alert("Please log in to save notes.");
                                     }
-                                }}>🔖</Button>
+                                }}>➕🔖</Button>
                     </div>
                 ))}
             </div>

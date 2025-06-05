@@ -33,13 +33,19 @@ const MainNavBar = () => {
                             Υποστήριξη🎧
                         </Nav.Link>
                     </Nav>
-                    <Nav>
+                    <Nav className={"h5"}>
                         {localStorage.getItem("user") ? (
                             <Nav.Link href={"/profile"} className={"text-light"}>
                                 <Image src={avatar}/>
                             </Nav.Link>
                         ) : (
                             <Nav.Link href={"/login"} className={"text-light"}>
+                                <picture>
+                                    <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
+                                            type="image/webp"/>
+                                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋"
+                                         width="32" height="32"/>
+                                </picture>
                                 Login
                             </Nav.Link>
                         )}

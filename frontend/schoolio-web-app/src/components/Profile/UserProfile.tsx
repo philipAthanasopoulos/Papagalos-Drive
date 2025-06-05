@@ -1,16 +1,17 @@
 import {User} from "../Login/User";
-import {Button, Col, Container, Image, Row} from "react-bootstrap";
+import {Button, Card, Col, Container, Image, Modal, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import {fileIcons} from "../FileIcons";
 import React, {useEffect, useState} from "react";
 import {NoteDTO} from "../Note/NoteDTO";
-import {getUserFavoriteNotes, removeFavoriteNote} from "../../api/api";
+import {getUserFavoriteNotes, logout, removeFavoriteNote} from "../../api/api";
 import avatar from "../../images/Profile Interface-cuate.svg"
 
 
 export const UserProfile = () => {
     const user: User = JSON.parse(localStorage.getItem("user") || "null");
     const [favoriteNotes, setFavoriteNotes] = useState<NoteDTO[]>([]);
+    const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
 
     useEffect(() => {
         const notes: NoteDTO[] = []
@@ -22,22 +23,73 @@ export const UserProfile = () => {
 
     const removeNote = async (note: NoteDTO) => {
         removeFavoriteNote(note.id).then((responce) => {
-            console.log(responce)
-            if (responce.status === 200) window.location.reload()
-            else alert("Could not remove note")
+            if (responce.status === 200) {
+                setFavoriteNotes(favoriteNotes.filter((n) => n.id !== note.id));
+            } else alert("Could not remove note")
         })
     }
 
+    const handleLogout = async () => {
+        try {
+            const response = await logout();
+            if (response.status === 200) {
+                localStorage.removeItem("user");
+                window.location.assign("/");
+            } else {
+                alert("Could not log out");
+            }
+        } catch (error) {
+            alert("An error occurred during logout");
+        }
+    };
+
     return (
         <Container>
-            <Row className={"justify-content-left"}>
-                <Image src={avatar} className="w-25"/>
-            </Row>
-            <Row className="fs-4">👤{user.firstName} {user.lastName}</Row>
-            <Row className="fs-4">📧{user.email}</Row>
+            <Container className={"justify-content-center"}>
+                <Row xs={12} md={6}>
+                    <Col xs={12} md={6}>
+                        <Image src={avatar} className="w-25"/>
+                    </Col>
+                </Row>
+                <Row className="fs-4 mt-4">
+                    👤{user.firstName} {user.lastName}
+                </Row>
+                <Row className="fs-4">
+                    📧 {user.email}
+                </Row>
+                <Row>
+                    <Col>
+                        <Button className="btn-light" onClick={() => setShowLogoutModal(true)}>⬅️ Logout</Button>
+                        <Modal show={showLogoutModal} onHide={() => setShowLogoutModal(false)} centered>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Βεβαίωση αποσύνδεσης</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                Είστε σίγουροι ότι θέλετε να αποσυνδεθείτε;
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={() => setShowLogoutModal(false)}>
+                                    Cancel
+                                </Button>
+                                <Button variant="primary" onClick={handleLogout}>
+                                    <picture>
+                                        <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
+                                                type="image/webp"/>
+                                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋"
+                                             width="32" height="32"/>
+                                    </picture>
+                                    Logout
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    </Col>
+                </Row>
+            </Container>
+
+
             <Row className={"pt-5"}>
                 <Col>
-                    <h2>🔖Saved notes</h2>
+                <h2>🔖Saved notes</h2>
                     {favoriteNotes.map((note, index) => (
                         <Row key={index} className="mb-3">
                             <Col>
@@ -60,5 +112,5 @@ export const UserProfile = () => {
                 </Col>
             </Row>
         </Container>
-    );
+);
 }
