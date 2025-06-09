@@ -8,7 +8,8 @@ public record UserDTO(
         Long id,
         String firstName,
         String lastName,
-        String email) {
+        String email,
+        int grapes) {
 
     public static UserDTO from(User user) {
         return UserDTO.builder()
@@ -16,6 +17,7 @@ public record UserDTO(
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
                 .email(user.getEmail())
+                .grapes(user.getGrapes())
                 .build();
     }
 }

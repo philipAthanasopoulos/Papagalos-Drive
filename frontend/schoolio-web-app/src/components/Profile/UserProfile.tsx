@@ -1,6 +1,6 @@
 import {User} from "../Login/User";
 import {Button, Card, Col, Container, Image, Modal, Row} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {fileIcons} from "../FileIcons";
 import React, {useEffect, useState} from "react";
 import {NoteDTO} from "../Note/NoteDTO";
@@ -9,16 +9,24 @@ import avatar from "../../images/Profile Interface-cuate.svg"
 
 
 export const UserProfile = () => {
+    const navigate = useNavigate();
     const user: User = JSON.parse(localStorage.getItem("user") || "null");
     const [favoriteNotes, setFavoriteNotes] = useState<NoteDTO[]>([]);
-    const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
 
     useEffect(() => {
-        const notes: NoteDTO[] = []
-        getUserFavoriteNotes().then((notesData) => {
-            const notes: NoteDTO[] = notesData.map((note: any) => new NoteDTO(note));
-            setFavoriteNotes(notes);
-        });
+        if (!user) {
+            navigate("/login");
+        }
+    }, [user, navigate]);
+
+    useEffect(() => {
+        if (user) {
+            const notes: NoteDTO[] = []
+            getUserFavoriteNotes().then((notesData) => {
+                const notes: NoteDTO[] = notesData.map((note: any) => new NoteDTO(note));
+                setFavoriteNotes(notes);
+            });
+        }
     }, []);
 
     const removeNote = async (note: NoteDTO) => {
@@ -43,53 +51,26 @@ export const UserProfile = () => {
         }
     };
 
+    if (!user) {
+        return null;
+    }
+
     return (
         <Container>
-            <Container className={"justify-content-center"}>
-                <Row xs={12} md={6}>
-                    <Col xs={12} md={6}>
-                        <Image src={avatar} className="w-25"/>
-                    </Col>
-                </Row>
-                <Row className="fs-4 mt-4">
-                    👤{user.firstName} {user.lastName}
-                </Row>
-                <Row className="fs-4">
-                    📧 {user.email}
-                </Row>
-                <Row>
-                    <Col>
-                        <Button className="btn-light" onClick={() => setShowLogoutModal(true)}>⬅️ Logout</Button>
-                        <Modal show={showLogoutModal} onHide={() => setShowLogoutModal(false)} centered>
-                            <Modal.Header closeButton>
-                                <Modal.Title>Βεβαίωση αποσύνδεσης</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                Είστε σίγουροι ότι θέλετε να αποσυνδεθείτε;
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={() => setShowLogoutModal(false)}>
-                                    Cancel
-                                </Button>
-                                <Button variant="primary" onClick={handleLogout}>
-                                    <picture>
-                                        <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
-                                                type="image/webp"/>
-                                        <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋"
-                                             width="32" height="32"/>
-                                    </picture>
-                                    Logout
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
-                    </Col>
-                </Row>
-            </Container>
-
-
+            <Row xs={12} md={6}>
+                <Col className={"col-md-4"}>
+                    <Image src={avatar} className="w-50"/>
+                </Col>
+            </Row>
+            <Row className="fs-4 mt-4">
+                👤: {user.firstName} {user.lastName}
+            </Row>
+            <Row className="fs-4">
+                📧: {user.email}
+            </Row>
             <Row className={"pt-5"}>
                 <Col>
-                <h2>🔖Saved notes</h2>
+                    <h2>🔖Saved notes</h2>
                     {favoriteNotes.map((note, index) => (
                         <Row key={index} className="mb-3">
                             <Col>
@@ -104,13 +85,13 @@ export const UserProfile = () => {
                                         </span>
                                     </span>
                                 </Link>
-                                <Button style={{backgroundColor: "white", border: "none"}}
-                                        onClick={() => removeNote(note)}>❌</Button>
+                                <Button className={"ms-4 btn-light btn-lg bi-bookmark-x btn-outline-danger"}
+                                        onClick={() => removeNote(note)}/>
                             </Col>
                         </Row>
                     ))}
                 </Col>
             </Row>
         </Container>
-);
+    );
 }

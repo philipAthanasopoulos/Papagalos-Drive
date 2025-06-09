@@ -2,7 +2,7 @@ export class NoteDTODetailed {
     id: number;
     name: string;
     type: string;
-    uploadDate: string;
+    uploadDate: Date;
     data: string;
 
     constructor(data: any) {

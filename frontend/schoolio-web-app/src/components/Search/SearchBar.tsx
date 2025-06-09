@@ -115,10 +115,7 @@ export const SearchBar = (props: Props) => {
             <Row>
                 <Col xs={12}>
                     <InputGroup>
-                        <InputGroup.Text style={{backgroundColor:colors.shamrock_green}}>
-                            <Search color={"white"} />
-                        </InputGroup.Text>
-                        <FloatingLabel label="Αναζήτησε εδώ..." controlId='floatingInput'>
+                        <FloatingLabel label="🔍 Αναζήτησε εδώ..." controlId='floatingInput'>
                             <FormControl
                                 placeholder=''
                                 size='lg'

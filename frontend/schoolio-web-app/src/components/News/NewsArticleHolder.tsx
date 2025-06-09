@@ -4,6 +4,7 @@ import {NewsArticleDTO} from "./NewsArticleDTO";
 import {apiBaseURL} from "../../env/env";
 import axios from "axios";
 import {Container} from "react-bootstrap";
+import LoadingComponent from "../Loading/LoadingComponent";
 
 
 export const NewsArticleHolder = () => {
@@ -30,7 +31,7 @@ export const NewsArticleHolder = () => {
         <Container className="pt-5">
             <>
                 {isLoading ? (
-                    <p>Loading...</p>
+                    <LoadingComponent />
                 ) : (
                     <ul>
                         {newsArticles.map((article,index) => (

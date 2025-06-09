@@ -1,14 +1,34 @@
-import {Col, Image, NavDropdown, Row} from 'react-bootstrap';
+import {Button, Col, Dropdown, DropdownButton, Image, Modal, NavDropdown, Row} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import colors from '../../colors';
 import papagalos_png from '../../images/papagalos_comic.png';
-import React from "react";
+import React, {useEffect, useState} from "react";
 import avatar from "../../images/Profile Interface-cuate.svg"
+import {logout} from "../../api/api";
+import {Dropbox} from "react-bootstrap-icons";
+import DropDown from "cdbreact/dist/components/DropDown";
+import {User} from "../Login/User";
 
 const MainNavBar = () => {
+    const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
+    const user: User = JSON.parse(localStorage.getItem("user") || "null");
+
+    const handleLogout = async () => {
+        try {
+            const response = await logout();
+            if (response.status === 200) {
+                localStorage.removeItem("user");
+                window.location.assign("/");
+            } else {
+                alert("Could not log out");
+            }
+        } catch (error) {
+            alert("An error occurred during logout");
+        }
+    };
 
     return (
         <Navbar style={{background: colors.shamrock_green}} collapseOnSelect expand="lg">
@@ -35,9 +55,16 @@ const MainNavBar = () => {
                     </Nav>
                     <Nav className={"h5"}>
                         {localStorage.getItem("user") ? (
-                            <Nav.Link href={"/profile"} className={"text-light"}>
-                                <Image src={avatar}/>
-                            </Nav.Link>
+                            <Col className={"d-flex align-items-center"}>
+                                <div className={"text-light me-3"}>{user.grapes}🍇</div>
+                                <Link to={"/profile"} className={" me-2"}>
+                                    <Image src={avatar}/>
+                                </Link>
+                                <DropdownButton title="⚙️" variant={"white"}>
+                                    <Dropdown.Item onClick={() => setShowLogoutModal(true)}>Logout
+                                    </Dropdown.Item>
+                                </DropdownButton>
+                            </Col>
                         ) : (
                             <Nav.Link href={"/login"} className={"text-light"}>
                                 <picture>
@@ -51,10 +78,37 @@ const MainNavBar = () => {
                         )}
                     </Nav>
                 </Navbar.Collapse>
+                <Modal show={showLogoutModal} centered>
+                    <Modal.Header>
+                        <Modal.Title>Βεβαίωση αποσύνδεσης</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        Είστε σίγουροι ότι θέλετε να αποσυνδεθείτε;
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={() => setShowLogoutModal(false)}>
+                            Cancel
+                        </Button>
+                        <Button className={"border-0"} style={{backgroundColor: colors.carrot_orange}}
+                                onClick={handleLogout}>
+                            <picture>
+                                <source
+                                    srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
+                                    type="image/webp"/>
+                                <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif"
+                                     alt="👋"
+                                     width="32" height="32"/>
+                            </picture>
+                            Logout
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </Container>
+
         </Navbar>
 
-    );
+    )
+        ;
 }
 
 export default MainNavBar;

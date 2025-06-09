@@ -27,6 +27,7 @@ public class User implements UserDetails {
     private String password;
     @ManyToMany
     private List<Note> favoriteNotes = new ArrayList<>();
+    private int grapes = 10;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

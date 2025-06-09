@@ -4,20 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="handled cookie expiration">
-      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/interceptor/SessionInterceptor.java" afterDir="false" />
+    <list default="true" id="f420f106-1020-49fd-a8de-e402fc4e0408" name="Changes" comment="added logout">
+      <change afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/User/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/DTO/User/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/schoolio-api/src/main/java/org/example/schoolioapi/service/FolderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Folder/FolderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Login/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Login/LoginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Forum/ForumComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Forum/ForumComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/Hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/MainPage/Hero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/NavBar/MainNavBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleComponent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleHolder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/News/NewsArticleHolder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/DownloadFileButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/DownloadFileButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteComponent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteDetailedDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Note/NoteDetailedDTO.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Profile/UserProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Profile/UserProfile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Search/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/schoolio-web-app/src/components/Search/SearchBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -578,15 +584,11 @@
       <workItem from="1749024200205" duration="593000" />
       <workItem from="1749035260385" duration="13331000" />
       <workItem from="1749058768068" duration="5456000" />
-      <workItem from="1749109067747" duration="6856000" />
-    </task>
-    <task id="LOCAL-00013" summary="updated application.properties">
-      <option name="closed" value="true" />
-      <created>1724503637300</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1724503637300</updated>
+      <workItem from="1749109067747" duration="9823000" />
+      <workItem from="1749212880351" duration="595000" />
+      <workItem from="1749283496964" duration="122000" />
+      <workItem from="1749376995618" duration="3549000" />
+      <workItem from="1749480135832" duration="741000" />
     </task>
     <task id="LOCAL-00014" summary="updated ui&#10;added unit tests&#10;added heartbeat class">
       <option name="closed" value="true" />
@@ -964,7 +966,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749063424576</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="added logout">
+      <option name="closed" value="true" />
+      <created>1749116970704</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1749116970704</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers>
       <JIRA url="https://objectarmy.atlassian.net">
         <option name="apiType" value="REST_2_0" />
@@ -989,7 +999,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="generated new jarfile" />
     <MESSAGE value="commented out local api url" />
     <MESSAGE value="updated jarfile" />
     <MESSAGE value="updated gh actions" />
@@ -1014,7 +1023,8 @@
     <MESSAGE value="added password encryption" />
     <MESSAGE value="added https cookies" />
     <MESSAGE value="handled cookie expiration" />
-    <option name="LAST_COMMIT_MESSAGE" value="handled cookie expiration" />
+    <MESSAGE value="added logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logout" />
   </component>
   <component name="WfRunsListSearchHistory">{
   &quot;history&quot;: [

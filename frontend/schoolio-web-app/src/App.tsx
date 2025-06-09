@@ -17,36 +17,29 @@ import {UserProfile} from "./components/Profile/UserProfile";
 
 
 function App() {
-    const location = useLocation();
-
-    useEffect(() => {
-        document.documentElement.scrollTo({top: 0, left: 0, behavior: "auto"});
-    }, [location.pathname])
-
     return (
         <div className="App">
             <header className="App-header">
                 <MainNavBar/>
                 <Alert variant={"warning"} className="text-center justify-content-center">
                     🚧🦺 Ο Παπαγάλος είναι ακόμα <u>υπό κατασκευή</u>. Ορισμένες λειτουργίες μπορεί να μην δουλεύουν
-                    ακόμα.🏗️🚧
+                    ακόμα. 🏗️🚧
                 </Alert>
-                <Container className="d-flex flex-column  align-items-center min-vh-100">
-                    <Routes>
-                        <Route path="/" element={<Navigate to="/main"/>}/>
-                        <Route path="/folder/:id" element={<FolderComponent/>}/>
-                        <Route path="/note/:id" element={<NoteComponent/>}/>
-                        <Route path="/help" element={<SupportSection/>}/>
-                        <Route path="/main" element={<Hero/>}/>
-                        <Route path="/login" element={<LoginForm/>}/>
-                        <Route path="/news" element={<NewsArticleHolder/>}/>
-                        <Route path="/register" element={<RegisterForm/>}/>
-                        <Route path="/forum" element={<ForumComponent/>}/>
-                        <Route path="/profile" element={<UserProfile/>}/>
-                    </Routes>
-                </Container>
-                <Footer/>
             </header>
+            <div >
+                <Routes>
+                    <Route path="/" element={<Navigate to="/main"/>}/>
+                    <Route path="/folder/:id" element={<FolderComponent/>}/>
+                    <Route path="/note/:id" element={<NoteComponent/>}/>
+                    <Route path="/help" element={<SupportSection/>}/>
+                    <Route path="/main" element={<Hero/>}/>
+                    <Route path="/login" element={<LoginForm/>}/>
+                    <Route path="/news" element={<NewsArticleHolder/>}/>
+                    <Route path="/register" element={<RegisterForm/>}/>
+                    <Route path="/forum" element={<ForumComponent/>}/>
+                    <Route path="/profile" element={<UserProfile/>}/>
+                </Routes>
+            </div>
         </div>
     );
 }

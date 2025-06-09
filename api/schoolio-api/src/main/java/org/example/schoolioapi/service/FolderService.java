@@ -4,6 +4,7 @@ import org.example.schoolioapi.DTO.Folder.FolderDTO;
 import org.example.schoolioapi.domain.Folder;
 import org.example.schoolioapi.domain.Note;
 import org.example.schoolioapi.repository.FolderRepository;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -54,43 +54,29 @@ export const NoteComponent = () => {
         const defaultMimeType = "application/octet-stream";
         const mimeType = mimeTypes[note?.type.toLowerCase() ?? ''] || defaultMimeType;
         return (
-            <iframe
-                title="note"
-                className='vh-100'
-                style={{width: '100%', height: '100%', border: '5px solid'}}
+            <embed
+                title={note?.name}
                 src={`data:${mimeType};base64,${note?.data}`}
             />
         );
     };
 
+    if (loading) return <LoadingComponent/>
+
     return (
-        <Container fluid>
-            <Row className='mb-5'>
-                <Col xs={12}>
-                    {loading ? (
-                        <LoadingComponent/>
-                    ) : (
-                        <div>
-                            <Row className='d-flex text-primary mb-4 align-items-center'>
-                                <Col>
-                                    <Row className='text-secondary mb-4'>
-                                        <Col className="h4">
-                                            {fileIcons[note?.type.toLowerCase() || ""]}
-                                            {note?.name}
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <DownloadFileButton filename={note?.name || "file"}
-                                                            downloadString={`data:${mimeTypes[note?.type.toLowerCase() ?? '']};base64,${note?.data}`}/>
-                                    </Row>
-                                </Col>
-                            </Row>
-                            <div className='embed-responsive embed-responsive-16by9'>
-                                {displayMedia()}
-                            </div>
-                        </div>
-                    )}
-                </Col>
+        <Container>
+            <Row className='text-secondary mb-2 h4'>
+                {note?.name}
+            </Row>
+            <Row className='text-secondary mb-2'>
+                🗓️ {new Date(note?.uploadDate || Date.now()).toLocaleDateString()}
+            </Row>
+            <Row className={"mb-2"}>
+                <DownloadFileButton filename={note?.name || "file"}
+                                    downloadString={`data:${mimeTypes[note?.type.toLowerCase() ?? '']};base64,${note?.data}`}/>
+            </Row>
+            <Row fluid className={"min-vh-100"}>
+                {displayMedia()}
             </Row>
         </Container>
     );
