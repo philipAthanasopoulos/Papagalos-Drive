@@ -1,5 +1,4 @@
-import {Col, Container, Row} from 'react-bootstrap';
-import {Facebook, Github, Google, Instagram, Linkedin, Twitter} from 'react-bootstrap-icons';
+import {Container, Row} from 'react-bootstrap';
 import colors from '../colors';
 
 

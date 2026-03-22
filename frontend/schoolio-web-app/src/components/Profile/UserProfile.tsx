@@ -1,10 +1,10 @@
 import {User} from "../Login/User";
-import {Button, Card, Col, Container, Image, Modal, Row} from "react-bootstrap";
+import {Button, Col, Container, Image, Row} from "react-bootstrap";
 import {Link, useNavigate} from "react-router-dom";
 import {fileIcons} from "../FileIcons";
 import React, {useEffect, useState} from "react";
 import {NoteDTO} from "../Note/NoteDTO";
-import {getUserFavoriteNotes, logout, removeFavoriteNote} from "../../api/api";
+import {getUserFavoriteNotes, removeFavoriteNote} from "../../api/api";
 import avatar from "../../images/Profile Interface-cuate.svg"
 
 
@@ -21,13 +21,12 @@ export const UserProfile = () => {
 
     useEffect(() => {
         if (user) {
-            const notes: NoteDTO[] = []
             getUserFavoriteNotes().then((notesData) => {
                 const notes: NoteDTO[] = notesData.map((note: any) => new NoteDTO(note));
                 setFavoriteNotes(notes);
             });
         }
-    }, []);
+    }, [user]);
 
     const removeNote = async (note: NoteDTO) => {
         removeFavoriteNote(note.id).then((responce) => {
@@ -36,20 +35,6 @@ export const UserProfile = () => {
             } else alert("Could not remove note")
         })
     }
-
-    const handleLogout = async () => {
-        try {
-            const response = await logout();
-            if (response.status === 200) {
-                localStorage.removeItem("user");
-                window.location.assign("/");
-            } else {
-                alert("Could not log out");
-            }
-        } catch (error) {
-            alert("An error occurred during logout");
-        }
-    };
 
     if (!user) {
         return null;

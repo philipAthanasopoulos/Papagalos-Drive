@@ -2,17 +2,13 @@ import React, {useEffect, useState} from 'react';
 import ReactLoading from 'react-loading';
 import colors from '../../colors';
 
-const getRandomColor = () => {
-    return ;
-};
-
 
 
 const LoadingComponent = () => {
-    const colorValues = Object.values(colors);
     const [color,setColor] = useState('');
 
     useEffect(() => {
+        const colorValues = Object.values(colors);
         setColor(colorValues[Math.floor(Math.random() * colorValues.length)])
     }, []);
 

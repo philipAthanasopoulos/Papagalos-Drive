@@ -1,11 +1,6 @@
-import {Alert, Button, Card, Col, Container, FloatingLabel, Form, FormControl, Image, Row} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-import papagalos from "../../images/cool.png"
+import {Alert, Button, Card, Container, FloatingLabel, Form, FormControl} from 'react-bootstrap'
 import React, {useState} from "react";
-import {apiBaseURL} from "../../env/env";
-import {User} from "./User";
 import colors from "../../colors";
-import axios from "axios";
 import {loginUser} from "../../api/api";
 
 export const LoginForm = () => {

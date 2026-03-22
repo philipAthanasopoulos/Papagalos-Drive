@@ -1,13 +1,12 @@
 import {useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Card, Col, Container, Image, Row} from 'react-bootstrap';
+import {Button, Col, Container, Image, Row} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import colors from '../../colors';
 import students from "../../images/Learning languages-cuate.svg";
 import studentgrades from "../../images/Grades-cuate.png";
 import bookmarks from "../../images/Bookmarks-cuate.svg"
 import "./hero.css";
-import {Footer} from "../Footer";
 
 const Hero = () => {
     useEffect(() => {

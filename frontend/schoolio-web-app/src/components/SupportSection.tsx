@@ -1,5 +1,4 @@
-import {Alert, Button, Col, Container, Row} from 'react-bootstrap';
-import {Bug, ChatLeftText, Image, Laptop, Lightbulb, PcDisplay} from 'react-bootstrap-icons';
+import {Button, Col, Container, Row} from 'react-bootstrap';
 import colors from '../colors';
 
 
