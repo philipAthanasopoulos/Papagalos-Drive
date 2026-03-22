@@ -32,11 +32,11 @@ const Hero = () => {
                 <Col xs={12} md={6} className="order-md-1 mb-3 mb-md-0">
                     <div className="text-center">
                         <h1 className="display-3 rubik-text hero-heading">
-                            <b>🎓Σημειώσεις από κάθε γωνιά της Ελλάδας, στα χέρια σου!✨</b>
+                            <b>🎓<span className="gradient-text">Σημειώσεις από κάθε γωνιά της Ελλάδας, στα χέρια σου!</span>✨</b>
                         </h1>
                         <Link to={"/folder/1"}>
                             <Button
-                                className="btn-lg mt-3 mb-3 rounded-pill mainbutton rubik-text shadow fade-in-element"
+                                className="btn-lg mt-3 mb-3 rounded-pill mainbutton rubik-text shadow bounce-in stagger-2 button-hover-effect"
                                 style={{background: `${colors.carrot_orange}`, border: "none"}}>
                 <span>
                     <picture>
@@ -58,18 +58,18 @@ const Hero = () => {
                     </div>
                 </Col>
                 <Col xs={12} md={6} style={{backgroundColor: colors.shamrock_green}} className="order-md-2 rounded-5">
-                    <Image src={studentgrades} className="w-100"/>
+                    <Image src={studentgrades} className="w-100 floating"/>
                 </Col>
             </Row>
 
-            <Row className={"align-items-center m-2 m-md-3 p-2 p-md-3 rounded-5 hero-section-row"} style={{backgroundColor: colors.sky_blue}}>
+            <Row className={"align-items-center m-2 m-md-3 p-2 p-md-3 rounded-5 fade-in-element slide-in-left hero-section-row"} style={{backgroundColor: colors.sky_blue}}>
                 <Col xs={12} md={6} className="order-2 order-md-1 mt-3 mt-md-0">
-                    <Image src={bookmarks} alt="Notes" className="w-100"/>
+                    <Image src={bookmarks} alt="Notes" className="w-100 floating"/>
                 </Col>
                 <Col xs={12} md={6} className={"bg-light p-3 rounded-5 shadow order-1 order-md-2 mb-3 mb-md-0"}>
                     <h2 className="rubik-text">Αμέτρητο ακαδημαϊκό υλικό 📚</h2>
                     <p className="lead">
-                        <ul className="fade-in-element">
+                        <ul>
                             <li>Διαλέξεις
                                 <picture>
                                     <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3ac/512.webp"
@@ -90,8 +90,8 @@ const Hero = () => {
                     </p>
                 </Col>
             </Row>
-            <Row className={"align-items-center m-2 m-md-3 p-2 p-md-3 rounded-5 hero-section-row"} style={{backgroundColor: colors.sandy_brown}}>
-                <Col xs={12} md={6} className={"bg-light p-3 rounded-5 shadow fade-in-element mb-3 mb-md-0"}>
+            <Row className={"align-items-center m-2 m-md-3 p-2 p-md-3 rounded-5 fade-in-element slide-in-right hero-section-row"} style={{backgroundColor: colors.sandy_brown}}>
+                <Col xs={12} md={6} className={"bg-light p-3 rounded-5 shadow mb-3 mb-md-0"}>
                     <h2 className="rubik-text"> Πρόσβαση από παντού, κάθε στιγμή <picture>
                         <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f933_1f3fb/512.webp"
                                 type="image/webp"/>
@@ -102,7 +102,7 @@ const Hero = () => {
                         βρίσκεσαι.</p>
                 </Col>
                 <Col xs={12} md={6}>
-                    <Image src={students} alt="Notes" className="w-100"/>
+                    <Image src={students} alt="Notes" className="w-100 floating"/>
                 </Col>
             </Row>
         </Container>

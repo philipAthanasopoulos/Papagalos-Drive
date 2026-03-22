@@ -9,6 +9,7 @@ import React, {useState} from "react";
 import avatar from "../../images/Profile Interface-cuate.svg"
 import {logout} from "../../api/api";
 import {User} from "../Login/User";
+import "./navbar.css";
 
 const MainNavBar = () => {
     const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
@@ -29,9 +30,9 @@ const MainNavBar = () => {
     };
 
     return (
-        <Navbar style={{background: colors.shamrock_green}} collapseOnSelect expand="lg">
+        <Navbar style={{background: colors.shamrock_green}} collapseOnSelect expand="lg" className="navbar-animated">
             <Container>
-                <Link to={"/main"} className='me-5 text-decoration-none'>
+                <Link to={"/main"} className='me-5 text-decoration-none logo-hover'>
                     <Col>
                         <Row>
                             <Image src={papagalos_png} height={120} className=''/>
@@ -41,20 +42,20 @@ const MainNavBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto h5">
-                        <Nav.Link className='text-light' href="/">
+                        <Nav.Link className='text-light nav-link-animated' href="/">
                             Αρχική🏠
                         </Nav.Link>
-                        <Nav.Link className='text-light' href="/folder/1">Σημειώσεις📗</Nav.Link>
-                        <Nav.Link className='text-light' href="/news">Νέα📢</Nav.Link>
-                        <Nav.Link className='text-light' href="/forum">Forum📬</Nav.Link>
-                        <Nav.Link className='text-light' href="/help">
+                        <Nav.Link className='text-light nav-link-animated' href="/folder/1">Σημειώσεις📗</Nav.Link>
+                        <Nav.Link className='text-light nav-link-animated' href="/news">Νέα📢</Nav.Link>
+                        <Nav.Link className='text-light nav-link-animated' href="/forum">Forum📬</Nav.Link>
+                        <Nav.Link className='text-light nav-link-animated' href="/help">
                             Υποστήριξη🎧
                         </Nav.Link>
                     </Nav>
                     <Nav className={"h5"}>
                         {localStorage.getItem("user") ? (
                             <Col className={"d-flex align-items-center"}>
-                                <div className={"text-light me-3"}>{user.grapes}🍇</div>
+                                <div className={"text-light me-3 grapes-counter"}>{user.grapes}🍇</div>
                                 <Link to={"/profile"} className={" me-2"}>
                                     <Image src={avatar} width={40} height={40} style={{objectFit: 'cover'}}/>
                                 </Link>
@@ -64,7 +65,7 @@ const MainNavBar = () => {
                                 </DropdownButton>
                             </Col>
                         ) : (
-                            <Nav.Link href={"/login"} className={"text-light"}>
+                            <Nav.Link href={"/login"} className={"text-light nav-link-animated"}>
                                 <picture>
                                     <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.webp"
                                             type="image/webp"/>

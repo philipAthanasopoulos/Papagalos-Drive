@@ -83,11 +83,84 @@ body, html {
     animation: fadeIn 0.8s forwards;
 }
 
+/* Bounce-in animation for CTA button */
+@keyframes bounceIn {
+    0% { transform: scale(0.6); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    80% { transform: scale(0.97); }
+    100% { transform: scale(1); }
+}
+
+.bounce-in {
+    animation: bounceIn 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-left {
+    opacity: 0;
+}
+
+.slide-in-left.fade-in {
+    animation: slideInLeft 0.7s ease-out forwards;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.slide-in-right {
+    opacity: 0;
+}
+
+.slide-in-right.fade-in {
+    animation: slideInRight 0.7s ease-out forwards;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.25s; }
+.stagger-3 { animation-delay: 0.4s; }
+.stagger-4 { animation-delay: 0.6s; }
+.stagger-5 { animation-delay: 0.8s; }
+
+/* Animated gradient text */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+    background: linear-gradient(270deg, #2B9B52, #EA8D0C, #054B8B, #65C7E8);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 6s ease infinite;
+}
+
 /* Hero section responsive styles */
 .hero-section {
     min-height: 60vh;
     display: flex;
     align-items: center;
+}
+
+/* Hero row hover lift */
+.hero-section-row {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-section-row:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15) !important;
 }
 
 @media (max-width: 767.98px) {
