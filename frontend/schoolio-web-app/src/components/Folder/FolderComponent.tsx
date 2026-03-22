@@ -14,6 +14,7 @@ import {FolderDetailedDTO} from "./FolderDetailedDTO";
 import AddSubFolderButton from "./AddSubFolderButton";
 import AddFileButton from "../Note/AddFileButton";
 import {SearchBar} from "../Search/SearchBar";
+import "./folder.css";
 
 
 export const FolderComponent: React.FC = () => {
@@ -51,7 +52,7 @@ export const FolderComponent: React.FC = () => {
 
         if (selectedFileType === "All" || selectedFileType === "Folder")
             return subFolders?.map((subFolder, index) => (
-                <div key={index}>
+                <div key={index} className="folder-item">
                     <hr/>
                     <Link to={`/folder/${subFolder.id}`} className='btn btn-light btn-lg'>
                         <FolderFill color={colors.carrot_orange}/> {subFolder.name}
@@ -66,7 +67,7 @@ export const FolderComponent: React.FC = () => {
         return (
             <div>
                 {notesToDisplay.map((note, index) => (
-                    <div key={index}>
+                    <div key={index} className="folder-item">
                         <hr/>
                         <div className="d-flex flex-wrap align-items-center gap-2">
                             <Link to={`/note/${note.id}`} className='btn btn-light btn-lg text-truncate' style={{maxWidth: '100%'}}>
@@ -145,7 +146,7 @@ export const FolderComponent: React.FC = () => {
             {folder &&
                 <Container>
                     <Row>
-                        <Col className="h2 text-decoration-underline ">
+                        <Col className="h2 text-decoration-underline folder-header">
                             <FolderFill className='me-2' color={colors.carrot_orange}/>
                             &gt;{folder?.name}
                         </Col>

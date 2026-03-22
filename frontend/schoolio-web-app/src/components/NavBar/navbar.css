@@ -1,0 +1,57 @@
+/* Navbar slide-down entrance */
+@keyframes navbarSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-animated {
+    animation: navbarSlideDown 0.4s ease-out;
+}
+
+/* Nav link underline slide animation */
+.nav-link-animated {
+    position: relative;
+    padding-bottom: 4px !important;
+}
+
+.nav-link-animated::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FBCA12;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link-animated:hover::after {
+    width: 100%;
+}
+
+/* Logo hover bounce/scale */
+.logo-hover {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.logo-hover:hover {
+    transform: rotate(-5deg) scale(1.08);
+}
+
+/* Subtle pulse for grapes counter */
+@keyframes grapesPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.grapes-counter {
+    display: inline-block;
+    animation: grapesPulse 3s ease-in-out infinite;
+}
