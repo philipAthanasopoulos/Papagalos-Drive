@@ -1,8 +1,6 @@
 import {useEffect, useState} from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
-import Skeleton from 'react-loading-skeleton';
+import {Container, Row} from 'react-bootstrap';
 import {useParams} from 'react-router-dom';
-import {fileIcons} from '../FileIcons';
 import {DownloadFileButton} from './DownloadFileButton';
 import LoadingComponent from "../Loading/LoadingComponent";
 import {getNoteById} from "../../api/api";
@@ -19,10 +17,7 @@ export const NoteComponent = () => {
                 const data = await getNoteById(id);
                 setNote(data);
                 setLoading(false);
-                console.log(data);
             } catch (error) {
-                console.error('Error fetching note:', error);
-                fetchNote();
             }
         }
 

@@ -37,7 +37,6 @@ const AddSubFolderButton = (props: Props) => {
                 }, 3000);
             })
             .catch((error: any) => {
-                console.log(error);
                 setshowErrorAlert(true);
                 setTimeout(() => {
                     setshowErrorAlert(false);
@@ -64,8 +63,6 @@ const AddSubFolderButton = (props: Props) => {
     }
 
 
-    //TODO
-    //fix according to add file button component
     return (
         <div>
             <div>

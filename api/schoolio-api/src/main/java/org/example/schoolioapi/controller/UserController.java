@@ -40,8 +40,6 @@ public class UserController {
 
     @GetMapping("/{id}/notes")
     public ResponseEntity<List<NoteDTO>> getUserNotes(@PathVariable Long id, HttpServletRequest request) {
-        System.out.println(request.getCookies());
-
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();

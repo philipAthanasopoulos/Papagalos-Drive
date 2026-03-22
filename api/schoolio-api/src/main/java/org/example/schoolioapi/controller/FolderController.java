@@ -42,7 +42,6 @@ public class FolderController {
         return folderService.getFolderSubfolders(id);
     }
 
-    //TODO transaction should undo invalid folder creation
     @PostMapping("/{id}/subfolders")
     @CacheEvict(value = "folderDTO", key = "#id")
     public ResponseEntity<FolderDTO> addSubFolder(@PathVariable Long id, @RequestBody FolderDTO folderDTO) {

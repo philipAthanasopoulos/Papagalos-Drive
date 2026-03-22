@@ -31,7 +31,6 @@ export const FolderComponent: React.FC = () => {
                 setSelectedFileType("All");
                 setIsLoading(false);
             } catch (error) {
-                console.log(error)
             }
         };
         fetchFolder();

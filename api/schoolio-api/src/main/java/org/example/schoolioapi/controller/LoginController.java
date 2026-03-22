@@ -49,7 +49,6 @@ public class LoginController {
     public ResponseEntity<?> logout(HttpSession session) {
         if (session != null) {
             session.invalidate();
-            System.out.println("Removed Session");
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();

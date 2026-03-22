@@ -10,7 +10,6 @@ import {
     ModalHeader,
     ModalTitle
 } from 'react-bootstrap';
-import {FileEarmarkArrowUp} from 'react-bootstrap-icons';
 import colors from '../../colors';
 import {NotificationComponent} from '../Notifications/NotificationComponent';
 import {FolderDetailedDTO} from "../Folder/FolderDetailedDTO";
@@ -86,7 +85,6 @@ const AddFileButton = (props: Props) => {
             </div>
             <div>
                 <Button variant="light" size='lg' onClick={() => setShowModal(true)}>
-                    {/*<FileEarmarkArrowUp color={colors.shamrock_green}/> */}
                     📒Ανέβασμα αρχείου
                 </Button>
 
