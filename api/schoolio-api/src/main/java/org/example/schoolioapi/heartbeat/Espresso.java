@@ -25,7 +25,7 @@ public class Espresso {
             restTemplate.getForEntity(localhost, String.class);
             logger.info("Ping");
         } catch (RestClientException e) {
-            logger.error("Something went wrong while drinking espresso", e);
+            logger.error("Failed to ping health check endpoint: {}", e.getMessage(), e);
         }
     }
 }
