@@ -10,9 +10,9 @@ type Props = {
 
 export const NewsArticleComponent = (props: Props) => {
     return (
-        <Container>
-            <Col md={5}>
-                <Card className="mb-5">
+        <Container className="px-0">
+            <Col xs={12} md={8} lg={6}>
+                <Card className="mb-5 shadow-sm">
                     <Card.Header className="fw-bold h4 text-light" style={{backgroundColor: colors.shamrock_green}}>
                         {props.fire && (<picture>
                             <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f525/512.webp"

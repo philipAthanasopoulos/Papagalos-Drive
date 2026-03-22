@@ -22,8 +22,8 @@ export const UserProfile = () => {
     useEffect(() => {
         if (user) {
             getUserFavoriteNotes().then((notesData) => {
-                const notes: NoteDTO[] = notesData.map((note: any) => new NoteDTO(note));
-                setFavoriteNotes(notes);
+                const fetchedNotes: NoteDTO[] = notesData.map((note: any) => new NoteDTO(note));
+                setFavoriteNotes(fetchedNotes);
             });
         }
     }, [user]);
@@ -41,37 +41,41 @@ export const UserProfile = () => {
     }
 
     return (
-        <Container>
-            <Row xs={12} md={6}>
-                <Col className={"col-md-4"}>
-                    <Image src={avatar} className="w-50"/>
+        <Container className="py-4">
+            <Row className="mb-4 align-items-center">
+                <Col xs="auto">
+                    <Image src={avatar} width={80} height={80} style={{objectFit: 'cover'}} roundedCircle/>
+                </Col>
+                <Col>
+                    <div className="fs-5 fw-semibold">👤 {user.firstName} {user.lastName}</div>
+                    <div className="text-muted">📧 {user.email}</div>
+                    <div className="mt-1">🍇 {user.grapes} grapes</div>
                 </Col>
             </Row>
-            <Row className="fs-4 mt-4">
-                👤: {user.firstName} {user.lastName}
-            </Row>
-            <Row className="fs-4">
-                📧: {user.email}
-            </Row>
-            <Row className={"pt-5"}>
+            <Row className={"pt-2"}>
                 <Col>
                     <h2>🔖Saved notes</h2>
+                    {favoriteNotes.length === 0 && (
+                        <p className="text-muted mt-3">Δεν έχεις αποθηκευμένες σημειώσεις ακόμα.</p>
+                    )}
                     {favoriteNotes.map((note, index) => (
                         <Row key={index} className="mb-3">
                             <Col>
                                 <hr/>
-                                <Link to={`/note/${note.id}`} className='btn btn-light btn-lg'>
-                                    {fileIcons[note.type.toLowerCase()]}
-                                    <span className='ms-2'>
-                                        {note.name}.{note.type.toLowerCase()}
-                                        <span className='ms-4 text-muted'>
-                                            {note.uploadDate ? new Date(note.uploadDate).toLocaleDateString() : ''}
+                                <div className="d-flex flex-wrap align-items-center gap-2">
+                                    <Link to={`/note/${note.id}`} className='btn btn-light btn-lg'>
+                                        {fileIcons[note.type.toLowerCase()]}
+                                        <span className='ms-2'>
+                                            {note.name}.{note.type.toLowerCase()}
+                                            <span className='ms-4 text-muted'>
+                                                {note.uploadDate ? new Date(note.uploadDate).toLocaleDateString() : ''}
 
+                                            </span>
                                         </span>
-                                    </span>
-                                </Link>
-                                <Button className={"ms-4 btn-light btn-lg bi-bookmark-x btn-outline-danger"}
-                                        onClick={() => removeNote(note)}/>
+                                    </Link>
+                                    <Button className={"btn-light btn-lg bi-bookmark-x btn-outline-danger"}
+                                            onClick={() => removeNote(note)}/>
+                                </div>
                             </Col>
                         </Row>
                     ))}

@@ -7,6 +7,7 @@ import students from "../../images/Learning languages-cuate.svg";
 import studentgrades from "../../images/Grades-cuate.png";
 import bookmarks from "../../images/Bookmarks-cuate.svg"
 import "./hero.css";
+import {Footer} from "../Footer";
 
 const Hero = () => {
     useEffect(() => {
@@ -16,7 +17,7 @@ const Hero = () => {
                     entry.target.classList.add('fade-in');
                 }
             });
-        }, {threshold: 1.0});
+        }, {threshold: 0.2});
 
         const elements = document.querySelectorAll('.fade-in-element');
         elements.forEach(element => observer.observe(element));
@@ -25,14 +26,12 @@ const Hero = () => {
     }, []);
 
     return (
-        <Container>
-            <Row className={"m-3 p-3 align-items-center rounded-5 fade-in"}>
-                <Col xs={12} md={6} style={{backgroundColor: colors.shamrock_green}} className="rounded-5">
-                    <Image src={studentgrades} className="w-100"/>
-                </Col>
-                <Col xs={12} md={6}>
+        <>
+        <Container className="pb-4">
+            <Row className={"m-2 m-md-3 p-2 p-md-3 align-items-center rounded-5 fade-in hero-section-row"}>
+                <Col xs={12} md={6} className="order-md-1 mb-3 mb-md-0">
                     <div className="text-center">
-                        <h1 className="display-3 rubik-text">
+                        <h1 className="display-3 rubik-text hero-heading">
                             <b>🎓Σημειώσεις από κάθε γωνιά της Ελλάδας, στα χέρια σου!✨</b>
                         </h1>
                         <Link to={"/folder/1"}>
@@ -58,13 +57,16 @@ const Hero = () => {
                         </Link>
                     </div>
                 </Col>
+                <Col xs={12} md={6} style={{backgroundColor: colors.shamrock_green}} className="order-md-2 rounded-5">
+                    <Image src={studentgrades} className="w-100"/>
+                </Col>
             </Row>
 
-            <Row className={"align-items-center m-3 p-3 rounded-5"} style={{backgroundColor: colors.sky_blue}}>
-                <Col xs={12} md={6}>
+            <Row className={"align-items-center m-2 m-md-3 p-2 p-md-3 rounded-5 hero-section-row"} style={{backgroundColor: colors.sky_blue}}>
+                <Col xs={12} md={6} className="order-2 order-md-1 mt-3 mt-md-0">
                     <Image src={bookmarks} alt="Notes" className="w-100"/>
                 </Col>
-                <Col className={"bg-light p-3 rounded-5 shadow"}>
+                <Col xs={12} md={6} className={"bg-light p-3 rounded-5 shadow order-1 order-md-2 mb-3 mb-md-0"}>
                     <h2 className="rubik-text">Αμέτρητο ακαδημαϊκό υλικό 📚</h2>
                     <p className="lead">
                         <ul className="fade-in-element">
@@ -88,8 +90,8 @@ const Hero = () => {
                     </p>
                 </Col>
             </Row>
-            <Row className={"align-items-center m-3 p-3 rounded-5"} style={{backgroundColor: colors.sandy_brown}}>
-                <Col xs={12} md={6} className={"bg-light p-3 rounded-5 shadow fade-in-element"}>
+            <Row className={"align-items-center m-2 m-md-3 p-2 p-md-3 rounded-5 hero-section-row"} style={{backgroundColor: colors.sandy_brown}}>
+                <Col xs={12} md={6} className={"bg-light p-3 rounded-5 shadow fade-in-element mb-3 mb-md-0"}>
                     <h2 className="rubik-text"> Πρόσβαση από παντού, κάθε στιγμή <picture>
                         <source srcSet="https://fonts.gstatic.com/s/e/notoemoji/latest/1f933_1f3fb/512.webp"
                                 type="image/webp"/>
@@ -99,11 +101,13 @@ const Hero = () => {
                     <p className="lead">Μελέτησε από τον υπολογιστή, το laptop ή το κινητό σου, όπου κι αν
                         βρίσκεσαι.</p>
                 </Col>
-                <Col>
+                <Col xs={12} md={6}>
                     <Image src={students} alt="Notes" className="w-100"/>
                 </Col>
             </Row>
         </Container>
+        <Footer/>
+        </>
     );
 }
 

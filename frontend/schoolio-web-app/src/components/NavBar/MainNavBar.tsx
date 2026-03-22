@@ -56,7 +56,7 @@ const MainNavBar = () => {
                             <Col className={"d-flex align-items-center"}>
                                 <div className={"text-light me-3"}>{user.grapes}🍇</div>
                                 <Link to={"/profile"} className={" me-2"}>
-                                    <Image src={avatar}/>
+                                    <Image src={avatar} width={40} height={40} style={{objectFit: 'cover'}}/>
                                 </Link>
                                 <DropdownButton title="⚙️" variant={"white"}>
                                     <Dropdown.Item onClick={() => setShowLogoutModal(true)}>Logout

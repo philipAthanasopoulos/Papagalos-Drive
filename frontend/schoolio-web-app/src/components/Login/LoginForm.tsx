@@ -46,9 +46,9 @@ export const LoginForm = () => {
     };
 
     return (
-        <Container fluid className='d-flex align-items-center justify-content-center bg-image'>
+        <Container fluid className='d-flex align-items-center justify-content-center min-vh-100 bg-image'>
             <div className='mask gradient-custom-3'></div>
-            <Card className='m-5' style={{maxWidth: '600px'}}>
+            <Card className='m-3 m-md-5 shadow-lg w-100' style={{maxWidth: '520px'}}>
                 <div className='px-5'>
                     <h2 className=" text-center mb-5 mt-4">🛂Login</h2>
                     <Form onSubmit={handleSubmit}>
