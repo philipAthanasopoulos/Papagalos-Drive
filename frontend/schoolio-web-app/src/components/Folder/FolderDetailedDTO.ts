@@ -17,6 +17,6 @@ export class FolderDetailedDTO {
     }
 
     isEmpty(): boolean {
-        return this.subFolders.length == 0 && this.notes.length == 0;
+        return this.subFolders.length === 0 && this.notes.length === 0;
     }
 }

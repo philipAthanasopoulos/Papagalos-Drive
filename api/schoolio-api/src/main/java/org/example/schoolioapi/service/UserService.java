@@ -48,7 +48,7 @@ public class UserService {
     }
 
     public List<UserDTO> getUsersDTO() {
-        return null;
+        return userRepository.findAll().stream().map(UserDTO::from).collect(Collectors.toList());
     }
 
     public User getUserById(Long id) {

@@ -13,15 +13,12 @@ export const NewsArticleHolder = () => {
 
     useEffect(() => {
         const fetchNews = async () => {
-            console.log(apiBaseURL)
             try {
                 const response = await axios.get<NewsArticleDTO[]>(`${apiBaseURL}/news`);
                 const newArticles = response.data.map(article => new NewsArticleDTO(article));
                 setNewsArticles(newArticles);
                 setIsLoading(false);
             } catch (error) {
-                console.log(error)
-                fetchNews();
             }
         };
         fetchNews();

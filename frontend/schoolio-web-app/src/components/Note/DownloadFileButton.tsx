@@ -1,5 +1,4 @@
-import {Button, Container} from 'react-bootstrap'
-import {Download} from 'react-bootstrap-icons'
+import {Button} from 'react-bootstrap'
 import colors from "../../colors";
 
 type Props = {

@@ -1,5 +1,7 @@
 package org.example.schoolioapi.heartbeat;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
@@ -13,15 +15,17 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class Espresso {
 
+    private static final Logger logger = LoggerFactory.getLogger(Espresso.class);
+
     @Scheduled(fixedDelay = 3 * 60000)
     public void drinkEspresso() {
         RestTemplate restTemplate = new RestTemplate();
         String localhost = "https://schoolio.onrender.com/folders/1";
         try {
             restTemplate.getForEntity(localhost, String.class);
-            System.out.println("Ping");
+            logger.info("Ping");
         } catch (RestClientException e) {
-            System.out.println("Something went wrong while drinking espresso");
+            logger.error("Something went wrong while drinking espresso", e);
         }
     }
 }

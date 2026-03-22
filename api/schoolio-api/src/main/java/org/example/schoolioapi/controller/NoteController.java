@@ -38,7 +38,6 @@ public class NoteController {
             folderService.addNoteToFolder(id, note.getId());
             return ok(FolderDTO.from(folderService.getFolderById(id)));
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             return status(CONFLICT).body(null);
         }
     }
