@@ -2,10 +2,8 @@ import cosineSimilarity from 'compute-cosine-similarity'
 import {useEffect, useState} from 'react'
 import {Col, Container, FloatingLabel, FormControl, InputGroup, ListGroup, ListGroupItem, Row} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import colors from '../../colors'
 import {FolderDetailedDTO} from "../Folder/FolderDetailedDTO";
 import {FolderDTO} from "../Folder/FolderDTO";
-import {Search} from "react-bootstrap-icons";
 
 type Props = { folder?: FolderDetailedDTO }
 
@@ -35,12 +33,6 @@ export const SearchBar = (props: Props) => {
                 .map(subFolder => ({
                     ...subFolder,
                     similarity: calculateSimilarity(replaceTonus(subFolder.name.replace("Πανεπιστήμιο", "")), replaceTonus(query))
-                })) || [];
-
-            const noteResults = props.folder?.notes
-                .map(note => ({
-                    ...note,
-                    similarity: calculateSimilarity(replaceTonus(note.name.replace("Πανεπιστήμιο", "")), replaceTonus(query))
                 })) || [];
 
             const combinedResults = [...folderResults]

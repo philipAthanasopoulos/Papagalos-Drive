@@ -10,7 +10,6 @@ import {
     ModalHeader,
     ModalTitle
 } from 'react-bootstrap';
-import {FileEarmarkArrowUp} from 'react-bootstrap-icons';
 import colors from '../../colors';
 import {NotificationComponent} from '../Notifications/NotificationComponent';
 import {FolderDetailedDTO} from "../Folder/FolderDetailedDTO";

@@ -2,10 +2,6 @@ import React, {useEffect, useState} from 'react';
 import ReactLoading from 'react-loading';
 import colors from '../../colors';
 
-const getRandomColor = () => {
-    return ;
-};
-
 
 
 const LoadingComponent = () => {
