@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import ReactLoading from 'react-loading';
 import colors from '../../colors';
 
-const colorValues = Object.values(colors);
-
 const LoadingComponent = () => {
     const [color,setColor] = useState('');
 

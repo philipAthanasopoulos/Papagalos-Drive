@@ -7,6 +7,7 @@ import students from "../../images/Learning languages-cuate.svg";
 import studentgrades from "../../images/Grades-cuate.png";
 import bookmarks from "../../images/Bookmarks-cuate.svg"
 import "./hero.css";
+import {Footer} from "../Footer";
 
 const Hero = () => {
     useEffect(() => {
