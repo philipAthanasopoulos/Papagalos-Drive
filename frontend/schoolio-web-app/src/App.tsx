@@ -1,10 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useEffect} from 'react';
-import {Alert, Container} from 'react-bootstrap';
-import {Navigate, Route, Routes, useLocation} from 'react-router-dom';
+import React from 'react';
+import {Alert} from 'react-bootstrap';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import './App.css';
 import {FolderComponent} from './components/Folder/FolderComponent';
-import {Footer} from './components/Footer';
 import {LoginForm} from './components/Login/LoginForm';
 import Hero from './components/MainPage/Hero';
 import MainNavBar from './components/NavBar/MainNavBar';

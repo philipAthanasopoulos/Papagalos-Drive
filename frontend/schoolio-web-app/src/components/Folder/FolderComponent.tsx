@@ -68,26 +68,28 @@ export const FolderComponent: React.FC = () => {
                 {notesToDisplay.map((note, index) => (
                     <div key={index}>
                         <hr/>
-                        <Link to={`/note/${note.id}`} className='btn btn-light btn-lg'>
-                            {fileIcons[note.type.toLowerCase()]}
-                            <span className='ms-2'>
-                                {note.name}
-                                <span>
-                                    .{note.type.toLowerCase()}
+                        <div className="d-flex flex-wrap align-items-center gap-2">
+                            <Link to={`/note/${note.id}`} className='btn btn-light btn-lg text-truncate' style={{maxWidth: '100%'}}>
+                                {fileIcons[note.type.toLowerCase()]}
+                                <span className='ms-2'>
+                                    {note.name}
+                                    <span>
+                                        .{note.type.toLowerCase()}
+                                    </span>
+                                    <span className='ms-4 text-muted'>
+                                        {note.uploadDate ? new Date(note.uploadDate).toLocaleDateString() : ''}
+                                    </span>
                                 </span>
-                                <span className='ms-4 text-muted'>
-                                    {note.uploadDate ? new Date(note.uploadDate).toLocaleDateString() : ''}
-                                </span>
-                            </span>
-                        </Link>
-                        <Button className={" ms-3 btn-light btn-outline-danger btn-lg bi-bookmark-heart "}
-                                onClick={() => {
-                                    if (localStorage.getItem("user")) {
-                                        addNote(note);
-                                    } else {
-                                        alert("Please log in to save notes.");
-                                    }
-                                }}></Button>
+                            </Link>
+                            <Button className={"btn-light btn-outline-danger btn-lg bi-bookmark-heart "}
+                                    onClick={() => {
+                                        if (localStorage.getItem("user")) {
+                                            addNote(note);
+                                        } else {
+                                            alert("Please log in to save notes.");
+                                        }
+                                    }}></Button>
+                        </div>
                     </div>
                 ))}
             </div>

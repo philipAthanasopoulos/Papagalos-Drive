@@ -1,15 +1,13 @@
-import {Button, Col, Dropdown, DropdownButton, Image, Modal, NavDropdown, Row} from 'react-bootstrap';
+import {Button, Col, Dropdown, DropdownButton, Image, Modal, Row} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import colors from '../../colors';
 import papagalos_png from '../../images/papagalos_comic.png';
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import avatar from "../../images/Profile Interface-cuate.svg"
 import {logout} from "../../api/api";
-import {Dropbox} from "react-bootstrap-icons";
-import DropDown from "cdbreact/dist/components/DropDown";
 import {User} from "../Login/User";
 
 const MainNavBar = () => {
@@ -58,7 +56,7 @@ const MainNavBar = () => {
                             <Col className={"d-flex align-items-center"}>
                                 <div className={"text-light me-3"}>{user.grapes}🍇</div>
                                 <Link to={"/profile"} className={" me-2"}>
-                                    <Image src={avatar}/>
+                                    <Image src={avatar} width={40} height={40} style={{objectFit: 'cover'}}/>
                                 </Link>
                                 <DropdownButton title="⚙️" variant={"white"}>
                                     <Dropdown.Item onClick={() => setShowLogoutModal(true)}>Logout

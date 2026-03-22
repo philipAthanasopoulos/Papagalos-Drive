@@ -1,4 +1,4 @@
-import {Button, Card, Container, Row} from "react-bootstrap";
+import {Button, Card, Container} from "react-bootstrap";
 import colors from "../../colors";
 
 export const ForumComponent = () => {

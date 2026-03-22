@@ -1,11 +1,6 @@
-import {Alert, Button, Card, Col, Container, FloatingLabel, Form, FormControl, Image, Row} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
-import papagalos from "../../images/cool.png"
+import {Alert, Button, Card, Container, FloatingLabel, Form, FormControl} from 'react-bootstrap'
 import React, {useState} from "react";
-import {apiBaseURL} from "../../env/env";
-import {User} from "./User";
 import colors from "../../colors";
-import axios from "axios";
 import {loginUser} from "../../api/api";
 
 export const LoginForm = () => {
@@ -51,9 +46,9 @@ export const LoginForm = () => {
     };
 
     return (
-        <Container fluid className='d-flex align-items-center justify-content-center bg-image'>
+        <Container fluid className='d-flex align-items-center justify-content-center min-vh-100 bg-image'>
             <div className='mask gradient-custom-3'></div>
-            <Card className='m-5' style={{maxWidth: '600px'}}>
+            <Card className='m-3 m-md-5 shadow-lg w-100' style={{maxWidth: '520px'}}>
                 <div className='px-5'>
                     <h2 className=" text-center mb-5 mt-4">🛂Login</h2>
                     <Form onSubmit={handleSubmit}>
