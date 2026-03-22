@@ -1,20 +1,18 @@
-import {Button, Col, Dropdown, DropdownButton, Image, Modal, NavDropdown, Row} from 'react-bootstrap';
+import {Button, Col, Dropdown, DropdownButton, Image, Modal, Row} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import colors from '../../colors';
 import papagalos_png from '../../images/papagalos_comic.png';
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import avatar from "../../images/Profile Interface-cuate.svg"
 import {logout} from "../../api/api";
-import {Dropbox} from "react-bootstrap-icons";
-import DropDown from "cdbreact/dist/components/DropDown";
 import {User} from "../Login/User";
 
 const MainNavBar = () => {
     const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
-    const user: User = JSON.parse(localStorage.getItem("user") || "null");
+    const user: User | null = JSON.parse(localStorage.getItem("user") || "null");
 
     const handleLogout = async () => {
         try {
@@ -54,7 +52,7 @@ const MainNavBar = () => {
                         </Nav.Link>
                     </Nav>
                     <Nav className={"h5"}>
-                        {localStorage.getItem("user") ? (
+                        {user ? (
                             <Col className={"d-flex align-items-center"}>
                                 <div className={"text-light me-3"}>{user.grapes}🍇</div>
                                 <Link to={"/profile"} className={" me-2"}>

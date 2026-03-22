@@ -24,7 +24,10 @@ apiClient.interceptors.response.use(
 );
 
 function getUserId(): number {
-    const user: User = JSON.parse(localStorage.getItem("user") || "null");
+    const user: User | null = JSON.parse(localStorage.getItem("user") || "null");
+    if (!user) {
+        throw new Error("User not logged in. Please authenticate before accessing this resource.");
+    }
     return user.id;
 }
 
