@@ -8,6 +8,7 @@ const LoadingComponent = () => {
     const [color,setColor] = useState('');
 
     useEffect(() => {
+        const colorValues = Object.values(colors);
         setColor(colorValues[Math.floor(Math.random() * colorValues.length)])
     }, []);
 
