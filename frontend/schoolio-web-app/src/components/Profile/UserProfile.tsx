@@ -26,7 +26,7 @@ export const UserProfile = () => {
                 setFavoriteNotes(notes);
             });
         }
-    }, []);
+    }, [user]);
 
     const removeNote = async (note: NoteDTO) => {
         removeFavoriteNote(note.id).then((responce) => {

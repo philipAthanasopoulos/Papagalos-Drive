@@ -5,10 +5,10 @@ import colors from '../../colors';
 
 
 const LoadingComponent = () => {
-    const colorValues = Object.values(colors);
     const [color,setColor] = useState('');
 
     useEffect(() => {
+        const colorValues = Object.values(colors);
         setColor(colorValues[Math.floor(Math.random() * colorValues.length)])
     }, []);
 
