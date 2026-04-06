@@ -13,7 +13,7 @@ import "./navbar.css";
 
 const MainNavBar = () => {
     const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
-    const user: User = JSON.parse(localStorage.getItem("user") || "null");
+    const user: User | null = JSON.parse(localStorage.getItem("user") || "null");
 
     const handleLogout = async () => {
         try {
@@ -53,7 +53,7 @@ const MainNavBar = () => {
                         </Nav.Link>
                     </Nav>
                     <Nav className={"h5"}>
-                        {localStorage.getItem("user") ? (
+                        {user ? (
                             <Col className={"d-flex align-items-center"}>
                                 <div className={"text-light me-3 grapes-counter"}>{user.grapes}🍇</div>
                                 <Link to={"/profile"} className={" me-2"}>
